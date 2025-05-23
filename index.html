@@ -20,119 +20,102 @@
     html {
       height: 100%;
       width: 100%;
-      background-color: #888888; /* Dark gray background */
+      background-color: #ffffff; /* White background */
     }
 
-    @keyframes colorWave {
-      0% {
-        color: #a8d8ff;
-        text-shadow: 0 0 1px rgba(168, 216, 255, 0.3);
-      }
-      33% {
-        color: #ffb8e6;
-        text-shadow: 0 0 1px rgba(255, 184, 230, 0.3);
-      }
-      66% {
-        color: #b8ffd8;
-        text-shadow: 0 0 1px rgba(184, 255, 216, 0.3);
-      }
-      100% {
-        color: #a8d8ff;
-        text-shadow: 0 0 1px rgba(168, 216, 255, 0.3);
-      }
+    /* Removed colorWave animation */
+    /* @keyframes colorWave {} */
+
+    @keyframes taglineFade {
+      /* This keyframe definition is no longer needed as JS controls opacity directly */
+    }
+
+    @keyframes glitch {
+        
     }
 
     /* Contenedor del texto */
     .text-overlay {
       position: relative;
-      color: #FFFFFF; /* Pure white for optimal contrast */
+      color: #000000; /* Base text color is black */
       padding: 4rem 2rem;
       max-width: 800px;
       margin: 0 auto;
       font-family: 'Comfortaa', cursive;
       line-height: 2;
+      height: 100vh; /* Use viewport height for centering */
+      display: flex; /* Use flexbox for centering */
+      flex-direction: column; /* Stack children vertically */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally within flex container */
     }
 
     .text-overlay .title {
       font-size: 3rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem; /* Adjust margin for spacing from tagline */
       font-weight: 700;
       letter-spacing: 0;
+      color: #000000; /* Explicitly set title color to black */
+      animation: none; /* Remove colorWave animation from the title */
+      text-shadow: none; /* Remove text shadows */
     }
-
-    .text-overlay .title span {
-      display: inline-block;
-      animation: colorWave 8s ease-in-out infinite;
-      margin-right: -0.2em;
-    }
-
-    .text-overlay .title span:nth-child(1) { animation-delay: 0s; }
-    .text-overlay .title span:nth-child(2) { animation-delay: 0.5s; }
-    .text-overlay .title span:nth-child(3) { animation-delay: 1s; }
-    .text-overlay .title span:nth-child(4) { animation-delay: 1.5s; }
-    .text-overlay .title span:nth-child(5) { animation-delay: 2s; }
-    .text-overlay .title span:nth-child(6) { animation-delay: 2.5s; }
-    .text-overlay .title span:nth-child(7) { animation-delay: 3s; }
-    .text-overlay .title span:nth-child(8) { animation-delay: 3.5s; }
-    .text-overlay .title span:nth-child(9) { animation-delay: 4s; }
 
     .text-overlay .tagline {
       font-size: 1.2rem;
-      margin-bottom: 3rem;
-      color: #E0E0E0; /* Slightly softer white for tagline */
+      margin-bottom: 0; /* No bottom margin needed as flex handles spacing */
+      color: #333333;
       letter-spacing: 0.05em;
       font-weight: 400;
+      min-height: 3em; /* Ensure container has height */
+      position: relative; /* Keep relative position for absolute children spans */
+      overflow: hidden; /* Hide overflow */
+      width: 100%; /* Allow tagline container to take width */
+      text-align: center; /* Center tagline text */
     }
 
-    .text-overlay h1 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+    /* This animation is applied to all spans with appropriate delays */
+    .tagline span {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      /* Removed animation property: animation: taglineFade 45s ease-in-out infinite; */
+      opacity: 0; /* Keep initial opacity 0 */
+      transition: opacity 0.5s ease-in-out; /* Smooth fade transition duration */
     }
 
-    .text-overlay p {
-      margin-bottom: 1.5rem;
+    .tagline span.visible {
+      opacity: 1; /* Make visible when class is added by JS */
     }
 
-    .text-overlay h2 {
-      font-size: 1.5rem;
-      margin: 2rem 0 1rem;
-    }
-
-    /* Media Queries para Responsive Design */
+    /* Media Queries adjusted for new layout */
     @media screen and (max-width: 768px) {
       .text-overlay {
         padding: 3rem 1.5rem;
       }
-
       .text-overlay .title {
         font-size: 2.5rem;
       }
-
       .text-overlay .tagline {
         font-size: 1.1rem;
       }
     }
-
     @media screen and (max-width: 480px) {
       .text-overlay {
         padding: 2rem 1rem;
       }
-
       .text-overlay .title {
         font-size: 2rem;
       }
-
       .text-overlay .tagline {
         font-size: 1rem;
-        margin-bottom: 2rem;
       }
     }
-
     @media screen and (max-width: 320px) {
       .text-overlay .title {
         font-size: 1.8rem;
       }
-
       .text-overlay .tagline {
         font-size: 0.9rem;
       }
@@ -143,17 +126,44 @@
 <body>
   <div class="text-overlay">
     <div class="title">
-      <span>F</span>
-      <span>U</span>
-      <span>T</span>
-      <span>U</span>
-      <span>R</span>
-      <span>A</span>
-      <span>B</span>
-      <span>L</span>
-      <span>E</span>
+      <span>FUTURABLE</span>
     </div>
-    <div class="tagline">Think Tank Evolutivo</div>
+    <div class="tagline">
+      <span>“Think tank para futuros deseables”</span>
+      <span>“Preguntas audaces. Futuros posibles.”</span>
+      <span>“No predigas el futuro. Coordínalo.”</span>
+      <span>“No es imposible, es necesario”</span>
+      <span>“Think Tank de sentido planetario”</span>
+      <span>“Una empresa que manufactura futuros”</span>
+      <span>“Una empresa de diseño y futuros experienciales”</span>
+      <span>“No sabemos exactamente qué haremos después, pero sabemos que será ingenioso.”</span>
+      <span>“Un pequeño concilio de mentes extrañas”</span>
+    </div>
   </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const taglines = document.querySelectorAll('.tagline span');
+    let currentTaglineIndex = 0;
+
+    function showTagline(index) {
+      taglines.forEach((tagline, i) => {
+        if (i === index) {
+          tagline.classList.add('visible');
+        } else {
+          tagline.classList.remove('visible');
+        }
+      });
+    }
+
+    // Show the first tagline initially
+    showTagline(currentTaglineIndex);
+
+    // Cycle through taglines every 5 seconds
+    setInterval(() => {
+      currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
+      showTagline(currentTaglineIndex);
+    }, 5000); // 5000 milliseconds = 5 seconds
+  });
+</script>
 </body>
 </html>
