@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FUTURABLE — An evolutive Think Tank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
     /* Elimina márgenes y rellenos del navegador */
@@ -19,7 +20,26 @@
     html {
       height: 100%;
       width: 100%;
-      background-color: #1d1d1d; /* Dark gray background */
+      background-color: #232323; /* Dark gray background */
+    }
+
+    @keyframes colorWave {
+      0% {
+        color: #a8d8ff;
+        text-shadow: 0 0 1px rgba(168, 216, 255, 0.3);
+      }
+      33% {
+        color: #ffb8e6;
+        text-shadow: 0 0 1px rgba(255, 184, 230, 0.3);
+      }
+      66% {
+        color: #b8ffd8;
+        text-shadow: 0 0 1px rgba(184, 255, 216, 0.3);
+      }
+      100% {
+        color: #a8d8ff;
+        text-shadow: 0 0 1px rgba(168, 216, 255, 0.3);
+      }
     }
 
     /* Contenedor del texto */
@@ -29,19 +49,35 @@
       padding: 4rem 2rem;
       max-width: 800px;
       margin: 0 auto;
-      font-family: monospace;
-      line-height: 1.6;
+      font-family: 'Press Start 2P', cursive;
+      line-height: 2;
     }
 
     .text-overlay .title {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: normal;
+      letter-spacing: 0;
     }
 
+    .text-overlay .title span {
+      display: inline-block;
+      animation: colorWave 8s ease-in-out infinite;
+      margin-right: -0.2em;
+    }
+
+    .text-overlay .title span:nth-child(1) { animation-delay: 0s; }
+    .text-overlay .title span:nth-child(2) { animation-delay: 0.5s; }
+    .text-overlay .title span:nth-child(3) { animation-delay: 1s; }
+    .text-overlay .title span:nth-child(4) { animation-delay: 1.5s; }
+    .text-overlay .title span:nth-child(5) { animation-delay: 2s; }
+    .text-overlay .title span:nth-child(6) { animation-delay: 2.5s; }
+    .text-overlay .title span:nth-child(7) { animation-delay: 3s; }
+    .text-overlay .title span:nth-child(8) { animation-delay: 3.5s; }
+    .text-overlay .title span:nth-child(9) { animation-delay: 4s; }
+
     .text-overlay .tagline {
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin-bottom: 3rem;
       color: #E0E0E0; /* Slightly softer white for tagline */
       letter-spacing: 0.05em;
@@ -65,8 +101,18 @@
 
 <body>
   <div class="text-overlay">
-    <div class="title">futurable</div>
+    <div class="title">
+      <span>F</span>
+      <span>U</span>
+      <span>T</span>
+      <span>U</span>
+      <span>R</span>
+      <span>A</span>
+      <span>B</span>
+      <span>L</span>
+      <span>E</span>
+    </div>
     <div class="tagline">Think Tank Evolutivo</div>
-    
+  </div>
 </body>
 </html>
