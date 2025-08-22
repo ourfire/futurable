@@ -4,286 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FUTURABLE — An evolutive Think Tank</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <style>
-    /* Elimina márgenes y rellenos del navegador */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: transparent;
-    }
-
-    /* Contenedor a pantalla completa */
-    body,
-    html {
-      height: 100%;
-      width: 100%;
-      background-color: #ffffff; /* White background */
-      color: #000000; /* Default text color is black */
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Dark Mode styles */
-    body.dark-mode {
-      background-color: #1a1a1a; /* Dark background */
-      color: #f0f0f0; /* Light text color */
-    }
-
-    body.dark-mode .text-overlay .tagline span {
-        color: #cccccc; /* Slightly darker gray for tagline in dark mode */
-    }
-
-    /* Removed colorWave animation keyframes */
-    /* @keyframes colorWave {} */
-
-    /* Removed glitch animation keyframes */
-    /* @keyframes glitch {} */
-
-    @keyframes taglineFade {
-      0%, 100% { opacity: 0; } /* Hidden at the start and end of the full cycle */
-      1% { opacity: 1; }   /* Start fade in */
-      10% { opacity: 1; }  /* Stay visible up to 10% */
-      11% { opacity: 0; }  /* Fade out starts at 11% */
-    }
-
-    /* Contenedor del texto */
-    .text-overlay {
-      position: relative;
-      /* color handled by body */
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      font-family: 'Comfortaa', cursive;
-      line-height: 2;
-      height: 100vh; /* Use viewport height for centering */
-      display: flex; /* Use flexbox for centering */
-      flex-direction: column; /* Stack children vertically */
-      justify-content: center; /* Center content vertically */
-      align-items: center; /* Center content horizontally within flex container */
-    }
-
-    .text-overlay .title {
-      font-size: 3rem;
-      margin-bottom: 2rem; /* Adjust margin for spacing from tagline */
-      font-weight: 700;
-      letter-spacing: 0;
-      /* color handled by body */
-      animation: none; /* Remove colorWave animation from the title */
-      text-shadow: none; /* Remove text shadows */
-    }
-
-    .text-overlay .tagline {
-      font-size: 1.2rem;
-      margin-bottom: 0; /* No bottom margin needed as flex handles spacing */
-      /* color handled by body/dark-mode */
-      letter-spacing: 0.05em;
-      font-weight: 400;
-      min-height: 3em; /* Ensure container has height */
-      position: relative; /* Keep relative position for absolute children spans */
-      /* Removed overflow: hidden; */
-      width: 100%; /* Allow tagline container to take width */
-      text-align: center; /* Center tagline text */
-    }
-
-    .tagline span {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      left: 0;
-      right: 0;
-      /* Removed animation property: animation: taglineFade 45s ease-in-out infinite; */
-      opacity: 0; /* Keep initial opacity 0 */
-      transition: opacity 0.5s ease-in-out; /* Smooth fade transition duration */
-      /* color inherited or set by dark-mode class */
-    }
-
-    .tagline span.visible {
-      opacity: 1; /* Make visible when class is added by JS */
-    }
-
-    /* Dark Mode Toggle Button */
-    .mode-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 10px; /* Make it square */
-        width: 40px; /* Fixed width */
-        height: 40px; /* Fixed height */
-        background-color: transparent; /* Transparent background */
-        color: #000000; /* Icon color in light mode */
-        border: none; /* Remove border */
-        border-radius: 50%; /* Make it round */
-        cursor: pointer;
-        font-size: 1.5rem; /* Icon size */
-        z-index: 1000;
-        transition: color 0.3s ease, background-color 0.3s ease;
-        display: flex; /* Use flexbox to center icon */
-        justify-content: center;
-        align-items: center;
-    }
-
-    body.dark-mode .mode-toggle {
-        background-color: transparent; /* Transparent background in dark mode */
-        color: #f0f0f0; /* Icon color in dark mode */
-    }
-
-    .mode-toggle .fas {
-        pointer-events: none; /* Prevent icon clicks from interfering with button */
-    }
-
-    .mode-toggle .dark-mode-icon {
-        display: none; /* Hide moon icon by default */
-    }
-
-    body.dark-mode .mode-toggle .light-mode-icon {
-        display: none; /* Hide sun icon in dark mode */
-    }
-
-    body.dark-mode .mode-toggle .dark-mode-icon {
-        display: inline-block; /* Show moon icon in dark mode */
-    }
-
-    /* Social Icons */
-    .social-icons {
-        margin-top: 3rem; /* Space above the icons */
-        text-align: center; /* Center the icons horizontally */
-    }
-
-    .social-icons a {
-        margin: 0 15px; /* Increased space between icons */
-        color: #000000; /* Black icon color by default */
-        font-size: 1.8rem;
-        transition: color 0.3s ease;
-    }
-
-    body.dark-mode .social-icons a {
-        color: #f0f0f0; /* Light icon color in dark mode */
-    }
-
-    /* Media Queries adjusted for new layout */
-    @media screen and (max-width: 768px) {
-      .text-overlay {
-        padding: 3rem 1.5rem;
-      }
-      .text-overlay .title {
-        font-size: 2.5rem;
-      }
-      .text-overlay .tagline {
-        font-size: 1.1rem;
-      }
-    }
-    @media screen and (max-width: 480px) {
-      .text-overlay {
-        padding: 2rem 1rem;
-      }
-      .text-overlay .title {
-        font-size: 2rem;
-      }
-      .text-overlay .tagline {
-        font-size: 1rem;
-      }
-    }
-    @media screen and (max-width: 320px) {
-      .text-overlay {
-         padding: 1.5rem 0.5rem;
-      }
-      .text-overlay .title {
-        font-size: 1.5rem;
-      }
-      .text-overlay .tagline {
-        font-size: 0.8rem;
-      }
-        .mode-toggle {
-            top: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            font-size: 0.8rem;
-        }
-    }
-  </style>
-</head>
-
+  <link rel="stylesheet" href="styles.css">
 <body>
   <button class="mode-toggle" aria-label="Toggle dark mode">
       <i class="fas fa-sun light-mode-icon"></i>
       <i class="fas fa-moon dark-mode-icon"></i>
   </button>
-  <div class="text-overlay">
+
+  <header class="logo-section">
     <div class="title">
-      <span>FUTURABLE</span>
+      <a href="index.html" class="logo-link">
+        <img src="logomo.svg" alt="FUTURABLE" class="title-logo" id="logo-image">
+      </a>
     </div>
     <div class="tagline">
-      <span>“Think tank para futuros deseables”</span>
-      <span>“Preguntas audaces. Futuros posibles.”</span>
-      <span>“No predigas el futuro. Coordínalo.”</span>
-      <span>“No es imposible, es necesario”</span>
-      <span>“Think Tank de sentido planetario”</span>
-      <span>“Una empresa que manufactura futuros”</span>
-      <span>“Una empresa de diseño y futuros experienciales”</span>
-      <span>“No sabemos exactamente qué haremos después, pero sabemos que será ingenioso.”</span>
-      <span>“Un pequeño concilio de mentes extrañas”</span>
+      <span>Imagination as a service</span>
     </div>
-    <div class="social-icons">
-        <a href="https://twitter.com/futurablenow" aria-label="X (formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/futurablenow/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
+  </header>
+
+  <nav class="top-nav">
+    <ul>
+      <li><a href="manifesto.html">Manifesto</a></li>
+      <li><a href="services.html">Servicios</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <aside class="left-side">
+      <div class="social-icons">
+        <a href="https://twitter.com/futurablenow" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/futurablenow/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </aside>
+
+    <section class="website-links">
+      <div class="links-container">
+        <a href="https://example1.com" target="_blank" rel="noopener noreferrer" class="website-link">Website 1</a>
+        <a href="https://example2.com" target="_blank" rel="noopener noreferrer" class="website-link">Website 2</a>
+        <a href="https://example3.com" target="_blank" rel="noopener noreferrer" class="website-link">Website 3</a>
+      </div>
+    </section>
+  </main>
+
 <script>
+  /*
+   * MEJORA 2: JavaScript Refactorizado (Principio DRY)
+   * Se elimina la lógica duplicada creando una función `applyTheme`.
+   * El código es más limpio, legible y fácil de mantener.
+  */
   document.addEventListener('DOMContentLoaded', () => {
-    const taglines = document.querySelectorAll('.tagline span');
-    let currentTaglineIndex = 0;
-
-    function showTagline(index) {
-      taglines.forEach((tagline, i) => {
-        if (i === index) {
-          tagline.classList.add('visible');
-        } else {
-          tagline.classList.remove('visible');
-        }
-      });
-    }
-
-    // Show the first tagline initially
-    showTagline(currentTaglineIndex);
-
-    // Cycle through taglines every 5 seconds
-    setInterval(() => {
-      currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
-      showTagline(currentTaglineIndex);
-    }, 5000); // 5000 milliseconds = 5 seconds
-
-    // Dark Mode Toggle
     const modeToggle = document.querySelector('.mode-toggle');
     const body = document.body;
+    const logoImage = document.getElementById('logo-image');
     const darkModeStorageKey = 'darkMode';
 
-    // Check for saved preference on load
-    const savedMode = localStorage.getItem(darkModeStorageKey);
-    if (savedMode === 'dark') {
-      body.classList.add('dark-mode');
-      modeToggle.querySelector('.light-mode-icon').style.display = 'none';
-      modeToggle.querySelector('.dark-mode-icon').style.display = 'inline-block';
-    } else {
-      modeToggle.querySelector('.light-mode-icon').style.display = 'inline-block';
-      modeToggle.querySelector('.dark-mode-icon').style.display = 'none';
-    }
+    // Rutas de los logos definidas en constantes para fácil mantenimiento
+    const logoLight = 'logomc.svg';
+    const logoDark = 'logomo.svg';
 
-    modeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        modeToggle.querySelector('.light-mode-icon').style.display = 'none';
-        modeToggle.querySelector('.dark-mode-icon').style.display = 'inline-block';
+    // --- Función única para aplicar el tema y actualizar el DOM ---
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        body.classList.add('dark-mode');
+        logoImage.src = logoDark;
         localStorage.setItem(darkModeStorageKey, 'dark');
       } else {
-        modeToggle.querySelector('.light-mode-icon').style.display = 'inline-block';
-        modeToggle.querySelector('.dark-mode-icon').style.display = 'none';
+        body.classList.remove('dark-mode');
+        logoImage.src = logoLight;
         localStorage.setItem(darkModeStorageKey, 'light');
       }
-    });
+    }
 
+    // --- Al cargar la página, se verifica la preferencia guardada ---
+    const savedMode = localStorage.getItem(darkModeStorageKey);
+    // Se aplica el tema guardado, o el tema claro por defecto.
+    applyTheme(savedMode);
+
+    // --- Evento click para cambiar de tema ---
+    modeToggle.addEventListener('click', () => {
+      // Verifica si el modo oscuro está activo y decide el nuevo tema
+      const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+      applyTheme(newTheme);
+    });
   });
 </script>
 </body>
