@@ -1,261 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manifesto — FUTURABLE</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: transparent;
-    }
-
-    body, html {
-      height: 100%;
-      width: 100%;
-      background-color: #ffffff;
-      color: #000000;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body.dark-mode {
-      background-color: #1a1a1a;
-      color: #f0f0f0;
-    }
-
-    /* Header */
-    .header {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .back-button {
-      color: #000000;
-      text-decoration: none;
-      font-size: 1.2rem;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .back-button:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
-    }
-
-    body.dark-mode .back-button {
-      color: #f0f0f0;
-      background-color: rgba(26, 26, 26, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .logo-small {
-      max-width: 100px;
-      height: auto;
-    }
-
-    /* Content */
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 120px 2rem 2rem 2rem;
-    }
-
-    .manifesto-title {
-      font-size: 3rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #000000;
-    }
-
-    body.dark-mode .manifesto-title {
-      color: #f0f0f0;
-    }
-
-    .manifesto-section {
-      margin-bottom: 3rem;
-    }
-
-    .manifesto-section h3 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #000000;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: 0.5rem;
-    }
-
-    body.dark-mode .manifesto-section h3 {
-      color: #f0f0f0;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .manifesto-section p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #333333;
-      margin-bottom: 1rem;
-    }
-
-    body.dark-mode .manifesto-section p {
-      color: #cccccc;
-    }
-
-    /* Dark Mode Toggle */
-    .mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px;
-      width: 40px;
-      height: 40px;
-      background-color: transparent;
-      color: #000000;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.5rem;
-      z-index: 1000;
-      transition: color 0.3s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    body.dark-mode .mode-toggle {
-      color: #f0f0f0;
-    }
-
-    .mode-toggle .fas {
-      pointer-events: none;
-    }
-
-    .mode-toggle .dark-mode-icon {
-      display: none;
-    }
-
-    body.dark-mode .mode-toggle .light-mode-icon {
-      display: none;
-    }
-
-    body.dark-mode .mode-toggle .dark-mode-icon {
-      display: inline-block;
-    }
-
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      .content {
-        padding: 100px 1.5rem 1.5rem 1.5rem;
-      }
-      .manifesto-title {
-        font-size: 2.5rem;
-      }
-      .manifesto-section h3 {
-        font-size: 1.6rem;
-      }
-      .manifesto-section p {
-        font-size: 1.1rem;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .content {
-        padding: 80px 1rem 1rem 1rem;
-      }
-      .manifesto-title {
-        font-size: 2rem;
-      }
-      .manifesto-section h3 {
-        font-size: 1.4rem;
-      }
-      .manifesto-section p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <button class="mode-toggle" aria-label="Toggle dark mode">
-    <i class="fas fa-sun light-mode-icon"></i>
-    <i class="fas fa-moon dark-mode-icon"></i>
-  </button>
 
-  <div class="header">
+  <header class="header">
     <a href="index.html" class="back-button">
-      <i class="fas fa-arrow-left"></i> Volver
+      <i class="fas fa-arrow-left"></i> Back
     </a>
-    <img src="logo" alt="FUTURABLE" class="logo-small">
-  </div>
+    <img src="logomc.svg" alt="FUTURABLE Logo" class="logo-small">
+  </header>
 
-  <div class="content">
+  <main class="content">
     <h1 class="manifesto-title">Manifesto</h1>
     
-    <div class="manifesto-section">
+    <section class="manifesto-section">
       <h3>Intro</h3>
-      <p>Imaginadores y estrategas, movidos por causas planetarias y post-biológicas. No sólo concebimos y diseñamos productos, sistemas, civilizaciones y mundos, también hacemos arte y vandalismo inocuo. Somos algo entre estudio de diseño especulativo, laboratorio de sociedades y colectivo de inteligencia distribuida. No encajamos fácil en una caja, pero funcionamos como catalizadores donde hay propósito, caos y visión.</p>
-    </div>
+      <p>We are imaginers and strategists, driven by planetary and post-biological causes. We not only conceive and design products, systems, civilizations, and worlds, but we also create art and harmless vandalism. We are something between a speculative design studio, a societal laboratory, and a distributed intelligence collective. We don't fit easily into a box, but we function as catalysts where there is purpose, chaos, and vision.</p>
+    </section>
 
-    <div class="manifesto-section">
-      <h3>Propósito</h3>
-      <p>Lograr la coordinación humana a gran escala para convertir los riesgos existenciales de la humanidad en la mejor oportunidad para reinventarnos como civilización.</p>
-    </div>
+    <section class="manifesto-section">
+      <h3>Purpose</h3>
+      <p>To achieve large-scale human coordination to transform humanity's existential risks into the greatest opportunity to reinvent ourselves as a civilization.</p>
+    </section>
 
-    <div class="manifesto-section">
-      <h3>Misión</h3>
-      <p>Potenciar a las organizaciones de impacto y su interoperabilidad.</p>
-    </div>
+    <section class="manifesto-section">
+      <h3>Mission</h3>
+      <p>To empower impact organizations and their interoperability.</p>
+    </section>
 
-    <div class="manifesto-section">
-      <h3>Visión</h3>
-      <p>Ser un catalizador global en la transición hacia la vida post biológica, siendo la consultora de las principales organizaciones de impacto.</p>
-    </div>
-  </div>
+    <section class="manifesto-section">
+      <h3>Vision</h3>
+      <p>To be a global catalyst in the transition towards post-biological life, serving as the consultant for leading impact organizations.</p>
+    </section>
+  </main>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const modeToggle = document.querySelector('.mode-toggle');
-    const body = document.body;
-    const darkModeStorageKey = 'darkMode';
-
-    const savedMode = localStorage.getItem(darkModeStorageKey);
-    if (savedMode === 'dark') {
-      body.classList.add('dark-mode');
-      modeToggle.querySelector('.light-mode-icon').style.display = 'none';
-      modeToggle.querySelector('.dark-mode-icon').style.display = 'inline-block';
-    } else {
-      modeToggle.querySelector('.light-mode-icon').style.display = 'inline-block';
-      modeToggle.querySelector('.dark-mode-icon').style.display = 'none';
-    }
-
-    modeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        modeToggle.querySelector('.light-mode-icon').style.display = 'none';
-        modeToggle.querySelector('.dark-mode-icon').style.display = 'inline-block';
-        localStorage.setItem(darkModeStorageKey, 'dark');
-      } else {
-        modeToggle.querySelector('.light-mode-icon').style.display = 'inline-block';
-        modeToggle.querySelector('.dark-mode-icon').style.display = 'none';
-        localStorage.setItem(darkModeStorageKey, 'light');
-      }
-    });
-  });
-</script>
 </body>
-</html> 
+</html>

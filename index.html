@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,16 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <button class="mode-toggle" aria-label="Toggle dark mode">
-      <i class="fas fa-sun light-mode-icon"></i>
-      <i class="fas fa-moon dark-mode-icon"></i>
-  </button>
 
   <header class="logo-section">
     <div class="title">
       <a href="index.html" class="logo-link">
-        <img src="logomo.svg" alt="FUTURABLE" class="title-logo" id="logo-image">
+        <img src="logomc.svg" alt="FUTURABLE" class="title-logo" id="logo-image">
       </a>
     </div>
     <div class="tagline">
@@ -27,7 +24,7 @@
   <nav class="top-nav">
     <ul>
       <li><a href="manifesto.html">Manifesto</a></li>
-      <li><a href="services.html">Servicios</a></li>
+      <li><a href="services.html">Services</a></li>
     </ul>
   </nav>
 
@@ -52,47 +49,5 @@
     </section>
   </main>
 
-<script>
-  /*
-   * MEJORA 2: JavaScript Refactorizado (Principio DRY)
-   * Se elimina la lógica duplicada creando una función `applyTheme`.
-   * El código es más limpio, legible y fácil de mantener.
-  */
-  document.addEventListener('DOMContentLoaded', () => {
-    const modeToggle = document.querySelector('.mode-toggle');
-    const body = document.body;
-    const logoImage = document.getElementById('logo-image');
-    const darkModeStorageKey = 'darkMode';
-
-    // Rutas de los logos definidas en constantes para fácil mantenimiento
-    const logoLight = 'logomc.svg';
-    const logoDark = 'logomo.svg';
-
-    // --- Función única para aplicar el tema y actualizar el DOM ---
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        body.classList.add('dark-mode');
-        logoImage.src = logoDark;
-        localStorage.setItem(darkModeStorageKey, 'dark');
-      } else {
-        body.classList.remove('dark-mode');
-        logoImage.src = logoLight;
-        localStorage.setItem(darkModeStorageKey, 'light');
-      }
-    }
-
-    // --- Al cargar la página, se verifica la preferencia guardada ---
-    const savedMode = localStorage.getItem(darkModeStorageKey);
-    // Se aplica el tema guardado, o el tema claro por defecto.
-    applyTheme(savedMode);
-
-    // --- Evento click para cambiar de tema ---
-    modeToggle.addEventListener('click', () => {
-      // Verifica si el modo oscuro está activo y decide el nuevo tema
-      const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-      applyTheme(newTheme);
-    });
-  });
-</script>
 </body>
 </html>
