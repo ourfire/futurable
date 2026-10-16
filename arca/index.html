@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARCA · Antes del diluvio, aborda</title>
+<meta name="description" content="ARCA, la Agencia de Reubicación de Capacidades Humanas. Una entrevista de embarque de 5 minutos para saber qué tan preparado estás para el gran salto. Una ficción de diseño de Futurable.">
+<meta property="og:title" content="ARCA · Antes del diluvio, aborda">
+<meta property="og:description" content="Es 2035 y el diluvio de la automatización ya empezó. Haz tu entrevista de embarque y recibe tu pase.">
+<meta name="theme-color" content="#2F3A36">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237E5236'/%3E%3Cpath d='M5 19h22l-3 6H8z' fill='%23CFA25A'/%3E%3Cpath d='M16 6v11M16 7l7 9h-7' stroke='%23EFE8D8' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/cormorant-garamond-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-italic.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/jost-latin-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jost-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jost-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/ibm-plex-mono-latin-600-normal.woff2) format('woff2')}
+[hidden]{display:none!important}
+/* Layout: mapa de expedición a pantalla completa; paneles de vidrio translúcido encima; pase = boleto de viaje sobre selva */
+:root{
+  color-scheme: light;
+  --sand:#EDE3CF; --sand-2:#E2D4B8; --paper:#FAF4E6; --paper-a:rgba(250,244,230,.62); --paper-b:rgba(250,244,230,.82);
+  --ink:#2F3A36; --ink-2:#56605A; --ink-3:#857F70;
+  --leather:#7E5236; --leather-2:#5F3D27; --brass:#CFA25A; --brass-a:rgba(207,162,90,.28);
+  --terra:#B4664A; --jungle:#4D6A5B; --jungle-2:#3C5548; --jungle-a:rgba(77,106,91,.14);
+  --line:rgba(47,58,54,.16); --line-2:rgba(47,58,54,.28);
+  --shadow:0 12px 32px rgba(70,48,25,.13), 0 2px 6px rgba(70,48,25,.08);
+  --display:'Cormorant Garamond', 'Cormorant', Garamond, Georgia, serif;
+  --cond:'Jost', 'Futura', 'Century Gothic', sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, monospace;
+  --sans:'Jost', 'Futura', system-ui, sans-serif;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --map: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%237E5236' stroke-opacity='.13' stroke-width='1.2'%3E%3Cpath d='M-20 120 C 80 60 160 170 260 110 S 460 40 620 120'/%3E%3Cpath d='M-20 150 C 90 95 170 200 270 140 S 470 75 620 152'/%3E%3Cpath d='M-20 182 C 100 130 180 230 280 172 S 480 110 620 184'/%3E%3Cpath d='M-20 420 C 70 470 150 360 250 420 S 450 500 620 430'/%3E%3Cpath d='M-20 452 C 80 500 160 395 262 452 S 460 530 620 462'/%3E%3Cellipse cx='430' cy='300' rx='70' ry='42'/%3E%3Cellipse cx='430' cy='300' rx='46' ry='26'/%3E%3Cellipse cx='430' cy='300' rx='22' ry='11'/%3E%3Cellipse cx='130' cy='290' rx='52' ry='30'/%3E%3Cellipse cx='130' cy='290' rx='28' ry='15'/%3E%3C/g%3E%3Cg stroke='%237E5236' stroke-opacity='.07'%3E%3Cpath d='M0 0V600M150 0V600M300 0V600M450 0V600M0 150H600M0 300H600M0 450H600'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{background-color:var(--sand);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;
+  -webkit-tap-highlight-color:transparent;overflow-x:hidden;
+  background-image:var(--map), radial-gradient(ellipse at 20% 0%, rgba(255,250,238,.9), transparent 60%), radial-gradient(ellipse at 100% 100%, rgba(77,106,91,.16), transparent 55%);
+  background-size:600px 600px, 100% 100%, 100% 100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;touch-action:manipulation}
+input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.glass{background:var(--paper-a);-webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);border:1px solid rgba(255,255,255,.55);box-shadow:var(--shadow)}
+
+/* ---------- Señalética superior ---------- */
+.signbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:stretch;background:rgba(47,58,54,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--paper);
+  font-family:var(--cond);font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:11.48px;min-height:44px;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.signbar .brand{display:flex;align-items:center;gap:10px;padding:0 16px;color:var(--brass);font-family:var(--display);font-size:21.28px;letter-spacing:.08em;font-weight:600;border-right:1px solid rgba(250,244,230,.18)}
+.signbar .brand svg{width:22px;height:22px}
+.signbar .info{display:flex;align-items:center;gap:18px;padding:0 16px;flex:1;min-width:0;overflow:hidden;white-space:nowrap}
+.signbar .info span{opacity:.82}
+.signbar .clock{font-family:var(--mono);font-weight:500;letter-spacing:.04em;padding:0 16px;display:flex;align-items:center;color:var(--brass);font-size:13px;white-space:nowrap}
+@media (max-width:640px){.signbar .hide-s{display:none}.signbar .info{gap:10px}}
+
+.screen{display:none;min-height:calc(100vh - 44px);min-height:calc(100dvh - 44px)}
+.screen.on{display:block;animation:in .4s ease}
+@keyframes in{from{opacity:.001;transform:translateY(8px)}to{opacity:1;transform:none}}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px calc(40px + var(--safe-b));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:0 28px;
+  background:linear-gradient(180deg,#8E5F40,var(--leather-2));color:var(--paper);font-family:var(--cond);font-weight:500;font-size:18.86px;letter-spacing:.08em;text-transform:uppercase;
+  border-radius:12px;box-shadow:0 8px 20px rgba(95,61,39,.28), inset 0 1px 0 rgba(255,255,255,.18);transition:transform .1s, box-shadow .1s, opacity .2s}
+.btn:active{transform:translateY(2px);box-shadow:0 3px 8px rgba(95,61,39,.3)}
+.btn[disabled]{opacity:.38;pointer-events:none;box-shadow:none}
+.btn.signal{background:linear-gradient(180deg,#DDB46E,#BE8E45);color:var(--leather-2);box-shadow:0 8px 20px rgba(190,142,69,.32), inset 0 1px 0 rgba(255,255,255,.4)}
+.btn.ghost{background:var(--paper-a);color:var(--ink);box-shadow:none;border:1.5px solid var(--line-2);min-height:56px;font-size:20px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn .arrow{font-size:1.1em}
+.linkbtn{font-family:var(--mono);font-size:14px;text-decoration:underline;text-decoration-color:var(--brass);text-underline-offset:5px;color:var(--ink-2);padding:10px 4px}
+
+/* ---------- Bienvenida ---------- */
+#welcome .hero{position:relative;overflow:hidden}
+#welcome .hero-in{max-width:1100px;margin:0 auto;padding-block:46px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));position:relative;z-index:1}
+.route{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.route path{stroke-dasharray:10 9;animation:march 30s linear infinite}
+@keyframes march{to{stroke-dashoffset:-380}}
+.arca-word{font-family:var(--display);font-weight:600;font-size:clamp(103.04px,22.4vw,235.2px);line-height:.86;letter-spacing:.01em;color:var(--leather);
+  text-shadow:0 2px 0 rgba(255,255,255,.5), 0 18px 40px rgba(95,61,39,.18)}
+.arca-word em{font-style:normal;color:var(--brass)}
+.agency{font-family:var(--cond);font-weight:500;font-size:clamp(16.4px,2.79vw,23.78px);letter-spacing:.12em;text-transform:uppercase;margin-top:14px;max-width:18em;color:var(--ink)}
+.tagline{display:inline-flex;align-items:center;gap:12px;margin-top:26px;background:rgba(207,162,90,.88);color:var(--leather-2);font-family:var(--cond);font-weight:500;
+  font-size:clamp(18.86px,3.44vw,29.52px);letter-spacing:.06em;text-transform:uppercase;padding:8px 22px 8px 16px;border-radius:6px 22px 22px 6px;transform:rotate(-1.5deg);box-shadow:var(--shadow)}
+.tagline::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 2px var(--leather-2)}
+.hero .compass{position:absolute;right:5%;top:34px;width:190px;height:190px;opacity:.85}
+@media (max-width:760px){.hero .compass{width:112px;height:112px;top:20px;right:12px}}
+
+.counter{max-width:1100px;margin:0 auto;padding-block:0 44px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+@media (max-width:860px){.counter{grid-template-columns:1fr}}
+.card{background:var(--paper-a);-webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15);border:1px solid rgba(255,255,255,.6);border-radius:18px;box-shadow:var(--shadow);padding:26px;min-width:0}
+.form-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px dashed var(--line-2);padding-bottom:14px;margin-bottom:18px}
+.form-head h2{font-family:var(--display);font-weight:600;font-size:30.24px;line-height:1.05;color:var(--leather);text-wrap:balance}
+.form-code{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line-2);border-radius:20px;padding:4px 10px;white-space:nowrap;color:var(--ink-2)}
+.field label{display:block;font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);margin-bottom:8px}
+.field input[type=text],.field input[type=email]{width:100%;min-height:60px;padding:0 18px;border:1.5px solid var(--line-2);border-radius:12px;background:var(--paper-b);font-size:21px;font-family:var(--mono);color:var(--ink)}
+.field input:focus{border-color:var(--brass);outline:none;box-shadow:0 0 0 4px var(--brass-a)}
+.field small{display:block;color:var(--ink-3);font-size:14px;margin-top:6px}
+.consent{position:relative;display:flex;gap:14px;align-items:flex-start;margin:20px 0 24px;padding:14px;border:1px solid var(--line);border-radius:12px;cursor:pointer;background:rgba(250,244,230,.5)}
+.consent input{position:absolute;opacity:0;pointer-events:none}
+.consent .box{flex:0 0 32px;height:32px;border:2px solid var(--leather);border-radius:8px;display:grid;place-items:center;font-family:var(--cond);font-size:19.68px;font-weight:500;color:var(--paper);background:var(--paper-b);transition:background .15s}
+.consent.checked .box{background:var(--jungle);border-color:var(--jungle)}
+.consent.checked .box::after{content:"✓"}
+.consent.checked{border-color:rgba(77,106,91,.45);background:var(--jungle-a)}
+.consent p{font-size:15px;color:var(--ink-2)}
+.welcome-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.lore-card h3{font-family:var(--display);font-weight:600;font-size:26.88px;color:var(--leather);margin-bottom:10px}
+.lore-card p{color:var(--ink-2);font-size:16px;margin-bottom:12px}
+.steps{list-style:none;margin:18px 0 6px;display:grid;gap:10px}
+.steps li{display:flex;gap:12px;align-items:center;font-family:var(--cond);font-size:17.22px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.gate{font-weight:600;flex:0 0 42px;height:42px;display:grid;place-items:center;background:var(--jungle);color:var(--paper);font-family:var(--display);font-size:23.52px;border-radius:50%;box-shadow:0 0 0 4px var(--jungle-a)}
+.foot{max-width:1100px;margin:0 auto;padding-block:0 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-family:var(--mono);font-size:12px;color:var(--ink-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.futurable{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.02em}
+.futurable svg{width:18px;height:18px}
+
+/* ---------- Etapas ---------- */
+#stage .wrap{display:flex;flex-direction:column;justify-content:center;min-height:calc(100dvh - 44px);max-width:900px}
+.stage-gate{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.stage-letter{font-weight:600;width:clamp(130px,24vw,200px);aspect-ratio:1;max-width:100%;display:grid;place-items:center;border-radius:50%;
+  font-family:var(--display);font-size:clamp(94.08px,16.8vw,143.36px);line-height:1;color:var(--paper);
+  background:radial-gradient(circle at 35% 30%, #6C8B7A, var(--jungle-2));box-shadow:0 0 0 10px rgba(77,106,91,.16), 0 0 0 22px rgba(77,106,91,.07), var(--shadow)}
+.stage-txt{flex:1;min-width:260px}
+.stage-txt .eyebrow{margin-bottom:8px}
+.stage-txt h2{font-family:var(--display);font-weight:600;font-size:clamp(42.56px,7.17vw,73.92px);line-height:1;color:var(--leather);text-wrap:balance}
+.stage-txt p{font-size:19px;color:var(--ink-2);margin-top:14px;max-width:30em}
+.stage-meta{margin-top:34px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.sealed{display:inline-block;font-family:var(--cond);font-weight:500;font-size:17.22px;letter-spacing:.12em;color:var(--terra);border:2.5px solid rgba(180,102,74,.75);
+  padding:4px 14px;border-radius:30px;transform:rotate(-4deg);text-transform:uppercase;background:rgba(180,102,74,.07);animation:stampIn .5s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes stampIn{from{transform:rotate(-4deg) scale(2.2);opacity:.001}to{transform:rotate(-4deg) scale(1);opacity:1}}
+
+/* ---------- Preguntas ---------- */
+.qtop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.qtop .eyebrow b{color:var(--ink)}
+.ticks{display:grid;grid-template-columns:repeat(18,1fr);gap:4px;margin-bottom:26px}
+.ticks i{height:8px;background:rgba(47,58,54,.1);border-radius:6px}
+.ticks i.done{background:var(--jungle)}
+.ticks i.now{background:var(--brass);box-shadow:0 0 0 3px var(--brass-a)}
+.ticks i.gap{margin-left:8px}
+.qform{position:relative}
+.qcode{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px;margin-bottom:14px;flex-wrap:wrap}
+.qcode span{border:1px solid var(--line-2);border-radius:20px;padding:3px 10px;background:var(--paper-a)}
+.qcode .meas{color:var(--ink-3);border-color:var(--line)}
+.qtext{font-family:var(--cond);font-weight:500;font-size:clamp(25.42px,4.26vw,39.36px);line-height:1.06;margin-bottom:26px;text-wrap:balance;color:var(--ink)}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:16px;min-height:72px;padding:12px 18px 12px 12px;text-align:left;background:var(--paper-a);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:16px;box-shadow:0 6px 18px rgba(70,48,25,.09);transition:transform .1s, box-shadow .15s, background .15s;font-size:20px;line-height:1.25}
+.opt:active{transform:scale(.985)}
+.opt .k{font-weight:600;flex:0 0 46px;height:46px;display:grid;place-items:center;border:1.5px solid var(--line-2);border-radius:50%;font-family:var(--display);font-size:23.52px;color:var(--leather);text-transform:uppercase;background:var(--paper-b)}
+.opt.sel{background:rgba(77,106,91,.86);color:var(--paper);border-color:rgba(77,106,91,.9);box-shadow:0 10px 24px rgba(60,85,72,.28)}
+.opt.sel .k{background:var(--brass);color:var(--leather-2);border-color:var(--brass)}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.scale .opt{font-weight:600;flex-direction:column;justify-content:center;min-height:96px;padding:10px 4px;font-family:var(--display);font-size:42.56px;gap:0;color:var(--leather)}
+.scale .opt.sel{color:var(--paper)}
+.scale-ends{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:var(--mono);font-size:13.5px;color:var(--ink-2)}
+.scale-ends span:last-child{text-align:right}
+textarea.open{width:100%;min-height:170px;padding:18px;border:1px solid rgba(255,255,255,.6);border-radius:16px;background:var(--paper-b);font-size:21px;line-height:1.45;resize:vertical;box-shadow:var(--shadow);color:var(--ink)}
+textarea.open:focus{outline:none;box-shadow:0 0 0 4px var(--brass-a), var(--shadow)}
+.hint{font-family:var(--mono);font-size:13.5px;color:var(--ink-3);margin-top:10px}
+.multi .opt .k{font-family:var(--cond);font-weight:500;font-size:19.68px}
+.matrix{display:grid;gap:14px}
+.mrow{background:var(--paper-a);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:16px;padding:12px 14px;box-shadow:0 6px 18px rgba(70,48,25,.09)}
+.mrow .mlbl{font-family:var(--cond);font-weight:500;font-size:18.86px;margin-bottom:8px}
+.mrow .dots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.mrow .dots button{font-weight:600;min-height:54px;border:1.5px solid var(--line-2);border-radius:12px;font-family:var(--display);font-size:24.64px;background:var(--paper-b);color:var(--leather)}
+.mrow .dots button.sel{background:var(--jungle);color:var(--paper);border-color:var(--jungle)}
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px}
+.back{font-family:var(--cond);font-weight:500;font-size:16.4px;text-transform:uppercase;letter-spacing:.08em;padding:14px 8px;color:var(--ink-2)}
+
+/* ---------- Procesando ---------- */
+#processing .wrap{min-height:calc(100dvh - 44px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px}
+.proc-lines{font-family:var(--mono);font-size:16px;text-align:left;min-height:9em;width:min(460px,100%);color:var(--ink-2)}
+.proc-lines div{opacity:.001;animation:in .3s forwards}
+.proc-lines div::before{content:"✦ ";color:var(--brass)}
+.bigstamp{width:200px;height:200px;opacity:.001}
+.bigstamp.go{animation:bigStamp .55s cubic-bezier(.2,1.5,.4,1) forwards}
+@keyframes bigStamp{from{opacity:.001;transform:scale(2.4) rotate(-20deg)}to{opacity:.9;transform:scale(1) rotate(-8deg)}}
+
+/* ---------- Resultado ---------- */
+#result .wrap{max-width:1180px;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:36px;align-items:start}
+@media (max-width:900px){#result .wrap{grid-template-columns:1fr}}
+.pass-col{position:sticky;top:64px;min-width:0}
+@media (max-width:900px){.pass-col{position:static;max-width:440px;margin:0 auto;width:100%}}
+.res-col{min-width:0}
+.pass-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.pass-actions .btn{flex:1;min-height:56px;font-size:19px;padding:0 16px}
+.res-head .eyebrow{margin-bottom:8px}
+.res-head h2{font-family:var(--display);font-weight:600;font-size:clamp(49.28px,7.39vw,87.36px);line-height:.95;color:var(--leather);text-wrap:balance}
+.res-head .lead{font-family:var(--cond);font-size:clamp(18.86px,2.46vw,24.6px);font-weight:500;color:var(--jungle);margin-top:10px;line-height:1.15}
+.res-body{font-size:19px;color:var(--ink-2);margin-top:16px;max-width:36em}
+.deck-sign{display:flex;align-items:stretch;margin-top:22px;border-radius:16px;overflow:hidden;max-width:560px;box-shadow:var(--shadow)}
+.deck-sign .n{font-weight:600;background:var(--brass);color:var(--leather-2);font-family:var(--display);font-size:44.8px;padding:4px 20px;display:grid;place-items:center}
+.deck-sign .t{background:rgba(47,58,54,.86);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--paper);padding:12px 18px;flex:1}
+.deck-sign .t b{font-weight:500;display:block;font-family:var(--cond);font-size:22.14px;letter-spacing:.06em;text-transform:uppercase;line-height:1.05}
+.deck-sign .t span{font-size:15px;opacity:.82}
+.sec{margin-top:34px}
+.sec h3{font-family:var(--cond);font-size:19.68px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--line-2);padding-bottom:8px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sec h3 small{font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.04em;color:var(--ink-3);text-transform:none}
+.quad-wrap{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:22px;align-items:center}
+@media (max-width:560px){.quad-wrap{grid-template-columns:1fr}}
+.meter{margin-bottom:16px}
+.meter .row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:14px;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.meter .bar{height:12px;border-radius:12px;background:rgba(47,58,54,.1);position:relative}
+.meter .bar i{position:absolute;inset:0 auto 0 0;border-radius:12px;background:linear-gradient(90deg,var(--jungle),#7A9886)}
+.meter .bar::after{content:"";position:absolute;left:50%;top:-5px;bottom:-5px;border-left:2px dotted var(--terra)}
+.meter-note{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.bags{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.bag{position:relative;background:var(--paper-a);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:10px 26px 26px 10px;padding:14px 18px 16px 38px;box-shadow:0 6px 18px rgba(70,48,25,.09);min-width:0}
+.bag::before{content:"";position:absolute;left:13px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 2px var(--leather)}
+.bag::after{content:"";position:absolute;left:18px;top:34px;bottom:14px;border-left:1px dashed var(--line-2)}
+.bag b{font-weight:500;display:block;font-family:var(--cond);font-size:18.04px;line-height:1.1;margin:10px 0 4px;color:var(--leather)}
+.bag span{font-size:15px;color:var(--ink-2)}
+.bag .code{position:absolute;right:16px;top:9px;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.mail-card{background:linear-gradient(160deg, rgba(60,85,72,.92), rgba(47,58,54,.92));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--paper);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.mail-card h3{border-color:rgba(250,244,230,.25);color:var(--paper)}
+.mail-card p{color:rgba(250,244,230,.82);margin-bottom:16px}
+.mail-row{display:flex;gap:10px;flex-wrap:wrap}
+.mail-row input{flex:1 1 220px;min-width:0;min-height:58px;padding:0 18px;border:1px solid rgba(250,244,230,.4);border-radius:12px;background:rgba(250,244,230,.92);color:var(--ink);font-family:var(--mono);font-size:18px}
+.mail-ok{font-family:var(--cond);font-size:20.5px;font-weight:500;color:var(--brass);text-transform:uppercase;letter-spacing:.05em}
+.qr-card{display:flex;gap:18px;align-items:center;margin-top:16px;padding:16px;border-radius:18px;background:var(--paper-b);border:1px solid rgba(255,255,255,.6);box-shadow:var(--shadow)}
+.qr-card .qr{flex:0 0 150px;height:150px;background:#fff;border-radius:10px;padding:4px}
+.qr-card .qr svg{width:100%;height:100%;display:block}
+.qr-card b{font-family:var(--display);font-weight:600;font-size:24.64px;line-height:1.1;display:block;color:var(--leather);margin-bottom:4px}
+.qr-card span{font-size:15px;color:var(--ink-2)}
+.restart-row{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* ---------- Pase de abordaje (unidades cqw para escalar y exportar; sin backdrop-filter para la imagen) ---------- */
+.pass-frame{container-type:inline-size;width:100%;max-width:100%;aspect-ratio:9/16;background:#4D6A5B;position:relative;overflow:hidden;border-radius:20px;box-shadow:var(--shadow)}
+.pass-frame.export{border-radius:0;width:540px;box-shadow:none}
+.pf-bg{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%23FAF4E6' stroke-opacity='.10' stroke-width='1.2'%3E%3Cpath d='M-10 60 C 40 30 80 85 130 55 S 230 20 310 60'/%3E%3Cpath d='M-10 80 C 45 52 85 105 135 76 S 235 42 310 80'/%3E%3Cpath d='M-10 220 C 35 245 75 190 125 220 S 225 260 310 225'/%3E%3Cellipse cx='215' cy='150' rx='36' ry='22'/%3E%3Cellipse cx='215' cy='150' rx='18' ry='10'/%3E%3C/g%3E%3C/svg%3E");background-size:50cqw 50cqw}
+.pf-top{position:absolute;left:5cqw;right:5cqw;top:2.6cqw;display:flex;justify-content:space-between;align-items:center;color:rgba(250,244,230,.85);font-family:var(--mono);font-size:2.4cqw;letter-spacing:.1em;text-transform:uppercase}
+.pass{position:absolute;left:5cqw;right:5cqw;top:7.6cqw;bottom:11.4cqw;background:#F5EFE0;border-radius:4cqw;display:flex;flex-direction:column;overflow:hidden;color:#2F3A36;box-shadow:0 3cqw 6cqw rgba(20,30,25,.25)}
+.p-head{background:#7E5236;color:#FAF4E6;padding:3.2cqw 5cqw 2.8cqw;display:flex;justify-content:space-between;align-items:flex-end}
+.p-head .w{font-weight:600;font-family:var(--display);font-size:11.76cqw;line-height:.85;letter-spacing:.01em}
+.p-head .w em{font-style:normal;color:#E1BA78}
+.p-head .r{text-align:right;font-family:var(--mono);font-size:2.3cqw;line-height:1.4;text-transform:uppercase;letter-spacing:.06em;opacity:.9}
+.p-head .r b{display:block;font-family:var(--cond);font-size:3.61cqw;letter-spacing:.1em;color:#E1BA78;font-weight:500}
+.p-deck{background:rgba(207,162,90,.9);color:#5F3D27;display:flex;align-items:center;justify-content:space-between;padding:1.8cqw 5cqw;font-family:var(--cond);font-weight:500;font-size:4.1cqw;white-space:nowrap;letter-spacing:.06em;text-transform:uppercase}
+.p-deck .ar{font-size:6cqw}
+.p-body{padding:3.4cqw 5cqw 0;flex:1;position:relative}
+.lbl{font-family:var(--mono);font-size:2.3cqw;letter-spacing:.1em;text-transform:uppercase;color:#857F70}
+.p-name{font-family:var(--cond);font-weight:500;font-size:5.74cqw;line-height:1;text-transform:uppercase;margin-top:.6cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-route{display:flex;align-items:center;gap:3cqw;margin-top:2cqw}
+.p-route .pt{flex:0 0 auto}
+.p-route .pt b{font-weight:600;display:block;font-family:var(--display);font-size:10.64cqw;line-height:.9;color:#7E5236}
+.p-route .pt span{font-family:var(--mono);font-size:2.4cqw;text-transform:uppercase;letter-spacing:.06em}
+.p-route .pt.dest{text-align:right}
+.p-route .ln{flex:1;position:relative;height:6cqw}
+.p-route .ln::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:.6cqw dashed #B4664A}
+.p-route .ln svg,.p-route .ln img{position:absolute;left:50%;top:50%;width:9cqw;height:9cqw;transform:translate(-50%,-55%);background:#F5EFE0;padding:0 1cqw}
+.p-prof{margin-top:3cqw;border-top:.3cqw solid rgba(47,58,54,.25);padding-top:3cqw}
+.p-prof .pn{font-weight:600;font-family:var(--display);font-size:10.75cqw;line-height:1;margin-top:.8cqw;white-space:nowrap;color:#7E5236}
+.p-prof .pl{font-family:var(--sans);font-size:3.4cqw;line-height:1.25;color:#56605A;margin-top:1.2cqw;max-width:68%}
+.p-meters{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;margin-top:2.8cqw}
+.p-meters .mv{font-family:var(--cond);font-weight:500;font-size:5.25cqw;line-height:1}
+.p-meters .mb{height:1.6cqw;border-radius:2cqw;margin-top:1cqw;position:relative;background:rgba(47,58,54,.12);overflow:hidden}
+.p-meters .mb i{position:absolute;inset:0 auto 0 0;background:#4D6A5B;border-radius:2cqw}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;margin-top:2.8cqw}
+.p-grid div b{display:block;white-space:nowrap;font-family:var(--cond);font-weight:500;font-size:3.94cqw;line-height:1.05;margin-top:.4cqw;text-transform:uppercase}
+.p-stamp{position:absolute;right:2cqw;top:42cqw;width:24cqw;height:24cqw;transform:rotate(-12deg);opacity:.75}
+.p-perf{position:relative;height:6cqw;margin:1cqw 0 0}
+.p-perf::before{content:"";position:absolute;left:5cqw;right:5cqw;top:50%;border-top:.5cqw dashed rgba(47,58,54,.3)}
+.p-perf i{position:absolute;top:50%;width:6cqw;height:6cqw;border-radius:50%;background:#4D6A5B;transform:translateY(-50%)}
+.p-perf i:first-child{left:-3cqw}.p-perf i:last-child{right:-3cqw}
+.p-stub{padding:1.2cqw 5cqw 3.4cqw}
+.p-bags{display:flex;flex-direction:column;gap:1.4cqw;margin-top:1.6cqw}
+.p-bags div{display:flex;align-items:center;gap:2cqw;font-family:var(--cond);font-weight:500;font-size:3.44cqw;line-height:1.05;text-transform:uppercase}
+.p-bags div::before{content:"";flex:0 0 2.6cqw;height:2.6cqw;border-radius:50%;border:.5cqw solid #7E5236;box-sizing:border-box}
+.p-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:3cqw;margin-top:2.6cqw}
+.p-bar{display:flex;align-items:stretch;height:7cqw;gap:.45cqw}
+.p-bar i{background:#2F3A36;display:block}
+.p-folio{font-family:var(--mono);font-size:2.6cqw;letter-spacing:.06em;margin-top:1cqw}
+.p-fut{display:flex;align-items:center;gap:1.4cqw;font-family:var(--sans);font-weight:600;font-size:3cqw;white-space:nowrap}
+.p-fut svg,.p-fut img{width:4cqw;height:4cqw}
+.pf-bottom{position:absolute;left:5cqw;right:5cqw;bottom:2.6cqw;gap:3cqw;display:flex;justify-content:space-between;align-items:center;color:#FAF4E6}
+.pf-bottom .tg{white-space:nowrap;font-family:var(--cond);font-weight:500;font-size:4.1cqw;text-transform:uppercase;letter-spacing:.05em;color:#E1BA78}
+.pf-bottom .url{white-space:nowrap;font-family:var(--mono);font-size:2.4cqw;letter-spacing:.04em;opacity:.9}
+
+/* ---------- Modal expediente ---------- */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(47,58,54,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:24px max(12px,env(safe-area-inset-right,0px)) 24px max(12px,env(safe-area-inset-left,0px));overflow-y:auto}
+.modal.on{display:flex}
+.dossier{background:rgba(250,244,230,.94);max-width:720px;width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.7);position:relative;padding:34px 26px 26px;box-shadow:0 30px 60px rgba(40,30,20,.3)}
+.dossier .tab{position:absolute;top:0;left:26px;background:var(--leather);color:var(--paper);font-family:var(--mono);font-size:11.5px;padding:5px 12px;letter-spacing:.1em;border-radius:0 0 10px 10px}
+.dossier h2{font-family:var(--display);font-weight:600;font-size:44.8px;line-height:1.02;color:var(--leather);margin:12px 0 6px}
+.dossier .declass{display:inline-block;font-family:var(--cond);font-weight:500;color:var(--terra);border:2.5px solid rgba(180,102,74,.75);padding:2px 12px;border-radius:30px;transform:rotate(-3deg);letter-spacing:.12em;margin:6px 0 16px}
+.dossier p{font-size:18px;color:var(--ink-2);margin-bottom:14px}
+.dossier p.rule{font-family:var(--mono);font-size:15px;border-left:3px solid var(--brass);padding-left:12px;color:var(--ink)}
+.dossier .fine{font-size:15px;border-top:1px dashed var(--line-2);padding-top:14px;margin-top:20px}
+.dossier .close{position:absolute;right:10px;top:8px;width:48px;height:48px;font-size:21.32px;font-family:var(--cond);font-weight:500;color:var(--ink-2)}
+.decks-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:6px 0 16px}
+@media (max-width:520px){.decks-list{grid-template-columns:1fr}}
+.decks-list div{border:1px solid var(--line);padding:12px 14px;background:rgba(255,255,255,.5);border-radius:12px}
+.decks-list b{font-weight:500;font-family:var(--cond);font-size:16.4px;text-transform:uppercase;display:block;line-height:1.05;color:var(--leather)}
+.decks-list span{font-size:14px;color:var(--ink-2)}
+
+/* ---------- Inactividad y avisos ---------- */
+.idle{position:fixed;inset:0;z-index:60;background:rgba(47,58,54,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px}
+.idle.on{display:flex}
+.idle .card{text-align:center;max-width:460px}
+.idle h3{font-family:var(--display);font-weight:600;font-size:38.08px;color:var(--leather);line-height:1.05}
+.idle .n{font-weight:600;font-family:var(--display);font-size:100.8px;color:var(--terra);line-height:1;margin:10px 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + var(--safe-b));transform:translateX(-50%);background:rgba(47,58,54,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--paper);font-family:var(--mono);font-size:14px;padding:12px 18px;border-radius:30px;z-index:70;display:none;max-width:90vw}
+.toast.on{display:block}
+#export-stage{position:fixed;left:-10000px;top:0;width:540px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ---------- Capa editorial ---------- */
+body{font-weight:400;letter-spacing:.005em}
+.eyebrow{font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.22em}
+.masthead{display:flex;align-items:center;gap:14px;font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-bottom:18px;flex-wrap:wrap}
+.masthead i{flex:1 1 40px;height:1px;background:var(--line-2);min-width:24px}
+.arca-word{font-weight:600;letter-spacing:.04em;line-height:.82;text-shadow:none}
+.arca-word em{font-style:italic;font-weight:500}
+.agency{font-family:var(--display);font-style:italic;font-weight:500;text-transform:none;letter-spacing:0;font-size:clamp(25px,3.6vw,36px);line-height:1.15;max-width:19em;margin-top:18px;color:var(--ink)}
+.deck-copy{max-width:34em;margin-top:16px;font-size:17px;line-height:1.6;color:var(--ink-2);column-gap:28px}
+.tagline{font-weight:500;letter-spacing:.2em;font-size:clamp(14px,1.8vw,17px);padding:10px 22px 10px 16px;margin-top:28px}
+.btn{font-weight:500;font-size:16px;letter-spacing:.2em;border-radius:6px;min-height:60px}
+.btn.ghost{font-size:15px}
+.pass-actions .btn{font-size:15px}
+.form-head h2,.lore-card h3{font-style:italic;font-weight:600;font-size:31px;letter-spacing:0}
+.steps li{font-family:var(--display);font-weight:600;font-size:23px;text-transform:none;letter-spacing:0}
+.gate{font-family:var(--display);font-style:italic;font-weight:600;font-size:22px;background:transparent;color:var(--jungle);border:1px solid var(--jungle);box-shadow:none}
+.stage-letter{font-weight:500;font-style:italic}
+.stage-txt h2{font-weight:600;letter-spacing:-.005em}
+.stage-txt p{font-family:var(--display);font-size:23px;line-height:1.4;font-style:italic;color:var(--ink-2)}
+.qcode span{font-family:var(--cond);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+.qtext{font-family:var(--display);font-weight:600;font-size:clamp(36px,5.8vw,56px);line-height:1.04;letter-spacing:-.005em}
+.opt{font-size:19px}
+.opt .k{font-family:var(--display);font-style:italic;font-weight:600;font-size:24px;text-transform:lowercase}
+.multi .opt .k{font-family:var(--cond);font-style:normal;font-size:20px}
+.scale .opt{font-family:var(--display);font-weight:500;font-size:44px}
+.mrow .mlbl{font-family:var(--display);font-weight:600;font-size:25px}
+.mrow .dots button{font-family:var(--display);font-weight:600;font-size:26px}
+.back{font-weight:500;font-size:14px;letter-spacing:.2em}
+.res-head h2{font-weight:600;letter-spacing:-.01em}
+.res-head h2 em,.p-prof .pn em{font-style:italic;font-weight:500}
+.res-head .lead{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(25px,3.2vw,32px)}
+.res-body{font-size:18px;line-height:1.65}
+.res-body::first-letter{font-family:var(--display);font-weight:600;font-size:3.4em;float:left;line-height:.82;margin:.06em .1em 0 0;color:var(--leather)}
+.deck-sign .n{font-weight:500;font-style:italic;font-size:44px}
+.deck-sign .t b{font-weight:500;font-size:18px;letter-spacing:.18em}
+.sec h3{font-family:var(--display);font-weight:600;font-style:italic;font-size:29px;text-transform:none;letter-spacing:0}
+.bag b{font-family:var(--display);font-weight:600;font-size:23px}
+.mail-card h3{font-family:var(--display)}
+.qr-card b{font-style:italic}
+.dossier h2{font-weight:600}
+.dossier p:first-of-type::first-letter{font-family:var(--display);font-weight:600;font-size:3.6em;float:left;line-height:.8;margin:.06em .1em 0 0;color:var(--leather)}
+.decks-list b{font-family:var(--display);font-weight:600;font-size:21px;text-transform:none}
+.idle h3{font-style:italic}
+/* pase */
+.p-head .w{font-weight:600;letter-spacing:.05em;font-size:12cqw}
+.p-head .w em{font-style:italic;font-weight:500}
+.p-head .r b{font-family:var(--display);font-style:italic;font-weight:600;font-size:5cqw;letter-spacing:0;text-transform:none}
+.p-deck{font-weight:500;font-size:3.6cqw;letter-spacing:.22em}
+.p-deck .ar{font-size:5cqw}
+.p-name{font-family:var(--display);font-weight:600;font-size:7.6cqw;text-transform:none}
+.p-route .pt b{font-weight:600;font-style:italic;font-size:11cqw}
+.p-prof .pn{font-size:10.6cqw;font-weight:600}
+.p-prof .pl{font-family:var(--display);font-style:italic;font-size:4cqw}
+.p-meters .mv{font-family:var(--display);font-weight:600;font-size:7.6cqw}
+.p-grid div b{font-family:var(--display);font-weight:600;font-size:5.6cqw;text-transform:none}
+.p-bags div{font-family:var(--display);font-weight:600;font-size:4.6cqw;text-transform:none}
+.pf-bottom .tg{font-family:var(--display);font-style:italic;font-weight:500;font-size:5.6cqw;text-transform:none;letter-spacing:0}
+.lbl{font-family:var(--cond);font-weight:500;letter-spacing:.2em;font-size:2.1cqw}
+.p-name{font-size:6.8cqw}
+.p-route{margin-top:1.4cqw}
+.p-route .pt b{font-size:9cqw}
+.p-prof{margin-top:2.4cqw;padding-top:2.4cqw}
+.p-prof .pn{font-size:9.8cqw}
+.p-meters{margin-top:2cqw}
+.p-meters .mv{font-size:6.6cqw}
+.p-grid{margin-top:2.2cqw}
+.p-grid div b{font-size:5cqw}
+.p-bags{gap:.8cqw;margin-top:1.2cqw}
+.p-bags div{font-size:4.2cqw}
+.p-foot{margin-top:2cqw}
+.p-bar{height:6cqw}
+.p-meters .mv,.p-grid div b,.scale .opt,.mrow .dots button,.deck-sign .n,.p-route .pt b,.stage-letter{font-variant-numeric:lining-nums}
+.hero .compass{top:84px}
+@media (max-width:760px){.hero .compass{top:70px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- Logos y sellos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-ship" viewBox="0 0 32 32"><path d="M4 19h24l-4 7H8z" fill="currentColor"/><path d="M16 4v13M16 5l8 10h-8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linejoin="round"/></symbol>
+    <symbol id="i-futurable" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="8" height="8" rx="1.6"/><rect x="14" y="2" width="8" height="8" rx="1.6"/><rect x="2" y="14" width="8" height="8" rx="1.6"/></g></symbol>
+    <symbol id="i-stamp" viewBox="0 0 200 200">
+      <g fill="none" stroke="#B4664A">
+        <circle cx="100" cy="100" r="94" stroke-width="6"/>
+        <circle cx="100" cy="100" r="80" stroke-width="2"/>
+        <circle cx="100" cy="100" r="50" stroke-width="2"/>
+      </g>
+      <path id="stamp-arc" d="M100,100 m-65,0 a65,65 0 1,1 130,0 a65,65 0 1,1 -130,0" fill="none"/>
+      <text font-family="Jost, Futura, sans-serif" font-weight="500" font-size="16.5" letter-spacing="3.6" fill="#B4664A"><textPath href="#stamp-arc" startOffset="0">APROBADO PARA ABORDAR · ARCA · 2035 ·</textPath></text>
+      <path d="M68 108h64l-9 16H77z" fill="#B4664A"/><path d="M100 72v32M100 74l20 26h-20" stroke="#B4664A" stroke-width="5" fill="none" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-compass" viewBox="0 0 200 200">
+      <g fill="none" stroke="#7E5236" stroke-opacity=".75">
+        <circle cx="100" cy="100" r="92" stroke-width="2"/><circle cx="100" cy="100" r="84" stroke-width="1" stroke-dasharray="2 5"/><circle cx="100" cy="100" r="56" stroke-width="1.2"/>
+      </g>
+      <path d="M100 18 L112 100 L100 182 L88 100Z" fill="#7E5236" fill-opacity=".8"/>
+      <path d="M18 100 L100 88 L182 100 L100 112Z" fill="#4D6A5B" fill-opacity=".7"/>
+      <path d="M100 18 L112 100 L100 100Z" fill="#CFA25A"/>
+      <path d="M42 42 L104 96 L158 158 L96 104Z" fill="#7E5236" fill-opacity=".25"/><path d="M158 42 L104 104 L42 158 L96 96Z" fill="#7E5236" fill-opacity=".25"/>
+      <circle cx="100" cy="100" r="6" fill="#FAF4E6" stroke="#7E5236" stroke-width="2"/>
+      <text x="100" y="12" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="15" font-weight="600" fill="#7E5236">N</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="signbar" role="banner">
+  <div class="brand"><svg><use href="#i-ship"/></svg>ARCA</div>
+  <div class="info"><span>Muelle 7</span><span class="hide-s">Mostrador de abordaje</span><span id="sb-stage">Abierto</span></div>
+  <div class="clock" id="clock">--:--</div>
+</header>
+
+<!-- ============ BIENVENIDA ============ -->
+<section class="screen on" id="welcome" aria-label="Bienvenida">
+  <div class="hero">
+    <svg class="route" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 470 C 180 430 260 330 420 360 S 700 470 860 330 S 1060 120 1130 150" fill="none" stroke="#B4664A" stroke-opacity=".55" stroke-width="3" vector-effect="non-scaling-stroke"/>
+      <g stroke="#B4664A" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"><path d="M1118 138 l24 24 M1142 138 l-24 24" vector-effect="non-scaling-stroke"/></g>
+    </svg>
+    <div class="hero-in">
+      <div class="masthead"><span>Expediente Nº 000</span><i></i><span>Año 2035</span><i></i><span>Muelle 7 · Progreso</span></div>
+      <div class="arca-word">ARC<em>A</em></div>
+      <div class="agency">Agencia de Reubicación de Capacidades Humanas</div>
+      <p class="deck-copy">El gran diluvio de la automatización ya empezó. Antes de cada zarpe, ARCA entrevista a sus pasajeros para saber dónde están, a dónde quieren ir y con qué cuentan para el viaje.</p>
+      <div class="tagline">Antes del diluvio, aborda</div>
+      <svg class="compass" aria-hidden="true"><use href="#i-compass"/></svg>
+    </div>
+  </div>
+
+  <div class="counter">
+    <form class="card" id="boardForm" autocomplete="off">
+      <div class="form-head">
+        <h2>Registro de pasajero</h2>
+        <span class="form-code">FORMA 00 · ARCA</span>
+      </div>
+      <div class="field">
+        <label for="nombre">Nombre o apodo para tu pase</label>
+        <input type="text" id="nombre" maxlength="24" placeholder="Opcional" enterkeyhint="done">
+        <small>Si lo dejas vacío, viajas como Pasajero Anónimo.</small>
+      </div>
+      <label class="consent" id="consentBox">
+        <input type="checkbox" id="consent">
+        <span class="box" aria-hidden="true"></span>
+        <p>Acepto que Futurable use mis respuestas de forma anónima para investigación y, si dejo mi correo, que me contacte con mis resultados.</p>
+      </label>
+      <div class="welcome-cta">
+        <button class="btn signal" type="submit" id="startBtn" disabled>Iniciar entrevista <span class="arrow">→</span></button>
+        <button class="linkbtn" type="button" data-open-lore>Leer el expediente de ARCA</button>
+      </div>
+    </form>
+
+    <aside class="card lore-card">
+      <h3>Entrevista de embarque</h3>
+      <p>El agua no subió de golpe: subió un punto por trimestre. ARCA no salva empleos, reubica capacidades humanas. Antes de zarpar, entrevistamos a cada pasajero para asignarle cubierta.</p>
+      <ul class="steps">
+        <li><span class="gate">A</span>¿Dónde estás hoy?</li>
+        <li><span class="gate">B</span>¿A dónde quieres ir?</li>
+        <li><span class="gate">C</span>¿Con qué cuentas?</li>
+      </ul>
+      <p class="eyebrow" style="margin-top:14px">18 preguntas · 5 minutos · Sin montos ni datos bancarios</p>
+    </aside>
+  </div>
+  <div class="foot">
+    <span>ARCA es una ficción de diseño. El diluvio, por ahora, es metáfora.</span>
+    <span class="futurable"><svg><use href="#i-futurable"/></svg>Futurable</span>
+  </div>
+</section>
+
+<!-- ============ ETAPA ============ -->
+<section class="screen" id="stage" aria-label="Etapa">
+  <div class="wrap">
+    <div class="stage-gate">
+      <div class="stage-letter" id="stLetter">A</div>
+      <div class="stage-txt">
+        <div class="eyebrow" id="stEyebrow">Etapa 1 de 3 · Puerta A</div>
+        <h2 id="stTitle">¿Dónde estás hoy?</h2>
+        <p id="stDesc"></p>
+      </div>
+    </div>
+    <div class="stage-meta">
+      <button class="btn" id="stGo">Pasar a la puerta <span class="arrow">→</span></button>
+      <span id="stSealed"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREGUNTA ============ -->
+<section class="screen" id="question" aria-label="Pregunta">
+  <div class="wrap">
+    <div class="qtop">
+      <span class="eyebrow">Folio <b id="qFolio">—</b></span>
+      <span class="eyebrow" id="qCount">01 / 18</span>
+    </div>
+    <div class="ticks" id="ticks" aria-hidden="true"></div>
+    <div class="qform">
+      <div class="qcode"><span id="qForm">FORMA A-01</span><span class="meas" id="qMeas">Curiosidad</span></div>
+      <h2 class="qtext" id="qText"></h2>
+      <div id="qBody"></div>
+    </div>
+    <div class="qnav">
+      <button class="back" id="qBack">← Atrás</button>
+      <button class="btn" id="qNext" hidden>Siguiente <span class="arrow">→</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESANDO ============ -->
+<section class="screen" id="processing" aria-label="Procesando">
+  <div class="wrap">
+    <div class="eyebrow">Oficina de asignación de cubiertas</div>
+    <div class="proc-lines" id="procLines"></div>
+    <svg class="bigstamp" id="procStamp"><use href="#i-stamp"/></svg>
+  </div>
+</section>
+
+<!-- ============ RESULTADO ============ -->
+<section class="screen" id="result" aria-label="Tu pase de abordaje">
+  <div class="wrap">
+    <div class="pass-col">
+      <div id="passMount"></div>
+      <div class="pass-actions" id="passActions">
+        <button class="btn signal" id="dlBtn">Descargar pase</button>
+        <button class="btn ghost" id="shareBtn" hidden>Compartir</button>
+      </div>
+      <div class="qr-card" id="qrCard" hidden>
+        <div class="qr" id="qrBox"></div>
+        <div><b>Llévate tu pase</b><span>Escanea con tu celular para descargarlo, compartirlo en historias y dejar tu correo con calma.</span></div>
+      </div>
+    </div>
+
+    <div class="res-col">
+      <div class="res-head">
+        <div class="eyebrow" id="resEyebrow">Resultado de la entrevista · Folio</div>
+        <h2 id="resName">El Soñador</h2>
+        <div class="lead" id="resLead"></div>
+        <p class="res-body" id="resBody"></p>
+        <div class="deck-sign"><div class="n" id="resDeckN">2</div><div class="t"><b id="resDeck">Astillero</b><span id="resDeckDesc"></span></div></div>
+      </div>
+
+      <div class="sec">
+        <h3>Tu posición en el puerto <small>2 ejes · 4 perfiles</small></h3>
+        <div class="quad-wrap">
+          <div id="quad"></div>
+          <div>
+            <div class="meter"><div class="row"><span>Imaginación</span><b id="mImag">0%</b></div><div class="bar"><i id="bImag"></i></div></div>
+            <div class="meter"><div class="row"><span>Recursos y autonomía</span><b id="mRec">0%</b></div><div class="bar"><i id="bRec"></i></div></div>
+            <div class="meter-note">La línea roja marca el umbral de 50%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h3>Equipaje recomendado <small>lo que te falta para el viaje</small></h3>
+        <div class="bags" id="bags"></div>
+      </div>
+
+      <div class="sec mail-card" id="mailCard">
+        <h3>Futurable te acompaña</h3>
+        <p>Deja tu correo y te enviamos tu expediente completo, con ideas concretas para tu cubierta. Nada de spam: solo navegación.</p>
+        <form class="mail-row" id="mailForm">
+          <input type="email" id="mailInput" placeholder="tu@correo.com" required autocomplete="email" inputmode="email">
+          <input class="hp" name="bot-field" tabindex="-1" aria-hidden="true">
+          <button class="btn signal" type="submit">Enviar</button>
+        </form>
+      </div>
+
+      <div class="restart-row" id="restartRow">
+        <button class="btn ghost" id="restartBtn">Nuevo pasajero</button>
+        <button class="linkbtn" data-open-lore>Expediente de ARCA</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPEDIENTE (LORE) ============ -->
+<div class="modal" id="lore" role="dialog" aria-modal="true" aria-label="Expediente de ARCA">
+  <article class="dossier">
+    <span class="tab">EXPEDIENTE 000 · ARCA</span>
+    <button class="close" data-close-lore aria-label="Cerrar">✕</button>
+    <h2>Historia de la Agencia</h2>
+    <span class="declass">Desclasificado</span>
+    <p>Año 2035. El agua no subió de golpe. Subió un punto por trimestre: primero se automatizaron las tareas, después los puestos, después oficios enteros. Cuando por fin le pusieron nombre, el <b>Gran Diluvio</b> ya le llegaba a los tobillos a media economía.</p>
+    <p><b>ARCA, la Agencia de Reubicación de Capacidades Humanas</b>, abrió su primer mostrador en el Muelle 7 de Progreso, Yucatán: el muelle más largo que encontraron, porque nadie sabía todavía qué tan lejos había que llegar. Su mandato es simple y un poco absurdo: no salvar empleos, sino personas. No reubicar puestos, sino capacidades humanas.</p>
+    <p>Antes de cada zarpe, ARCA entrevista a cada pasajero para saber dónde está, a dónde quiere ir y con qué cuenta para el viaje. El arca no se asigna por méritos ni por patrimonio: se asigna por rumbo. Hay cuatro cubiertas, y ninguna es la última.</p>
+    <div class="decks-list">
+      <div><b>Cubierta 0 · Sala de Despertar</b><span>Para quien viaja en piloto automático.</span></div>
+      <div><b>Cubierta 2 · Astillero</b><span>Para quien sabe a dónde ir y necesita herramientas.</span></div>
+      <div><b>Cubierta 3 · Cuarto de Mapas</b><span>Para quien tiene con qué, pero no sabe hacia dónde.</span></div>
+      <div><b>Cubierta 4 · Puente de Mando</b><span>Para quien está listo para el gran salto.</span></div>
+    </div>
+    <p class="rule">Reglamento interno, artículo 1: nadie aborda sin imaginar a dónde va.<br>Artículo 2: el arca no se construyó para huir del agua, sino para aprender a navegarla.</p>
+    <p class="fine"><b>ARCA es una ficción de diseño de Futurable</b>, un estudio de imaginación constructiva. No predecimos el futuro: diseñamos los futuros necesarios, no los probables. El diluvio, por ahora, es una metáfora. La preparación, no.</p>
+    <button class="btn" data-close-lore>Volver al mostrador</button>
+  </article>
+</div>
+
+<div class="idle" id="idle"><div class="card"><h3>¿Sigues a bordo?</h3><div class="n" id="idleN">15</div><p style="margin-bottom:18px;color:var(--ink-2)">El mostrador se reinicia para el siguiente pasajero.</p><button class="btn signal" id="idleStay">Sigo aquí</button></div></div>
+<div class="toast" id="toast"></div>
+<div id="export-stage" aria-hidden="true"></div>
+
+<script src="vendor/qrcode.js"></script>
+<script src="vendor/html2canvas.min.js" defer></script>
+<script>
+(function(){
+'use strict';
+/* =================== CONTENIDO =================== */
+const STAGES = [
+  {L:'A', t:'¿Dónde estás hoy?', d:'Antes de zarpar, ARCA necesita saber desde qué muelle sales: tu curiosidad, tu relación con la IA, tu ingreso y tu autonomía.', sign:'Puerta A · Punto de partida'},
+  {L:'B', t:'¿A dónde quieres ir?', d:'Nadie aborda sin imaginar a dónde va. Estas preguntas miden tu capacidad de imaginar el futuro y tu horizonte de planeación.', sign:'Puerta B · Destino'},
+  {L:'C', t:'¿Con qué cuentas para el viaje?', d:'Último control: los activos, habilidades, personas y horas con las que cuentas para ir del punto A al punto B.', sign:'Puerta C · Equipaje'}
+];
+const Q = [
+ {id:1,st:0,m:'Curiosidad',type:'choice',t:'Cuando aparece una tecnología nueva (como la IA), tú…',o:['Ni me entero','Espero a que otros la prueben','La pruebo cuando la necesito','La pruebo el primer día']},
+ {id:2,st:0,m:'Adopción de IA',type:'choice',t:'¿Cada cuánto usas herramientas de IA?',o:['Nunca','Alguna vez','Cada semana','Todos los días, para trabajar']},
+ {id:3,st:0,m:'Dependencia del salario',type:'choice',t:'¿De dónde viene tu ingreso hoy?',o:['100% de un solo empleo','Un empleo y algo extra','Varios clientes o negocios','Una parte importante viene de activos (rentas, inversiones, negocios que no requieren mi tiempo)']},
+ {id:4,st:0,m:'Colchón',type:'choice',t:'Si mañana desapareciera tu trabajo, ¿cuánto tiempo podrías vivir sin ingresos?',o:['Menos de 1 mes','1 a 3 meses','3 a 12 meses','Más de un año']},
+ {id:5,st:0,m:'Autonomía',type:'choice',t:'En tu trabajo, ¿quién decide qué haces y cómo?',o:['Siempre otra persona','Casi siempre otros','Comparto las decisiones','Yo decido']},
+ {id:6,st:0,m:'Identidad y trabajo',type:'choice',t:'Si te presentas con alguien, lo primero que dices es…',o:['Mi puesto o profesión','Dónde trabajo','Lo que me apasiona','Lo que estoy construyendo']},
+ {id:7,st:0,m:'Curiosidad autónoma',type:'choice',t:'¿Cada cuánto aprendes algo totalmente nuevo, que nadie te pidió?',o:['Casi nunca','Una vez al año','Cada pocos meses','Siempre estoy aprendiendo algo']},
+ {id:8,st:1,m:'Imaginación',type:'scale',t:'Cierra los ojos e imagina tu vida en 10 años. ¿Qué tan clara es la imagen?',lo:'Todo borroso',hi:'La veo con detalle'},
+ {id:9,st:1,m:'Horizonte',type:'choice',t:'¿Hasta dónde llega tu plan de vida?',o:['Al fin de mes','Este año','Los próximos 5 años','Tengo una visión de 10 años o más']},
+ {id:10,st:1,m:'Reinvención',type:'choice',t:'Si la IA hiciera tu trabajo actual mañana, ¿qué harías?',o:['No tengo idea','Buscaría un trabajo similar','Aprendería algo nuevo','Ya tengo un plan B en marcha']},
+ {id:11,st:1,m:'Sentido de vida',type:'text',t:'Imagina que tienes resuelto el dinero para siempre. ¿En qué usarías tu tiempo?'},
+ {id:12,st:1,m:'Músculo de imaginar',type:'scale',t:'¿Qué tan fácil te fue contestar la pregunta anterior?',lo:'Me quedé en blanco',hi:'Tenía mil ideas'},
+ {id:13,st:1,m:'Visión del retiro',type:'choice',t:'¿Cómo imaginas tu retiro?',o:['No lo he pensado','Descansando, sin hacer nada','Con un proyecto o pasión','No pienso retirarme: pienso rediseñar cómo trabajo']},
+ {id:14,st:1,m:'Planeación financiera',type:'choice',t:'¿Tienes un plan financiero escrito (metas, ahorro, inversión)?',o:['No','Lo tengo en la cabeza','Sí, pero no lo sigo','Sí, y lo reviso']},
+ {id:15,st:2,m:'Activos',type:'multi',t:'¿Qué activos tienes hoy?',o:['Bienes raíces','Inversiones (bolsa, fondos)','Cripto o activos tokenizados','Un negocio propio','Propiedad intelectual (cursos, contenido, marca)','Ninguno todavía'],none:5},
+ {id:16,st:2,m:'Habilidades',type:'matrix',t:'¿Qué tanto dominas estas habilidades?',rows:[['ia','Usar IA'],['finanzas','Finanzas personales'],['vender','Vender o comunicar tus ideas'],['contenido','Crear contenido digital']]},
+ {id:17,st:2,m:'Red',type:'choice',t:'Si quisieras emprender un cambio grande, ¿con quién cuentas?',o:['Con nadie','Familia y amigos','Una comunidad o mentores','Socios o una red profesional activa']},
+ {id:18,st:2,m:'Tiempo',type:'choice',t:'¿Cuántas horas a la semana podrías dedicar a construir tu futuro?',o:['Ninguna','1 a 3','4 a 10','Más de 10']}
+];
+
+const PROFILES = {
+  pasajero:{name:'El Pasajero',short:'Pasajero',lead:'El cambio te va a llegar sin aviso.',gate:'A',dest:'Despertar',deckN:'0',deck:'Sala de Despertar',
+    deckDesc:'Aquí se reparten brújulas.',
+    body:'Hoy viajas en piloto automático: tu ingreso, tu tiempo y tu imagen del futuro dependen de decisiones que otros toman. No es un juicio, es un punto de partida, y por esta puerta aborda la mayoría. Tu primera tarea no es saltar: es despertar, mirar el agua y elegir un rumbo pequeño.'},
+  sonador:{name:'El Soñador',short:'Soñador',lead:'Sabes a dónde ir; te faltan herramientas.',gate:'B',dest:'Construir',deckN:'2',deck:'Astillero',
+    deckDesc:'Aquí la imaginación se vuelve casco.',
+    body:'Tienes el músculo más escaso de esta época: puedes imaginar otra vida con claridad. Lo que falta es el casco: colchón, activos, red y horas para construir. Sin herramientas, la imaginación se vuelve frustración; con ellas, se vuelve ruta.'},
+  ejecutor:{name:'El Ejecutor',short:'Ejecutor',lead:'Tienes con qué saltar, pero no sabes hacia dónde.',gate:'C',dest:'Rumbo',deckN:'3',deck:'Cuarto de Mapas',
+    deckDesc:'Aquí se dibujan los puertos que aún no existen.',
+    body:'Cuentas con recursos, autonomía y disciplina: el combustible está. Pero tu mapa termina donde termina tu trabajo actual. El riesgo no es quedarte sin barco, es navegar muy rápido hacia un puerto que pronto no va a existir.'},
+  orquestador:{name:'El Orquestador',short:'Orquestador',lead:'Listo para el gran salto.',gate:'D',dest:'Gran salto',deckN:'4',deck:'Puente de Mando',
+    deckDesc:'Aquí se coordina la travesía.',
+    body:'Imaginas con claridad y tienes con qué construir. Tu reto ya no es individual: es orquestar recursos, personas y agentes para llegar más lejos, y llevar a otros contigo. El arca necesita gente como tú en el puente.'}
+};
+
+const BAGS = {
+  curiosidad:{c:'i',t:'Curiosidad de primer día',d:'Prueba una herramienta nueva cada semana, aunque no la necesites.'},
+  ia:{c:'r',t:'Copiloto de IA',d:'Úsala a diario en algo real de tu trabajo, no solo para jugar.'},
+  ingreso:{c:'r',t:'Segunda fuente de ingreso',d:'Un solo sueldo es un solo cabo atado al muelle.'},
+  colchon:{c:'r',t:'Colchón de 6 meses',d:'El tiempo que te compra para decidir sin pánico.'},
+  autonomia:{c:'r',t:'Más decisiones propias',d:'Gana terreno sobre qué haces y cómo lo haces.'},
+  identidad:{c:'i',t:'Identidad más allá del puesto',d:'Que tu nombre no dependa del de tu empresa.'},
+  aprender:{c:'i',t:'Aprender sin permiso',d:'Algo que nadie te pidió, cada pocos meses.'},
+  brujula:{c:'i',t:'Brújula a 10 años',d:'Una imagen clara de a dónde quieres llegar.'},
+  planb:{c:'i',t:'Plan B en marcha',d:'Un proyecto pequeño que ya esté caminando.'},
+  imaginar:{c:'i',t:'Músculo de imaginar',d:'Se entrena: escribe tres futuros posibles para ti.'},
+  retiro:{c:'i',t:'Rediseñar, no retirarse',d:'Piensa cómo quieres trabajar, no cuándo dejar de hacerlo.'},
+  plan:{c:'r',t:'Plan financiero escrito',d:'Metas, ahorro e inversión en papel, revisado cada trimestre.'},
+  activo:{c:'r',t:'Tu primer activo',d:'Algo que genere valor sin pedirte horas.'},
+  finanzas:{c:'r',t:'Alfabetización financiera',d:'Entender interés, riesgo y flujo de caja.'},
+  voz:{c:'r',t:'Vender tus ideas',d:'Si no puedes contarlo, nadie lo va a financiar.'},
+  contenido:{c:'r',t:'Contenido digital',d:'Tu vitrina en la economía de la atención.'},
+  red:{c:'r',t:'Una tripulación',d:'Socios, mentores o comunidad para no saltar solo.'},
+  horas:{c:'r',t:'Horas de astillero',d:'Al menos 4 horas a la semana para construir lo tuyo.'}
+};
+
+/* =================== ESTADO =================== */
+const params = new URLSearchParams(location.search);
+const KIOSK = params.has('estacion') || params.get('modo') === 'estacion';
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+let S; // sesión
+function newSession(){
+  S = {folio:makeFolio(), name:'', consent:false, a:{}, i:0, t0:Date.now(), result:null, sent:false};
+}
+function makeFolio(){
+  const ch='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let s='';
+  const r = (crypto && crypto.getRandomValues) ? crypto.getRandomValues(new Uint32Array(5)) : Array.from({length:5},()=>Math.random()*1e9|0);
+  for(let k=0;k<5;k++) s+=ch[r[k]%ch.length];
+  return 'ARCA-35-'+s;
+}
+function date2035(d){
+  const m=['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+  d = d || new Date();
+  return String(d.getDate()).padStart(2,'0')+' '+m[d.getMonth()]+' 2035';
+}
+
+/* =================== RELOJ =================== */
+function tick(){
+  const d=new Date();
+  $('#clock').textContent = date2035(d)+' · '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+}
+tick(); setInterval(tick, 15000);
+
+/* =================== NAVEGACIÓN =================== */
+function show(id){
+  $$('.screen').forEach(s=>s.classList.toggle('on', s.id===id));
+  window.scrollTo(0,0);
+  const label = {welcome:'Abierto',stage:'Control de puertas',question:'Entrevista en curso',processing:'Asignando cubierta',result:'Pase emitido'}[id];
+  $('#sb-stage').textContent = label || '';
+}
+
+/* =================== BIENVENIDA =================== */
+const consentBox=$('#consentBox'), consent=$('#consent');
+consent.addEventListener('change',()=>{consentBox.classList.toggle('checked',consent.checked);$('#startBtn').disabled=!consent.checked;});
+$('#boardForm').addEventListener('submit',e=>{
+  e.preventDefault(); if(!consent.checked) return;
+  S.name = $('#nombre').value.trim().slice(0,24);
+  S.consent = true; S.t0 = Date.now();
+  showStage(0,false);
+});
+$$('[data-open-lore]').forEach(b=>b.addEventListener('click',()=>$('#lore').classList.add('on')));
+$$('[data-close-lore]').forEach(b=>b.addEventListener('click',()=>$('#lore').classList.remove('on')));
+$('#lore').addEventListener('click',e=>{if(e.target.id==='lore')$('#lore').classList.remove('on');});
+
+/* =================== ETAPAS =================== */
+let stageIdx=0;
+function showStage(n, sealedPrev){
+  stageIdx=n; const st=STAGES[n];
+  $('#stLetter').textContent=st.L;
+  $('#stEyebrow').textContent='Etapa '+(n+1)+' de 3 · '+st.sign;
+  $('#stTitle').textContent=st.t;
+  $('#stDesc').textContent=st.d;
+  $('#stSealed').innerHTML = sealedPrev ? '<span class="sealed">Etapa '+n+' sellada</span>' : '';
+  show('stage');
+}
+$('#stGo').addEventListener('click',()=>{ S.i = Q.findIndex(q=>q.st===stageIdx); renderQ(); });
+
+/* =================== PREGUNTAS =================== */
+const ticks=$('#ticks');
+ticks.innerHTML = Q.map((q,k)=>'<i'+(k>0&&Q[k-1].st!==q.st?' class="gap"':'')+'></i>').join('');
+function renderTicks(){
+  Array.from(ticks.children).forEach((el,k)=>{
+    el.classList.toggle('done', k<S.i); el.classList.toggle('now', k===S.i);
+  });
+}
+function renderQ(){
+  const q=Q[S.i], st=STAGES[q.st];
+  $('#qFolio').textContent=S.folio;
+  $('#qCount').textContent=String(S.i+1).padStart(2,'0')+' / 18';
+  const nInStage = Q.filter(x=>x.st===q.st).findIndex(x=>x.id===q.id)+1;
+  $('#qForm').textContent='FORMA '+st.L+'-'+String(nInStage).padStart(2,'0');
+  $('#qMeas').textContent=q.m;
+  $('#qText').textContent=q.t;
+  renderTicks();
+  const body=$('#qBody'), next=$('#qNext');
+  next.hidden=true; next.disabled=false;
+  next.innerHTML = (S.i===Q.length-1?'Sellar entrevista':'Siguiente')+' <span class="arrow">→</span>';
+  const cur=S.a[q.id];
+  if(q.type==='choice'){
+    body.innerHTML='<div class="opts">'+q.o.map((o,k)=>'<button class="opt'+(cur===k+1?' sel':'')+'" data-v="'+(k+1)+'"><span class="k">'+'abcd'[k]+'</span><span>'+esc(o)+'</span></button>').join('')+'</div>';
+    body.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+      body.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+      S.a[q.id]=+b.dataset.v; advanceSoon();
+    }));
+  } else if(q.type==='scale'){
+    body.innerHTML='<div class="scale">'+[1,2,3,4,5].map(v=>'<button class="opt'+(cur===v?' sel':'')+'" data-v="'+v+'">'+v+'</button>').join('')+'</div><div class="scale-ends"><span>1 · '+esc(q.lo)+'</span><span>5 · '+esc(q.hi)+'</span></div>';
+    body.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+      body.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+      S.a[q.id]=+b.dataset.v; advanceSoon();
+    }));
+  } else if(q.type==='text'){
+    body.innerHTML='<textarea class="open" id="openTa" maxlength="600" placeholder="Escribe lo primero que te venga a la mente…"></textarea><div class="hint">Respuesta libre. No hay respuestas incorrectas en esta forma.</div>';
+    const ta=$('#openTa'); ta.value=cur||'';
+    next.hidden=false;
+    const upd=()=>{ S.a[q.id]=ta.value.trim(); next.innerHTML = (ta.value.trim()?'Siguiente':'Me quedé en blanco')+' <span class="arrow">→</span>'; };
+    ta.addEventListener('input',upd); upd();
+    if(!KIOSK || matchMedia('(pointer:fine)').matches) setTimeout(()=>ta.focus(),300);
+  } else if(q.type==='multi'){
+    const set = new Set(Array.isArray(cur)?cur:[]);
+    body.innerHTML='<div class="opts multi">'+q.o.map((o,k)=>'<button class="opt'+(set.has(k)?' sel':'')+'" data-k="'+k+'"><span class="k">'+(set.has(k)?'✓':'')+'</span><span>'+esc(o)+'</span></button>').join('')+'</div><div class="hint">Puedes marcar varios.</div>';
+    next.hidden=false;
+    const sync=()=>{ body.querySelectorAll('.opt').forEach(b=>{const k=+b.dataset.k,on=set.has(k);b.classList.toggle('sel',on);b.querySelector('.k').textContent=on?'✓':'';}); S.a[q.id]=[...set].sort(); next.disabled=set.size===0; };
+    body.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+      const k=+b.dataset.k;
+      if(k===q.none){ if(set.has(k)) set.delete(k); else {set.clear(); set.add(k);} }
+      else { set.delete(q.none); set.has(k)?set.delete(k):set.add(k); }
+      sync();
+    }));
+    sync();
+  } else if(q.type==='matrix'){
+    const val = Object.assign({}, cur||{});
+    body.innerHTML='<div class="matrix">'+q.rows.map(([k,l])=>'<div class="mrow" data-r="'+k+'"><div class="mlbl">'+esc(l)+'</div><div class="dots">'+[1,2,3,4,5].map(v=>'<button data-v="'+v+'" class="'+(val[k]===v?'sel':'')+'">'+v+'</button>').join('')+'</div></div>').join('')+'</div><div class="scale-ends"><span>1 · Nada</span><span>5 · Domino</span></div>';
+    next.hidden=false;
+    const chk=()=>{ S.a[q.id]=Object.assign({},val); next.disabled = q.rows.some(([k])=>!val[k]); };
+    body.querySelectorAll('.mrow').forEach(r=>r.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+      val[r.dataset.r]=+b.dataset.v; r.querySelectorAll('button').forEach(x=>x.classList.toggle('sel',x===b)); chk();
+    })));
+    chk();
+  }
+  $('#qBack').hidden=false;
+  show('question');
+}
+let advTimer=null;
+function advanceSoon(){ clearTimeout(advTimer); advTimer=setTimeout(goNext,280); }
+function goNext(){
+  const q=Q[S.i];
+  if(S.i===Q.length-1){ finish(); return; }
+  const nq=Q[S.i+1];
+  S.i++;
+  if(nq.st!==q.st){ showStage(nq.st,true); return; }
+  renderQ();
+}
+$('#qNext').addEventListener('click',goNext);
+$('#qBack').addEventListener('click',()=>{
+  clearTimeout(advTimer);
+  const q=Q[S.i];
+  if(S.i===0){ showStage(0,false); return; }
+  S.i--; renderQ();
+});
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* =================== PUNTAJE =================== */
+const m5 = v => 1 + (v-1)*0.75;            // escala 1–5 → 1–4
+const avg = a => a.reduce((x,y)=>x+y,0)/a.length;
+function score(a){
+  const n15 = (a[15]||[]).filter(k=>k!==5).length;
+  const q15 = n15===0?1:n15===1?2:n15===2?3:4;
+  const sk = a[16]||{};
+  const q16 = avg(['ia','finanzas','vender','contenido'].map(k=>m5(sk[k]||1)));
+  const imag = avg([a[1],a[7],m5(a[8]),a[10],m5(a[12]),a[13]]);
+  const rec  = avg([a[3],a[4],a[5],a[14],q15,q16,a[17],a[18]]);
+  const hiI = imag>=2.5, hiR = rec>=2.5;
+  const key = hiI ? (hiR?'orquestador':'sonador') : (hiR?'ejecutor':'pasajero');
+  const pct = x => Math.round((x-1)/3*100);
+  // equipaje: puntaje por artículo (1–4)
+  const it = {
+    curiosidad:a[1], ia:avg([a[2],m5(sk.ia||1)]), ingreso:a[3], colchon:a[4], autonomia:a[5], identidad:a[6],
+    aprender:a[7], brujula:avg([m5(a[8]),a[9]]), planb:a[10], imaginar:m5(a[12]), retiro:a[13], plan:a[14],
+    activo:q15, finanzas:m5(sk.finanzas||1), voz:m5(sk.vender||1), contenido:m5(sk.contenido||1), red:a[17], horas:a[18]
+  };
+  const pref = key==='sonador'?'r':key==='ejecutor'?'i':null;
+  const order = Object.keys(it).sort((x,y)=>{
+    const wx = it[x] - (pref && BAGS[x].c===pref ? .6 : 0);
+    const wy = it[y] - (pref && BAGS[y].c===pref ? .6 : 0);
+    return wx-wy || Object.keys(BAGS).indexOf(x)-Object.keys(BAGS).indexOf(y);
+  });
+  let bags = order.slice(0,3);
+  if(!pref){ // Pasajero/Orquestador: asegurar al menos un artículo de cada eje
+    const hasI=bags.some(b=>BAGS[b].c==='i'), hasR=bags.some(b=>BAGS[b].c==='r');
+    if(!hasI) bags[2]=order.find(b=>BAGS[b].c==='i');
+    else if(!hasR) bags[2]=order.find(b=>BAGS[b].c==='r');
+  }
+  return {key, imag, rec, imagPct:pct(imag), recPct:pct(rec), bags};
+}
+
+/* =================== FIN Y ENVÍO =================== */
+function finish(){
+  S.result = score(S.a);
+  show('processing');
+  const lines=['Verificando folio '+S.folio,'Midiendo músculo de imaginar','Pesando equipaje y recursos','Consultando tabla de cubiertas','Imprimiendo pase de abordaje'];
+  const box=$('#procLines'); box.innerHTML='';
+  const st=$('#procStamp'); st.classList.remove('go');
+  lines.forEach((l,k)=>{const d=document.createElement('div');d.textContent=l;d.style.animationDelay=(k*0.42)+'s';box.appendChild(d);});
+  setTimeout(()=>st.classList.add('go'), lines.length*420+100);
+  submitAnswers();
+  setTimeout(renderResult, lines.length*420+1300);
+}
+function enc(obj){ return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+function dec(s){ s=s.replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4)s+='='; return JSON.parse(decodeURIComponent(escape(atob(s)))); }
+
+function submitAnswers(){
+  if(S.sent) return; S.sent=true;
+  const a=S.a, r=S.result, sk=a[16]||{};
+  const f = {
+    'form-name':'arca-respuestas', folio:S.folio, nombre:S.name, modo:KIOSK?'estacion':'web',
+    fecha:new Date().toISOString(), duracion_seg:String(Math.round((Date.now()-S.t0)/1000)),
+    perfil:PROFILES[r.key].short, imaginacion:String(r.imagPct), recursos:String(r.recPct),
+    cubierta:PROFILES[r.key].deckN+' · '+PROFILES[r.key].deck, equipaje:r.bags.map(b=>BAGS[b].t).join('; '),
+    q11:a[11]||'', q15:(a[15]||[]).map(k=>Q[14].o[k]).join('; '),
+    q16_ia:String(sk.ia||''), q16_finanzas:String(sk.finanzas||''), q16_vender:String(sk.vender||''), q16_contenido:String(sk.contenido||''),
+    consentimiento:'si'
+  };
+  [1,2,3,4,5,6,7,8,9,10,12,13,14,17,18].forEach(n=>f['q'+n]=String(a[n]||''));
+  queuePost(f);
+}
+const QKEY='arca_queue_v1';
+function readQ(){ try{return JSON.parse(localStorage.getItem(QKEY)||'[]');}catch(e){return [];} }
+function writeQ(q){ try{localStorage.setItem(QKEY,JSON.stringify(q));}catch(e){} }
+function queuePost(f){ const q=readQ(); q.push(f); writeQ(q); flush(); }
+let flushing=false;
+async function flush(){
+  if(flushing) return; flushing=true;
+  let q=readQ();
+  while(q.length){
+    const f=q[0];
+    try{
+      const res = await fetch('/__forms.html',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(f).toString()});
+      if(!res.ok && res.status!==404) throw new Error('http '+res.status);
+      if(res.status===404){ console.warn('ARCA: formulario no registrado (¿sitio sin Netlify Forms?)'); }
+      q=readQ(); q.shift(); writeQ(q);
+    }catch(e){ break; }
+  }
+  flushing=false;
+}
+window.addEventListener('online',flush);
+setInterval(flush,30000);
+
+/* =================== RENDER DEL PASE =================== */
+function passData(){
+  const r=S.result;
+  return {n:S.name,f:S.folio,p:r.key,i:r.imagPct,r:r.recPct,b:r.bags,d:date2035()};
+}
+function barcode(seed){
+  let h=0; for(const c of seed) h=(h*31+c.charCodeAt(0))>>>0;
+  let out=''; for(let k=0;k<34;k++){ h=(h*1103515245+12345)>>>0; const w=[.35,.6,.9,1.3][h>>>29&3]; out+='<i style="width:'+w+'cqw"></i>'; if(h>>>27&1) out+='<i style="width:.2cqw;background:transparent"></i>'; }
+  return out;
+}
+function passHTML(D, exportMode){
+  const P=PROFILES[D.p];
+  const name = D.n ? esc(D.n) : 'Pasajero anónimo';
+  return '<div class="pass-frame'+(exportMode?' export':'')+'"><div class="pf-bg"></div>'+
+   '<div class="pf-top"><span>Agencia de Reubicación de Capacidades Humanas</span><span>2035</span></div>'+
+   '<div class="pass">'+
+    '<div class="p-head"><div class="w">ARC<em>A</em></div><div class="r"><b>Pase de abordaje</b>Boarding pass<br>Muelle 7 · Progreso</div></div>'+
+    '<div class="p-deck"><span>Cubierta '+P.deckN+' · '+P.deck+'</span><span class="ar">→</span></div>'+
+    '<div class="p-body">'+
+      '<div class="lbl">Pasajero</div><div class="p-name">'+name+'</div>'+
+      '<div class="p-route"><div class="pt"><span>Origen</span><b>A</b><span>Hoy</span></div><div class="ln"><svg viewBox="0 0 32 32" style="color:#7E5236"><use href="#i-ship"/></svg></div><div class="pt dest"><span>Destino</span><b>B</b><span>'+esc(P.dest)+'</span></div></div>'+
+      '<div class="p-prof"><div class="lbl">Perfil asignado</div><div class="pn">'+P.name.replace(/^El (.+)$/,'El <em>$1</em>')+'</div><div class="pl">'+P.lead+'</div></div>'+
+      '<div class="p-meters"><div><div class="lbl">Imaginación</div><div class="mv">'+D.i+'%</div><div class="mb"><i style="width:'+D.i+'%"></i></div></div><div><div class="lbl">Recursos</div><div class="mv">'+D.r+'%</div><div class="mb"><i style="width:'+D.r+'%"></i></div></div></div>'+
+      '<div class="p-grid"><div><span class="lbl">Puerta</span><b>'+P.gate+'</b></div><div><span class="lbl">Cubierta</span><b>'+P.deckN+'</b></div><div><span class="lbl">Embarque</span><b>'+esc(D.d.slice(0,6))+'</b></div><div><span class="lbl">Clase</span><b>Humana</b></div></div>'+
+      '<svg class="p-stamp" viewBox="0 0 200 200"><use href="#i-stamp"/></svg>'+
+    '</div>'+
+    '<div class="p-perf"><i></i><i></i></div>'+
+    '<div class="p-stub"><div class="lbl">Equipaje recomendado</div><div class="p-bags">'+D.b.map(b=>'<div>'+esc((BAGS[b]||{}).t||b)+'</div>').join('')+'</div>'+
+      '<div class="p-foot"><div><div class="p-bar">'+barcode(D.f)+'</div><div class="p-folio">'+esc(D.f)+'</div></div><div class="p-fut"><svg viewBox="0 0 24 24"><use href="#i-futurable"/></svg>Futurable</div></div>'+
+    '</div>'+
+   '</div>'+
+   '<div class="pf-bottom"><span class="tg">Antes del diluvio, aborda.</span><span class="url">futurable.work/arca</span></div>'+
+  '</div>';
+}
+function quadSVG(i,r){
+  const x = 20 + (i/100)*260, y = 280 - (r/100)*260;
+  const cell=(x0,y0,lab,on)=>'<rect x="'+x0+'" y="'+y0+'" width="130" height="130" fill="'+(on?'rgba(207,162,90,.85)':'rgba(250,244,230,.6)')+'" stroke="rgba(47,58,54,.35)" stroke-width="1.5" rx="10"/><text x="'+(x0+65)+'" y="'+(y0+70)+'" text-anchor="middle" font-family="Jost,Futura,sans-serif" font-weight="500" font-size="14" letter-spacing="1.5" fill="#2F3A36">'+lab+'</text>';
+  const k=S.result?S.result.key:'';
+  return '<svg viewBox="0 0 300 330" width="100%" role="img" aria-label="Mapa de perfiles: imaginación en horizontal, recursos en vertical">'+
+    cell(20,20,'EJECUTOR',k==='ejecutor')+cell(150,20,'ORQUESTADOR',k==='orquestador')+cell(20,150,'PASAJERO',k==='pasajero')+cell(150,150,'SOÑADOR',k==='sonador')+
+    '<circle cx="'+x+'" cy="'+y+'" r="11" fill="#B4664A" stroke="#FAF4E6" stroke-width="3"/>'+
+    '<text x="150" y="304" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#56605A">IMAGINACIÓN →</text>'+
+    '<text x="8" y="150" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="12" fill="#56605A" transform="rotate(-90 8 150)">RECURSOS →</text></svg>';
+}
+function renderResult(){
+  const r=S.result, P=PROFILES[r.key], D=passData();
+  $('#passMount').innerHTML=passHTML(D,false);
+  $('#resEyebrow').textContent='Resultado de la entrevista · '+S.folio;
+  $('#resName').innerHTML=P.name.replace(/^El (.+)$/,'El <em>$1</em>');
+  $('#resLead').textContent=P.lead;
+  $('#resBody').textContent=P.body;
+  $('#resDeckN').textContent=P.deckN; $('#resDeck').textContent='Cubierta '+P.deckN+' · '+P.deck; $('#resDeckDesc').textContent=P.deckDesc;
+  $('#quad').innerHTML=quadSVG(r.imagPct,r.recPct);
+  $('#mImag').textContent=r.imagPct+'%'; $('#bImag').style.width=r.imagPct+'%';
+  $('#mRec').textContent=r.recPct+'%'; $('#bRec').style.width=r.recPct+'%';
+  $('#bags').innerHTML=r.bags.map((b,k)=>'<div class="bag"><span class="code">EQ-'+String(k+1).padStart(2,'0')+'</span><b>'+esc(BAGS[b].t)+'</b><span>'+esc(BAGS[b].d)+'</span></div>').join('');
+  resetMail();
+  const url = shareURL(D);
+  if(KIOSK){
+    $('#qrCard').hidden=false; $('#passActions').hidden=true;
+    $('#qrBox').innerHTML=qrSVG(url);
+  } else {
+    $('#qrCard').hidden=true; $('#passActions').hidden=false;
+    $('#shareBtn').hidden = !navigator.share;
+  }
+  $('#restartBtn').textContent = KIOSK ? 'Siguiente pasajero' : 'Volver a empezar';
+  show('result');
+}
+function shareURL(D){ return location.origin + location.pathname + '?p=' + enc(D); }
+function qrSVG(text){
+  const qr=qrcode(0,'M'); qr.addData(text); qr.make();
+  return qr.createSvgTag({cellSize:4,margin:2,scalable:true});
+}
+
+/* =================== EXPORTAR / COMPARTIR =================== */
+async function renderPNG(D){
+  if(!window.html2canvas) throw new Error('html2canvas no cargó');
+  const stage=$('#export-stage'); stage.innerHTML=passHTML(D,true);
+  try{ if(document.fonts && document.fonts.ready) await document.fonts.ready; }catch(e){}
+  // html2canvas no resuelve <use> ni currentColor: convertir cada SVG en <img> autónoma
+  await Promise.all(Array.from(stage.querySelectorAll('svg')).map(async svg=>{
+    const use=svg.querySelector('use');
+    const rect=svg.getBoundingClientRect(), cs=getComputedStyle(svg);
+    let markup=svg.innerHTML, vb=svg.getAttribute('viewBox');
+    if(use){ const sym=document.getElementById((use.getAttribute('href')||'').slice(1)); if(sym){ markup=sym.innerHTML; vb=vb||sym.getAttribute('viewBox'); } }
+    markup=markup.replace(/currentColor/g, cs.color);
+    const xml='<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+vb+'" width="'+rect.width+'" height="'+rect.height+'" style="color:'+cs.color+'">'+markup+'</svg>';
+    const img=new Image(); img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+    img.className=svg.getAttribute('class')||''; img.style.cssText=(svg.getAttribute('style')||'')+';width:'+rect.width+'px;height:'+rect.height+'px';
+    if(svg.parentNode.closest('.ln')) img.style.cssText+=';background:#F5EFE0';
+    try{ await img.decode(); }catch(e){}
+    svg.replaceWith(img);
+  }));
+  const node=stage.firstChild;
+  const canvas = await html2canvas(node,{scale:2,backgroundColor:'#4D6A5B',useCORS:true,logging:false,width:540,height:960});
+  stage.innerHTML='';
+  return await new Promise(res=>canvas.toBlob(res,'image/png'));
+}
+function fileName(D){ return 'pase-arca-'+D.f.toLowerCase()+'.png'; }
+let currentD=null;
+let dlNS; // namespace de descargas del visor de Claude (solo existe dentro de claude.ai)
+async function getDownloads(){
+  if(dlNS!==undefined) return dlNS;
+  try{ dlNS = (window.claude && typeof window.claude.use==='function') ? await window.claude.use('downloads') : null; }catch(e){ dlNS=null; }
+  return dlNS;
+}
+getDownloads();
+async function download(D){
+  toast('Imprimiendo tu pase…');
+  try{
+    const blob=await renderPNG(D);
+    const ns=await getDownloads();
+    if(ns){
+      try{ await ns.save({filename:fileName(D),data:blob}); toast('Pase guardado. Compártelo en tus historias.'); }
+      catch(err){ toast(err && err.code==='declined' ? 'Descarga cancelada.' : 'No se pudo guardar aquí. Toma captura de tu pase.'); }
+      return;
+    }
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download=fileName(D); document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),4000);
+    toast('Pase descargado. Compártelo en tus historias.');
+  }catch(e){ console.error(e); toast('No se pudo generar la imagen. Toma captura de pantalla de tu pase.'); }
+}
+async function share(D){
+  if(await getDownloads()){ return download(D); }
+  try{
+    const blob=await renderPNG(D);
+    const file=new File([blob],fileName(D),{type:'image/png'});
+    const data={title:'Mi pase de abordaje ARCA',text:'Soy '+PROFILES[D.p].name+'. ¿Y tú, qué tan preparado estás para el gran salto? Antes del diluvio, aborda.',url:location.origin+location.pathname};
+    if(navigator.canShare && navigator.canShare({files:[file]})) await navigator.share(Object.assign({files:[file]},data));
+    else if(navigator.share) await navigator.share(data);
+    else download(D);
+  }catch(e){ if(e && e.name!=='AbortError'){ console.error(e); download(D);} }
+}
+$('#dlBtn').addEventListener('click',()=>download(currentD||passData()));
+$('#shareBtn').addEventListener('click',()=>share(currentD||passData()));
+
+/* =================== CORREO =================== */
+function resetMail(){
+  $('#mailCard').querySelector('p').hidden=false;
+  const f=$('#mailForm'); f.hidden=false; f.reset();
+  const ok=$('#mailCard').querySelector('.mail-ok'); if(ok) ok.remove();
+}
+$('#mailForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const email=$('#mailInput').value.trim(); if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){toast('Revisa tu correo.');return;}
+  const D=currentD||passData();
+  queuePost({'form-name':'arca-correo',nombre:D.n||'',email,folio:D.f,perfil:PROFILES[D.p].short,origen:currentD?'pase-celular':(KIOSK?'estacion':'web'),'bot-field':e.target.querySelector('[name=bot-field]').value});
+  e.target.hidden=true; $('#mailCard').querySelector('p').hidden=true;
+  const ok=document.createElement('div'); ok.className='mail-ok'; ok.textContent='Registrado. Te escribimos pronto.';
+  $('#mailCard').appendChild(ok);
+});
+
+/* =================== REINICIO E INACTIVIDAD =================== */
+function restart(){
+  newSession(); currentD=null;
+  $('#boardForm').reset(); consent.checked=false; consentBox.classList.remove('checked'); $('#startBtn').disabled=true;
+  $('#lore').classList.remove('on'); $('#idle').classList.remove('on');
+  if(params.has('p')){ history.replaceState(null,'',location.pathname+(KIOSK?'?estacion':'')); }
+  show('welcome');
+}
+$('#restartBtn').addEventListener('click',restart);
+let idleT=null, idleCount=null, idleN=15;
+function armIdle(){
+  if(!KIOSK) return;
+  clearTimeout(idleT); clearInterval(idleCount); $('#idle').classList.remove('on');
+  const onWelcome = $('#welcome').classList.contains('on') && !$('#nombre').value && !consent.checked;
+  if(onWelcome) return;
+  const wait = $('#result').classList.contains('on') ? 75000 : 90000;
+  idleT=setTimeout(()=>{
+    idleN=15; $('#idleN').textContent=idleN; $('#idle').classList.add('on');
+    idleCount=setInterval(()=>{ idleN--; $('#idleN').textContent=idleN; if(idleN<=0){clearInterval(idleCount); restart();} },1000);
+  }, wait);
+}
+['pointerdown','keydown','input'].forEach(ev=>document.addEventListener(ev,armIdle,{passive:true}));
+$('#idleStay').addEventListener('click',armIdle);
+
+let toastT=null;
+function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),3500); }
+
+/* =================== ARRANQUE =================== */
+newSession(); flush();
+if(params.has('p')){
+  try{
+    const D=dec(params.get('p'));
+    if(!PROFILES[D.p]) throw new Error('perfil');
+    D.b=(D.b||[]).filter(b=>BAGS[b]).slice(0,3);
+    D.i=Math.max(0,Math.min(100,+D.i||0)); D.r=Math.max(0,Math.min(100,+D.r||0));
+    D.n=String(D.n||'').slice(0,24); D.f=String(D.f||'').slice(0,16); D.d=String(D.d||date2035()).slice(0,12);
+    currentD=D;
+    S.result={key:D.p,imagPct:D.i,recPct:D.r,bags:D.b}; S.folio=D.f; S.name=D.n;
+    renderResult();
+    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareBtn').hidden=!navigator.share;
+    $('#resEyebrow').textContent='Pase de abordaje · '+D.f;
+    $('#restartBtn').textContent='Hacer mi propia entrevista';
+  }catch(e){ console.warn('Pase inválido',e); show('welcome'); }
+}
+})();
+</script>
+</body>
+</html>

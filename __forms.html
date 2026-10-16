@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ARCA · formularios</title><meta name="robots" content="noindex"></head>
+<body>
+<!-- Esqueletos para que Netlify detecte los formularios de ARCA. La experiencia envía por AJAX a esta ruta. -->
+<form name="arca-respuestas" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="arca-respuestas">
+  <input name="bot-field">
+  <input name="folio"><input name="nombre"><input name="modo"><input name="fecha"><input name="duracion_seg">
+  <input name="perfil"><input name="imaginacion"><input name="recursos"><input name="cubierta"><input name="equipaje">
+  <input name="q1"><input name="q2"><input name="q3"><input name="q4"><input name="q5"><input name="q6"><input name="q7">
+  <input name="q8"><input name="q9"><input name="q10"><textarea name="q11"></textarea><input name="q12"><input name="q13"><input name="q14">
+  <input name="q15"><input name="q16_ia"><input name="q16_finanzas"><input name="q16_vender"><input name="q16_contenido">
+  <input name="q17"><input name="q18"><input name="consentimiento">
+</form>
+<form name="arca-correo" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="arca-correo">
+  <input name="bot-field">
+  <input name="nombre"><input type="email" name="email"><input name="folio"><input name="perfil"><input name="origen">
+</form>
+</body>
+</html>

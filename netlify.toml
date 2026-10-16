@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/arca/"
+  status = 302
+
+[[redirects]]
+  from = "/arca"
+  to = "/arca/"
+  status = 301
+
+[[headers]]
+  for = "/arca/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
