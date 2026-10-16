@@ -1,0 +1,15 @@
+/* Sistema de diseño de Futurable (tomado de futurable.now): monocromo, Zalando Sans Expanded + Zalando Sans */
+@font-face{font-family:'Zalando Sans Expanded';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/zalando-sans-expanded-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans Expanded';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/zalando-sans-expanded-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans Expanded';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/zalando-sans-expanded-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans Expanded';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/zalando-sans-expanded-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/zalando-sans-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/zalando-sans-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/zalando-sans-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Zalando Sans';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/zalando-sans-latin-700-normal.woff2) format('woff2')}
+:root{
+  --f-bg:#FFFFFF; --f-ink:#0F0F0F; --f-text:#1a1a1a; --f-muted:#5E5E5E; --f-muted-2:#6b6b6b; --f-line:#e4e4e4; --f-soft:#f2f2f2;
+  --f-display:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;
+  --f-body:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;
+  --f-radius:8px;
+}

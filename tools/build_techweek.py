@@ -40,9 +40,16 @@ def clean(sec, sid):
     sec = re.sub(r"(<p[^>]*style=\"[^\"]*letter-spacing:2px)", lambda m: m.group(1) + ";font-family:" + tokens["font_label"], sec)
     sec = sec.replace("#1f5fbf", tokens["accent"]).replace("#111111", tokens["ink"]).replace("#666666", tokens["muted"]).replace("#444444", tokens["muted"])
     sec = sec.replace("background:#ffffff", "background:" + tokens["bg"])
+    # la letra expandida es más ancha: títulos más contenidos y sin tracking negativo
+    sec = sec.replace("font-size:168px;font-weight:800;line-height:1.0;letter-spacing:-4px", "font-size:132px;font-weight:400;line-height:1.02;letter-spacing:-2px")
+    sec = re.sub(r"font-size:\s*80px;\s*font-weight:800;\s*line-height:1\.05;\s*letter-spacing:-2px", "font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px", sec)
+    sec = re.sub(r"font-size:\s*(?:26|30)px;\s*font-weight:700;\s*letter-spacing:2px", "font-size:22px;font-weight:500;letter-spacing:3px", sec)
+    def mute(m):
+        return m.group(0).replace("color:" + tokens["accent"], "color:" + tokens["muted"])
+    sec = re.sub(r"<p[^>]*letter-spacing:3px[^>]*>", mute, sec)
     if sid == "estacion":
         sec = sec.replace("Haz tu diagnóstico en la estación interactiva de Futurable.",
-                          'Haz tu diagnóstico en <a href="https://arca.futurable.work" style="color:%s">arca.futurable.work</a>' % tokens["accent"])
+                          'Haz tu diagnóstico en <a href="/arca/" style="color:%s">futurable.work/arca</a>' % tokens["accent"])
     return sec.strip()
 
 order = [s for s in deck["order"] if s not in SKIP]

@@ -7,13 +7,13 @@
 <meta name="description" content="La charla de Futurable en Tech Week Yucatán 2026: cuatro transiciones que convergen, dos retos humanos y el gran salto. Por Alejandro Vélez.">
 <meta property="og:title" content="El futuro del valor humano · Futurable">
 <meta property="og:description" content="La charla de Futurable en Tech Week Yucatán, 19 de octubre de 2026.">
-<meta name="theme-color" content="#0f1115">
+<meta name="theme-color" content="#0F0F0F">
 <link rel="icon" href="/assets/futurable-mark-dark.svg" type="image/svg+xml">
-
+<link rel="stylesheet" href="/assets/futurable.css">
 <style>
-:root{--bg:#ffffff;--ink:#111111;--muted:#666666;--accent:#1f5fbf;--chrome:#0f1115;--chrome-ink:#f3f1ec}
+:root{--bg:#FFFFFF;--ink:#0F0F0F;--muted:#5E5E5E;--accent:#0F0F0F;--chrome:#0F0F0F;--chrome-ink:#FFFFFF}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);font-family:'Inter Tight', Helvetica, Arial, sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;overflow:hidden;-webkit-tap-highlight-color:transparent}
 .stage{position:fixed;inset:0;display:grid;place-items:center;padding:calc(56px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(64px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .frame{position:relative;width:1920px;height:1080px;transform-origin:center center;flex:none;box-shadow:0 30px 80px rgba(0,0,0,.35);border-radius:6px;overflow:hidden;background:var(--bg)}
 .frame>section{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;color:var(--ink);visibility:hidden;opacity:0;transition:opacity .35s ease}
@@ -31,15 +31,15 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 .bottom{bottom:0;height:calc(64px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
 .brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:600;letter-spacing:.06em;font-size:14px;text-transform:uppercase}
 .brand img{width:22px;height:22px}
-.meta{font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ctrls{display:flex;gap:8px;align-items:center}
 .btn{min-width:44px;height:44px;border-radius:22px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:inherit;font:inherit;font-size:18px;cursor:pointer;display:grid;place-items:center;padding:0 14px}
 .btn:hover{background:rgba(255,255,255,.14)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.count{font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:13px;letter-spacing:.08em;min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+.count{font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:13px;letter-spacing:.08em;min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
 .progress{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));height:3px;background:rgba(255,255,255,.08);z-index:5}
 .progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s ease}
-.hint{font-family:'IBM Plex Mono', ui-monospace, monospace;font-size:12px;opacity:.55}
+.hint{font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:12px;opacity:.55}
 @media (max-width:640px){.hint,.meta{display:none}}
 @media (prefers-reduced-motion:reduce){.frame>section,.progress i{transition:none}}
 </style>
@@ -53,44 +53,44 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 
 <main class="stage" id="stage" aria-roledescription="presentación" aria-label="El futuro del valor humano">
   <div class="frame" id="frame">
-<section id="portada" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
-<p style="font-size:30px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">TECH WEEK YUCATÁN · 19 DE OCTUBRE</p>
-<h1 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:168px;font-weight:800;line-height:1.0;letter-spacing:-4px">El futuro del valor humano.</h1>
+<section id="portada" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">TECH WEEK YUCATÁN · 19 DE OCTUBRE</p>
+<h1 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:132px;font-weight:400;line-height:1.02;letter-spacing:-2px">El futuro del valor humano.</h1>
 <p style="font-size:44px;font-weight:700;line-height:1.35;width:1500px">La tecnología está cambiando el trabajo y nuestro lugar en la economía. ¿De qué vas a vivir? ¿Qué te hará valioso?</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:28px;color:#666666">Alejandro Vélez · Futurable</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1200px;font-size:28px;color:#5E5E5E">Alejandro Vélez · Futurable</p>
 
 </section>
-<section id="miedos" style="display:flex; flex-direction:column; gap:32px; padding:128px 128px 160px; background:#ffffff">
-  <p style="font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:26px; font-weight:700; letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace; color:#1f5fbf">LOS MIEDOS</p>
-  <h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.05; letter-spacing:-2px; color:#111111">Lo que todos estamos pensando</h2>
+<section id="miedos" style="display:flex; flex-direction:column; gap:32px; padding:128px 128px 160px; background:#FFFFFF">
+  <p style="font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif; color:#5E5E5E">LOS MIEDOS</p>
+  <h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px; color:#0F0F0F">Lo que todos estamos pensando</h2>
   <div style="display:flex; flex-direction:row; gap:48px; align-items:center; flex:1">
     <div style="display:flex; flex-direction:column; gap:32px; flex:1">
-      <ul style="font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:32px; line-height:1.5; color:#111111">
+      <ul style="font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:32px; line-height:1.5; color:#0F0F0F">
         <li>"La IA me va a quitar el trabajo."</li>
         <li>"Mis hijos no van a tener en qué trabajar."</li>
         <li>"Ya no entiendo nada de lo que está pasando."</li>
       </ul>
-      <p style="font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:32px; line-height:1.4; color:#111111"><b>73%</b> de los jóvenes en EE. UU. cree que la IA dejará menos empleos.</p>
-      <p style="font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:32px; line-height:1.4; color:#111111">En México, <b>61%</b> teme que la IA desplace empleos.</p>
+      <p style="font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:32px; line-height:1.4; color:#0F0F0F"><b>73%</b> de los jóvenes en EE. UU. cree que la IA dejará menos empleos.</p>
+      <p style="font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:32px; line-height:1.4; color:#0F0F0F">En México, <b>61%</b> teme que la IA desplace empleos.</p>
     </div>
     <img src="img/02af4ec1dd5d2e99b181296afb9da82e.png" loading="lazy" decoding="async" alt="Gráfica: el porcentaje de estadounidenses más preocupados que emocionados por la IA subió de 37% en 2021 a 52% en 2026; entre menores de 30, de 31% a 55%" style="width:770px; height:500px; object-fit:contain">
   </div>
-  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:24px; color:#666666">Fuentes: Pew Research Center (2023 y jun. 2026) · YouGov México (2023)</p>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:24px; color:#5E5E5E">Fuentes: Pew Research Center (2023 y jun. 2026) · YouGov México (2023)</p>
   
 </section>
-<section id="espectro" style="background:#ffffff">
-  <p id="e1-1xz70k6" style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:24px; color:#666666"></p>
-  <p id="p3fed1180bb3ar0-ff83ceb7" style="position:absolute; top:128px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:26px; font-weight:700; letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace; color:#1f5fbf">EL RUIDO</p>
-  <h2 id="p3fed1180bb3ar1-ff83ceb7" style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;position:absolute; top:188px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.05; letter-spacing:-2px; color:#111111">El mapa del ruido</h2>
-  <p id="p3fed1180bb3ar2-ff83ceb7" style="position:absolute; top:296px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#1f5fbf">Futurable no diseña los futuros probables, sino los necesarios.</p>
+<section id="espectro" style="background:#FFFFFF">
+  <p id="e1-1xz70k6" style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:24px; color:#5E5E5E"></p>
+  <p id="p3fed1180bb3ar0-ff83ceb7" style="position:absolute; top:128px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif; color:#5E5E5E">EL RUIDO</p>
+  <h2 id="p3fed1180bb3ar1-ff83ceb7" style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;position:absolute; top:188px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px; color:#0F0F0F">El mapa del ruido</h2>
+  <p id="p3fed1180bb3ar2-ff83ceb7" style="position:absolute; top:296px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#0F0F0F">Futurable no diseña los futuros probables, sino los necesarios.</p>
   <img src="img/17e68a941a62cf4a2343d3227d42d6ae.gif" loading="lazy" decoding="async" alt="Escena de Terminator: pie robótico aplastando un cráneo humano (lado pesimista)" id="p3fed1180bb3ar3_0-ff83ceb7" style="position:absolute; top:521.78px; left:56.34px; width:433.67px; height:244.45px; border-radius:8px">
   <img src="img/c5b102aeb14b831b27e03573eda96da7.png" loading="lazy" decoding="async" alt="Mapa de cuatro cuadrantes dibujado a mano: eje de pesimista a optimista y de fantástico a real. Riesgos reales (disrupción del empleo, estrés y abrumo, IAs con comportamientos emergentes en pruebas); conspiranoia (la IA es una mente alienígena, Skynet ya despertó, nos quieren reemplazar); tecnoutopía (superabundancia sin esfuerzo, nadie tendrá que trabajar, ingreso alto universal); optimismo responsable (la IA como copiloto, semanas laborales más cortas, ciencia y medicina aceleradas), donde est" id="p3fed1180bb3ar3_1-ff83ceb7" style="position:absolute; top:374px; left:490px; width:940px; height:540px; object-fit:contain">
   <img src="img/805c85afce313ed794684cb0ae3f1f51.png" loading="lazy" decoding="async" alt="Póster de Los Supersónicos (lado optimista)" id="p3fed1180bb3ar3_2-ff83ceb7" style="position:absolute; top:409px; left:1530.21px; width:314px; height:470px; border-radius:8px">
   
 </section>
-<section id="promesas" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">LOS DATOS</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Promesas vs. datos</h2>
+<section id="promesas" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">LOS DATOS</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Promesas vs. datos</h2>
 <div style="flex:1;display:flex;flex-direction:row;gap:48px;align-items:center">
 <ul style="flex:1;font-size:30px;line-height:1.5">
 <li>Para 2030 se crean más empleos de los que se pierden, <b>pero no son para las mismas personas.</b></li>
@@ -99,20 +99,20 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 </ul>
 <img src="img/eb3b8df81b4ba9a27973dbc6b3fd9814.png" loading="lazy" decoding="async" alt="Gráfica: 92 millones de empleos desplazados y 170 millones creados para 2030 según el WEF" style="width:770px;height:500px;object-fit:contain">
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Fuentes: World Economic Forum, Future of Jobs 2025 · Stanford, "Canaries in the Coal Mine" (2025) · Autonomy, piloto 4 días (2023)</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Fuentes: World Economic Forum, Future of Jobs 2025 · Stanford, "Canaries in the Coal Mine" (2025) · Autonomy, piloto 4 días (2023)</p>
 
 </section>
-<section id="transicion" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">LA GRAN TRANSICIÓN</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Cuatro cambios que convergen</h2>
+<section id="transicion" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">LA GRAN TRANSICIÓN</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Cuatro cambios que convergen</h2>
 <img src="img/dcb5e8136eb920f8ccf3256944a667a3.png" loading="lazy" decoding="async" alt="Dibujo: cuatro flechas (el humano deja de ser actor económico central, de biosfera a datasfera, la tokenización, superhumanos vs. analfabetismo digital) se juntan en la gran transición" style="width:1560px;height:582px;object-fit:contain">
 
 </section>
-<section id="conv-humano" style="display:flex; flex-direction:column; gap:32px; padding:128px 128px 160px; background:#ffffff">
-  <p style="font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:26px; font-weight:700; letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace; color:#1f5fbf">CONVERGENCIA 1 DE 4</p>
-  <h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.05; letter-spacing:-2px; color:#111111">Hacia una economía machine to machine</h2>
+<section id="conv-humano" style="display:flex; flex-direction:column; gap:32px; padding:128px 128px 160px; background:#FFFFFF">
+  <p style="font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif; color:#5E5E5E">CONVERGENCIA 1 DE 4</p>
+  <h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px; color:#0F0F0F">Hacia una economía machine to machine</h2>
   <div style="display:flex; flex-direction:row; gap:48px; align-items:center; flex:1">
-    <ul style="flex:1; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:30px; line-height:1.5; color:#111111">
+    <ul style="flex:1; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:30px; line-height:1.5; color:#0F0F0F">
       <li>El humano pierde peso como productor de valor y también como consumidor.</li>
       <li>Más de la mitad del tráfico de internet ya no es humano: <b>53% son bots.</b></li>
       <li>En Cloudflare, los bots ya hacen <b>57.5%</b> de las solicitudes de páginas web; los humanos, 42.5%.</li>
@@ -120,12 +120,12 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
     </ul>
     <img src="img/4820a584e447712766c14362c4c6da46.png" loading="lazy" decoding="async" alt="Gráfica: el tráfico automatizado de internet pasó de 47.4% a 51% y luego a 53%, según los informes de Imperva 2023, 2025 y 2026" style="width:770px; height:500px; object-fit:contain">
   </div>
-  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:24px; color:#666666">Fuentes: Imperva, Bad Bot Report 2023, 2025 y 2026 · Cloudflare Radar, jul. 2026</p>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:24px; color:#5E5E5E">Fuentes: Imperva, Bad Bot Report 2023, 2025 y 2026 · Cloudflare Radar, jul. 2026</p>
   
 </section>
-<section id="conv-datasfera" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">CONVERGENCIA 2 DE 4</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">La datasfera</h2>
+<section id="conv-datasfera" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">CONVERGENCIA 2 DE 4</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">La datasfera</h2>
 <div style="flex:1;display:flex;flex-direction:row;gap:48px;align-items:center">
 <ul style="flex:1;font-size:32px;line-height:1.5">
 <li>Sobre la biosfera crece una nueva capa: los data centers.</li>
@@ -135,47 +135,47 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 </ul>
 <img src="img/39f2afc17ae169ebb72f72122bee5eae.png" loading="lazy" decoding="async" alt="Gráfica: los data centers consumían 415 TWh en 2024 y se proyectan 945 TWh para 2030" style="width:770px;height:500px;object-fit:contain">
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Fuentes: Agencia Internacional de Energía, Energy and AI · MexDC vía Líder Empresarial, jun. 2026</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Fuentes: Agencia Internacional de Energía, Energy and AI · MexDC vía Líder Empresarial, jun. 2026</p>
 
 </section>
-<section id="token-que" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">CONVERGENCIA 3 DE 4</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">¿Qué es tokenizar?</h2>
+<section id="token-que" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">CONVERGENCIA 3 DE 4</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">¿Qué es tokenizar?</h2>
 <p style="font-size:36px;font-weight:700;line-height:1.3">Un cambio en cómo se certifica la propiedad.</p>
 <img src="img/30d131ac6d773d5a89e18eda2d45a244.png" loading="lazy" decoding="async" alt="Línea de tiempo dibujada a mano de cómo se certifica la propiedad: tablillas de arcilla (~3000 a.C.), mojones grabados (~1500 a.C.), escrituras y notarios (Edad Media), la primera acción (1602), registros públicos (1800s), bases de datos centrales (1970s), Bitcoin (2009) y tokenización (2020s): cualquier activo, en fracciones, 24/7" style="width:1430px;height:534px;object-fit:contain">
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Línea de tiempo esquemática. Fechas aproximadas.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Línea de tiempo esquemática. Fechas aproximadas.</p>
 
 </section>
-<section id="token-todo" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">CONVERGENCIA 3 DE 4</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Todo se está tokenizando</h2>
+<section id="token-todo" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">CONVERGENCIA 3 DE 4</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Todo se está tokenizando</h2>
 <div style="display:flex;flex-direction:row;gap:32px">
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #1f5fbf;padding:24px 0px 0px 0px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #0F0F0F;padding:24px 0px 0px 0px">
 <h3 style="font-size:40px;font-weight:800">El dinero</h3>
 <p style="font-size:28px;line-height:1.4">Stablecoins: dólares digitales que se mueven 24/7 en segundos. Ya suman <b>~$316,000 millones.</b></p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #1f5fbf;padding:24px 0px 0px 0px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #0F0F0F;padding:24px 0px 0px 0px">
 <h3 style="font-size:40px;font-weight:800">La deuda</h3>
 <p style="font-size:28px;line-height:1.4">Bonos del Tesoro de EE. UU. tokenizados: <b>~$15,000 millones.</b> BlackRock lidera con su fondo BUIDL.</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #1f5fbf;padding:24px 0px 0px 0px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #0F0F0F;padding:24px 0px 0px 0px">
 <h3 style="font-size:40px;font-weight:800">Las acciones</h3>
 <p style="font-size:28px;line-height:1.4">En marzo de 2026 la SEC aprobó que Nasdaq negocie acciones tokenizadas. La meta: <b>una bolsa 24/7.</b></p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #1f5fbf;padding:24px 0px 0px 0px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;border-top:6px solid #0F0F0F;padding:24px 0px 0px 0px">
 <h3 style="font-size:40px;font-weight:800">Los bienes raíces</h3>
 <p style="font-size:28px;line-height:1.4">Propiedades divididas en fracciones: <b>ser dueño de un pedazo de un edificio</b> sin comprarlo completo.</p>
 </div>
 </div>
 
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Fuentes: DefiLlama vía Transak (jun. 2026) · Bitcoin.com News, mercado de bonos tokenizados (ago. 2026) · Forklog, aprobación SEC–Nasdaq (mar. 2026)</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Fuentes: DefiLlama vía Transak (jun. 2026) · Bitcoin.com News, mercado de bonos tokenizados (ago. 2026) · Forklog, aprobación SEC–Nasdaq (mar. 2026)</p>
 
 </section>
-<section id="conv-token" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">CONVERGENCIA 3 DE 4</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Wall Street ya está tokenizando</h2>
+<section id="conv-token" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">CONVERGENCIA 3 DE 4</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Wall Street ya está tokenizando</h2>
 <div style="flex:1;display:flex;flex-direction:row;gap:48px;align-items:center">
-<table style="flex:1;font-size:26px;color:#111111">
+<table style="flex:1;font-size:26px;color:#0F0F0F">
 <tr><th style="width:28%">Quién</th><th style="width:44%">Qué tokeniza</th><th style="width:28%">Tamaño</th></tr>
 <tr><td><b>BlackRock</b></td><td>Fondo de bonos del Tesoro (BUIDL)</td><td>~$2,800 M</td></tr>
 <tr><td><b>JPMorgan</b></td><td>Pagos y repos en su red Kinexys</td><td>+$1.5 billones acumulados</td></tr>
@@ -185,12 +185,12 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 </table>
 <img src="img/b6d74e611bff7d764b80ab136100d8dd.png" loading="lazy" decoding="async" alt="Gráfica: los activos reales tokenizados pasaron de 4.1 mil millones de dólares en enero de 2025 a 38.6 mil millones en octubre de 2026" style="width:770px;height:500px;object-fit:contain">
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Cifras en dólares. Fuentes: rwa.xyz (oct. 2026) · Bitcoin.com News (ago. 2026) · Algeriatech, "Wall Street's On-Chain Shift" (mar. 2026) · Forklog (mar. 2026)</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Cifras en dólares. Fuentes: rwa.xyz (oct. 2026) · Bitcoin.com News (ago. 2026) · Algeriatech, "Wall Street's On-Chain Shift" (mar. 2026) · Forklog (mar. 2026)</p>
 
 </section>
-<section id="conv-superhumanos" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">CONVERGENCIA 4 DE 4</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Superhumanos vs. analfabetismo digital</h2>
+<section id="conv-superhumanos" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">CONVERGENCIA 4 DE 4</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Superhumanos vs. analfabetismo digital</h2>
 <div style="flex:1;display:flex;flex-direction:row;gap:48px;align-items:center">
 <ul style="flex:1;font-size:32px;line-height:1.5">
 <li>Quien adopta la IA multiplica lo que puede hacer: Sam Altman apuesta por la primera empresa de <b>mil millones de dólares con una sola persona.</b></li>
@@ -199,23 +199,23 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 </ul>
 <img src="img/88c823f09cba1cb98f62578a7c074cde.png" loading="lazy" decoding="async" alt="Escena de Elysium: en primer plano, un hombre con exoesqueleto carga a una niña; detrás, una mansión con jardín perfecto y una estación espacial para los privilegiados" style="width:760px;height:428px;object-fit:cover;border-radius:8px">
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Imagen: Elysium (2013)</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Imagen: Elysium (2013)</p>
 
 </section>
-<section id="analfabetismos" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">CONVERGENCIA 4 DE 4</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">La historia de los analfabetismos</h2>
+<section id="analfabetismos" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">CONVERGENCIA 4 DE 4</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">La historia de los analfabetismos</h2>
 <img src="img/63d3fd08c1d9d07a3a0e99c9c3251ee3.png" loading="lazy" decoding="async" alt="Línea de tiempo dibujada a mano: leer y escribir (1450), hacer cuentas (1800s), entender los medios (1950s), usar una computadora (1980s), navegar internet (1990s), comprar y pagar en línea (2000s), crear video y contenido (2010s), usar dinero digital (2010s), usar IA (2023) y orquestar agentes (¿2030?). Cada nueva alfabetización llega más rápido" style="width:1560px;height:582px;object-fit:contain">
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Fechas aproximadas: cuándo cada habilidad se volvió necesaria para participar en la economía. Ilustrativo.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Fechas aproximadas: cuándo cada habilidad se volvió necesaria para participar en la economía. Ilustrativo.</p>
 
 </section>
-<section id="abrumador" style="background:#ffffff">
-  <p id="e1-9mq5mi" style="position:absolute; bottom:74.37px; left:1067.64px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:24px; color:#666666">Idea: Astro Teller, en Thomas Friedman, "Thank You for Being Late" (2016)</p>
-  <p id="p6582908d12dbr0-f7ea7b43" style="position:absolute; top:128px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:26px; font-weight:700; letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace; color:#1f5fbf">EL CEREBRO de los SAPIENS</p>
-  <h2 id="p6582908d12dbr1-f7ea7b43" style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;position:absolute; top:196px; left:128px; width:1664px; font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:80px; font-weight:800; line-height:1.05; letter-spacing:-2px; color:#111111">Demasiado cambio, muy rápido</h2>
+<section id="abrumador" style="background:#FFFFFF">
+  <p id="e1-9mq5mi" style="position:absolute; bottom:74.37px; left:1067.64px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:24px; color:#5E5E5E">Idea: Astro Teller, en Thomas Friedman, "Thank You for Being Late" (2016)</p>
+  <p id="p6582908d12dbr0-f7ea7b43" style="position:absolute; top:128px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif; color:#5E5E5E">EL CEREBRO de los SAPIENS</p>
+  <h2 id="p6582908d12dbr1-f7ea7b43" style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;position:absolute; top:196px; left:128px; width:1664px; font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px; color:#0F0F0F">Demasiado cambio, muy rápido</h2>
   <div id="p6582908d12dbr2-f7ea7b43" style="position:absolute; top:312px; left:128px; width:1664px; height:608px; display:flex; flex-direction:row; gap:48px; align-items:center">
     <div style="display:flex; flex-direction:column; gap:24px; flex:1; min-width:846px; min-height:578px">
-      <ul style="font-family:'Inter Tight', Helvetica, Arial, sans-serif; font-size:28px; line-height:1.45; color:#111111">
+      <ul style="font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif; font-size:28px; line-height:1.45; color:#0F0F0F">
         <li>Nuestro cerebro evolucionó para cambios lentos, no para cuatro revoluciones al mismo tiempo.</li>
         <li>Alvin Toffler lo llamó "el shock del futuro".</li>
         <li><b>Sentirse abrumado es normal. Quedarse paralizado es opcional.</b></li>
@@ -226,18 +226,18 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
   <img src="img/ee8645f1970aa6fb803b2366cccedb1d.png" loading="lazy" decoding="async" alt="Meme: un hombre le mantiene abiertos los ojos a la fuerza a una mujer mayor que grita" id="p6582908d12dbr2_0_1-f7ea7b43" style="position:absolute; top:554px; left:128px; width:658.16px; height:444.26px; border-radius:8px">
   
 </section>
-<section id="dos-retos" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">LOS DOS RETOS</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Ante esta transición, enfrentamos dos grandes retos</h2>
+<section id="dos-retos" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">LOS DOS RETOS</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Ante esta transición, enfrentamos dos grandes retos</h2>
 <ol style="font-size:48px;font-weight:700;line-height:1.5">
 <li>¿Cómo vamos a sobrevivir financieramente?</li>
 <li>¿Cómo vamos a seguir encontrando sentido de vida como humanos?</li>
 </ol>
 
 </section>
-<section id="activos" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">RETO 1 · SOBREVIVIR</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">De trabajador a administrador de activos</h2>
+<section id="activos" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">RETO 1 · SOBREVIVIR</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">De trabajador a administrador de activos</h2>
 <div style="flex:1;display:flex;flex-direction:row;gap:48px;align-items:center">
 <ul style="flex:1;font-size:32px;line-height:1.5">
 <li>Antes: educarse, prepararse y trabajar, trabajar, trabajar.</li>
@@ -246,69 +246,69 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
 </ul>
 <img src="img/611ea8e9169cae7d53c4c10b13d1d1aa.png" loading="lazy" decoding="async" alt="Dibujo ilustrativo: el ingreso pasa de 100% salario en el siglo XX a 65/35 en la transición y a 30% salario y 70% activos en el puerto deseable" style="width:770px;height:500px;object-fit:contain">
 </div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Gráfica ilustrativa, no una proyección.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Gráfica ilustrativa, no una proyección.</p>
 
 </section>
-<section id="dignidad" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">RETO 2 · SENTIDO</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">"El trabajo dignifica"... ¿y si ya no hay trabajo?</h2>
+<section id="dignidad" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">RETO 2 · SENTIDO</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">"El trabajo dignifica"... ¿y si ya no hay trabajo?</h2>
 <ul style="font-size:36px;line-height:1.5">
 <li>Nos educaron para creer que valemos porque trabajamos: "ganarás el pan con el sudor de tu frente".</li>
 <li>Jubilarse aumenta en <b>~40%</b> la probabilidad de sufrir depresión clínica.</li>
 <li>Muchos emprendedores que venden su empresa reportan vacío y pérdida de propósito.</li>
 </ul>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Fuente: Institute of Economic Affairs, Reino Unido (2013)</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Fuente: Institute of Economic Affairs, Reino Unido (2013)</p>
 
 </section>
-<section id="robots" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">RETO 2 · SENTIDO</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Nos educaron para comportarnos como robots.</h2>
+<section id="robots" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">RETO 2 · SENTIDO</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Nos educaron para comportarnos como robots.</h2>
 <p style="font-size:36px;line-height:1.4">Hacer caso. Seguir procesos. Cumplir horarios.<br>Y ahora que los robots llegaron... ¿qué hacemos? ¿Volver a nuestra esencia humana?</p>
-<p style="font-size:48px;font-weight:700;line-height:1.3;color:#1f5fbf">¿Y si ya se nos olvidó cómo imaginar?</p>
+<p style="font-size:48px;font-weight:700;line-height:1.3;color:#0F0F0F">¿Y si ya se nos olvidó cómo imaginar?</p>
 
 </section>
-<section id="sapiens" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">RETO 2 · SENTIDO</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">Seguimos siendo animales</h2>
+<section id="sapiens" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">RETO 2 · SENTIDO</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">Seguimos siendo animales</h2>
 <ul style="font-size:36px;line-height:1.5">
 <li>Aunque todo se digitalice, los sapiens necesitamos pertenecer, convivir, mover el cuerpo y estar en la naturaleza.</li>
 <li>El estudio más largo sobre felicidad (Harvard, más de 85 años): <b>lo que más predice una vida buena son las relaciones.</b></li>
 <li>Diseñar tu estilo de vida: cuando tengas tiempo libre, ¿en qué lo vas a usar?</li>
 </ul>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Fuente: Harvard Study of Adult Development</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Fuente: Harvard Study of Adult Development</p>
 
 </section>
-<section id="gran-salto" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">FUTURABLE</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">El Gran Salto</h2>
+<section id="gran-salto" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">FUTURABLE</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">El Gran Salto</h2>
 <p style="font-size:36px;font-weight:700;line-height:1.3">Para saltar no basta la fuerza: hay que saber hacia dónde apuntar.</p>
 <img src="img/2f1a3b6a968817ea91217467e0b45dbb.png" loading="lazy" decoding="async" alt="Dibujo: desde el acantilado de hoy, un salto con fuerza y dirección llega al puerto deseable; un salto a ciegas cae en un puerto inseguro" style="width:1400px;height:523px;object-fit:contain">
 
 </section>
-<section id="necesario" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">FUTURABLE</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">De lo posible a lo necesario</h2>
+<section id="necesario" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:28px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">FUTURABLE</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">De lo posible a lo necesario</h2>
 <p style="font-size:32px;line-height:1.4">No mapeamos el futuro para predecirlo. Lo mapeamos para diseñar una estrategia y agenciarlo.</p>
-<table style="font-size:28px;color:#111111">
+<table style="font-size:28px;color:#0F0F0F">
 <tr><th style="width:50%">El espacio de lo posible</th><th style="width:50%">El espacio de lo necesario</th></tr>
 <tr><td>Mejoras incrementales</td><td>Soluciones a gran escala</td></tr>
 <tr><td>Parches que no resuelven el fondo</td><td>Enfriar ciudades enteras de forma pasiva</td></tr>
 <tr><td>Predecir tendencias</td><td>Estabilizar el manto freático</td></tr>
 <tr><td>Reaccionar al cambio</td><td>Restaurar biomas y funciones ecológicas</td></tr>
 </table>
-<p style="font-size:36px;font-weight:700;line-height:1.3;color:#1f5fbf">Cuando la data y la razón dicen "imposible", Futurable dice "necesario".</p>
+<p style="font-size:36px;font-weight:700;line-height:1.3;color:#0F0F0F">Cuando la data y la razón dicen "imposible", Futurable dice "necesario".</p>
 
 </section>
-<section id="estacion" style="background:#ffffff;color:#111111;font-family:'Inter Tight', Helvetica, Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<p style="font-size:26px;font-weight:700;letter-spacing:2px;font-family:'IBM Plex Mono', ui-monospace, monospace;color:#1f5fbf">ESTACIÓN INTERACTIVA</p>
-<h2 style="font-family:'Inter Tight', Helvetica, Arial, sans-serif;font-size:80px;font-weight:800;line-height:1.05;letter-spacing:-2px">¿Qué tan preparado estás para el salto?</h2>
+<section id="estacion" style="background:#FFFFFF;color:#0F0F0F;font-family:'Zalando Sans', 'Helvetica Neue', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:22px;font-weight:500;letter-spacing:3px;font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;color:#5E5E5E">ESTACIÓN INTERACTIVA</p>
+<h2 style="font-family:'Zalando Sans Expanded', 'Helvetica Neue', Arial, sans-serif;font-size:64px;font-weight:400;line-height:1.12;letter-spacing:-1px">¿Qué tan preparado estás para el salto?</h2>
 <ul style="font-size:36px;line-height:1.5">
 <li>¿Dónde estás hoy?</li>
 <li>¿Dónde te quieres ver?</li>
 <li>¿Qué tan fuerte está tu músculo para imaginar y reinventarte?</li>
 </ul>
-<p style="font-size:40px;font-weight:700;line-height:1.3">Haz tu diagnóstico en <a href="https://arca.futurable.work" style="color:#1f5fbf">arca.futurable.work</a></p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#666666">Alejandro Vélez · Futurable · futurable.now</p>
+<p style="font-size:40px;font-weight:700;line-height:1.3">Haz tu diagnóstico en <a href="/arca/" style="color:#0F0F0F">futurable.work/arca</a></p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#5E5E5E">Alejandro Vélez · Futurable · futurable.now</p>
 
 </section>
   </div>
@@ -322,7 +322,7 @@ html,body{margin:0;height:100%;background:var(--chrome);color:var(--chrome-ink);
     <span class="count" id="count" aria-live="polite">1 / 21</span>
     <button class="btn" id="next" aria-label="Diapositiva siguiente">→</button>
   </div>
-  <a class="brand" href="https://arca.futurable.work" style="font-size:12px">Haz el diagnóstico ARCA →</a>
+  <a class="brand" href="/arca/" style="font-size:12px">Haz el diagnóstico ARCA →</a>
 </footer>
 
 <script>
