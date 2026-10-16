@@ -437,6 +437,63 @@ textarea.open{border-radius:10px}
 .p-route .ln::before{right:58%}
 .p-route .ln::after{content:"";position:absolute;left:58%;right:0;top:50%;border-top:.6cqw dashed #B4664A}
 .p-route .ln svg,.p-route .ln img{background:transparent!important}
+
+/* ---------- Enfoque y accesibilidad ----------
+   Jerarquía: pregunta (máximo contraste y tamaño) > opciones > ayudas > metadatos y fondo (atenuados).
+   Contrastes WCAG medidos: texto secundario 5.0:1, placeholders 5.6:1, pregunta 11:1, opciones 9.9:1. */
+:root{--ink-3:#665F50;--ph:#6A6354;--focus-ink:#222A27;--lit:#FFFDF8}
+::placeholder{color:var(--ph);opacity:1;font-style:italic}
+.field input[type=text],.field input[type=email],.mail-row input{background:var(--lit);border:1.5px solid var(--edge-2);color:var(--focus-ink)}
+.field input:focus,.mail-row input:focus,textarea.open:focus{outline:none;border-color:var(--leather);box-shadow:0 0 0 4px rgba(207,162,90,.45), inset 0 2px 3px rgba(70,48,25,.06)}
+.field label{font-size:13px;color:var(--ink-2)}
+.field small{font-size:15px;color:var(--ink-3)}
+.eyebrow{font-size:13px}
+.consent p{color:var(--ink);font-size:16px}
+
+/* velo: el fondo se aleja (desenfoque + bruma) mientras se responde */
+.screen{position:relative;z-index:1}
+body:has(#question.on)::after,body:has(#stage.on)::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:rgba(237,227,207,.42);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+body:has(#question.on) .signbar,body:has(#stage.on) .signbar{opacity:.6}
+.signbar{transition:opacity .3s}
+
+/* metadatos de la pregunta: presentes pero en segundo plano */
+#question .qtop,#question .qcode{opacity:.62;transition:opacity .2s}
+#question .qtop:hover,#question .qcode:hover{opacity:1}
+.qcode span{font-size:12.5px}
+.ticks i{height:6px}
+
+/* el foco: un haz de luz detrás de la pregunta y sus respuestas */
+.qform{position:relative;isolation:isolate}
+.qform::before{content:"";position:absolute;inset:-36px -56px -28px;z-index:-1;border-radius:40px;background:radial-gradient(ellipse 70% 65% at 50% 45%, rgba(255,253,246,.96), rgba(255,253,246,.72) 55%, rgba(255,253,246,0) 100%);pointer-events:none}
+.qtext{color:var(--focus-ink);font-size:clamp(34px,5.4vw,54px);line-height:1.08;margin-bottom:24px}
+.opt{background-color:var(--lit);color:var(--focus-ink);font-size:20px;line-height:1.35;min-height:76px}
+.opt .k{color:var(--leather);border-color:var(--edge-2);background:#fff}
+.mrow{background-color:var(--lit)}
+.mrow .mlbl{color:var(--focus-ink)}
+textarea.open{background-color:var(--lit);color:var(--focus-ink);font-size:21px}
+.hint,.scale-ends{font-size:14.5px;color:var(--ink-2)}
+
+/* opción única: al elegir, las demás se apagan */
+.opts[role=radiogroup]:has(.sel) .opt:not(.sel),.scale:has(.sel) .opt:not(.sel){opacity:.45;filter:saturate(.6)}
+.opt{transition:transform .1s, box-shadow .15s, background .15s, opacity .2s, filter .2s}
+
+/* opción múltiple: casilla visible a la derecha */
+.pickhint{display:inline-flex;align-items:center;gap:10px;margin:-8px 0 16px;font-family:var(--sans);font-size:16px;font-weight:500;color:var(--jungle-2);background:rgba(77,106,91,.1);border:1px solid rgba(77,106,91,.28);border-radius:30px;padding:6px 14px}
+.pickhint::before{content:"";width:14px;height:14px;border-radius:4px;border:2px solid var(--jungle-2);box-shadow:inset 0 0 0 2px var(--lit),inset 0 0 0 8px var(--jungle-2)}
+.opt .tick{margin-left:auto;flex:0 0 30px;height:30px;border-radius:7px;border:2px solid var(--edge-2);background:#fff;display:grid;place-items:center;font-family:var(--cond);font-weight:600;font-size:18px;color:var(--leather-2)}
+.opt.sel .tick{background:var(--brass);border-color:var(--brass)}
+.opt.sel .tick::after{content:"✓"}
+
+/* bienvenida: al llenar el registro, lo demás se desenfoca */
+#welcome .hero,#welcome .lore-card,#welcome .foot{transition:opacity .35s, filter .35s}
+body:has(#boardForm:focus-within) #welcome .hero,body:has(#boardForm:focus-within) #welcome .lore-card,body:has(#boardForm:focus-within) #welcome .foot{opacity:.4;filter:blur(2.5px)}
+#boardForm{transition:box-shadow .3s}
+#boardForm:focus-within{box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 0 0 4px rgba(207,162,90,.35), 0 18px 40px rgba(70,48,25,.18)}
+
+/* resultado: al escribir el correo, el resto se aleja */
+#result .pass-col,#result .res-head,#result .sec:not(.mail-card),#result .restart-row{transition:opacity .35s, filter .35s}
+body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-within) #result .res-head,body:has(#mailForm:focus-within) #result .sec:not(.mail-card),body:has(#mailForm:focus-within) #result .restart-row{opacity:.35;filter:blur(2.5px)}
+.mail-row input::placeholder{color:#6A6354}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
 </style>
 </head>
@@ -679,21 +736,21 @@ const STAGES = [
 const Q = [
  {id:1,st:0,m:'Curiosidad',type:'choice',t:'Cuando aparece una tecnología nueva (como la IA), tú…',o:['Ni me entero','Espero a que otros la prueben','La pruebo cuando la necesito','La pruebo el primer día']},
  {id:2,st:0,m:'Adopción de IA',type:'choice',t:'¿Cada cuánto usas herramientas de IA?',o:['Nunca','Alguna vez','Cada semana','Todos los días, para trabajar']},
- {id:3,st:0,m:'Dependencia del salario',type:'choice',t:'¿De dónde viene tu ingreso hoy?',o:['100% de un solo empleo','Un empleo y algo extra','Varios clientes o negocios','Una parte importante viene de activos (rentas, inversiones, negocios que no requieren mi tiempo)']},
+ {id:3,st:0,m:'Dependencia del salario',type:'choice',pick:'many',t:'¿De dónde viene tu ingreso hoy?',o:['100% de un solo empleo','Un empleo y algo extra','Varios clientes o negocios','Una parte importante viene de activos (rentas, inversiones, negocios que no requieren mi tiempo)']},
  {id:4,st:0,m:'Colchón',type:'choice',t:'Si mañana desapareciera tu trabajo, ¿cuánto tiempo podrías vivir sin ingresos?',o:['Menos de 1 mes','1 a 3 meses','3 a 12 meses','Más de un año']},
  {id:5,st:0,m:'Autonomía',type:'choice',t:'En tu trabajo, ¿quién decide qué haces y cómo?',o:['Siempre otra persona','Casi siempre otros','Comparto las decisiones','Yo decido']},
- {id:6,st:0,m:'Identidad y trabajo',type:'choice',t:'Si te presentas con alguien, lo primero que dices es…',o:['Mi puesto o profesión','Dónde trabajo','Lo que me apasiona','Lo que estoy construyendo']},
+ {id:6,st:0,m:'Identidad y trabajo',type:'choice',pick:'many',t:'Si te presentas con alguien, lo primero que dices es…',o:['Mi puesto o profesión','Dónde trabajo','Lo que me apasiona','Lo que estoy construyendo']},
  {id:7,st:0,m:'Curiosidad autónoma',type:'choice',t:'¿Cada cuánto aprendes algo totalmente nuevo, que nadie te pidió?',o:['Casi nunca','Una vez al año','Cada pocos meses','Siempre estoy aprendiendo algo']},
  {id:8,st:1,m:'Imaginación',type:'scale',t:'Cierra los ojos e imagina tu vida en 10 años. ¿Qué tan clara es la imagen?',lo:'Todo borroso',hi:'La veo con detalle'},
  {id:9,st:1,m:'Horizonte',type:'choice',t:'¿Hasta dónde llega tu plan de vida?',o:['Al fin de mes','Este año','Los próximos 5 años','Tengo una visión de 10 años o más']},
- {id:10,st:1,m:'Reinvención',type:'choice',t:'Si la IA hiciera tu trabajo actual mañana, ¿qué harías?',o:['No tengo idea','Buscaría un trabajo similar','Aprendería algo nuevo','Ya tengo un plan B en marcha']},
+ {id:10,st:1,m:'Reinvención',type:'choice',pick:'many',t:'Si la IA hiciera tu trabajo actual mañana, ¿qué harías?',o:['No tengo idea','Buscaría un trabajo similar','Aprendería algo nuevo','Ya tengo un plan B en marcha']},
  {id:11,st:1,m:'Sentido de vida',type:'text',t:'Imagina que tienes resuelto el dinero para siempre. ¿En qué usarías tu tiempo?'},
  {id:12,st:1,m:'Músculo de imaginar',type:'scale',t:'¿Qué tan fácil te fue contestar la pregunta anterior?',lo:'Me quedé en blanco',hi:'Tenía mil ideas'},
- {id:13,st:1,m:'Visión del retiro',type:'choice',t:'¿Cómo imaginas tu retiro?',o:['No lo he pensado','Descansando, sin hacer nada','Con un proyecto o pasión','No pienso retirarme: pienso rediseñar cómo trabajo']},
+ {id:13,st:1,m:'Visión del retiro',type:'choice',pick:'many',t:'¿Cómo imaginas tu retiro?',o:['No lo he pensado','Descansando, sin hacer nada','Con un proyecto o pasión','No pienso retirarme: pienso rediseñar cómo trabajo']},
  {id:14,st:1,m:'Planeación financiera',type:'choice',t:'¿Tienes un plan financiero escrito (metas, ahorro, inversión)?',o:['No','Lo tengo en la cabeza','Sí, pero no lo sigo','Sí, y lo reviso']},
  {id:15,st:2,m:'Activos',type:'multi',t:'¿Qué activos tienes hoy?',o:['Bienes raíces','Inversiones (bolsa, fondos)','Cripto o activos tokenizados','Un negocio propio','Propiedad intelectual (cursos, contenido, marca)','Ninguno todavía'],none:5},
  {id:16,st:2,m:'Habilidades',type:'matrix',t:'¿Qué tanto dominas estas habilidades?',rows:[['ia','Usar IA'],['finanzas','Finanzas personales'],['vender','Vender o comunicar tus ideas'],['contenido','Crear contenido digital']]},
- {id:17,st:2,m:'Red',type:'choice',t:'Si quisieras emprender un cambio grande, ¿con quién cuentas?',o:['Con nadie','Familia y amigos','Una comunidad o mentores','Socios o una red profesional activa']},
+ {id:17,st:2,m:'Red',type:'choice',pick:'many',t:'Si quisieras emprender un cambio grande, ¿con quién cuentas?',o:['Con nadie','Familia y amigos','Una comunidad o mentores','Socios o una red profesional activa']},
  {id:18,st:2,m:'Tiempo',type:'choice',t:'¿Cuántas horas a la semana podrías dedicar a construir tu futuro?',o:['Ninguna','1 a 3','4 a 10','Más de 10']}
 ];
 
@@ -816,10 +873,17 @@ function renderQ(){
   next.hidden=true; next.disabled=false;
   next.innerHTML = (S.i===Q.length-1?'Sellar entrevista':'Siguiente')+' <span class="arrow">→</span>';
   const cur=S.a[q.id];
-  if(q.type==='choice'){
-    body.innerHTML='<div class="opts">'+q.o.map((o,k)=>'<button class="opt'+(cur===k+1?' sel':'')+'" data-v="'+(k+1)+'"><span class="k">'+'abcd'[k]+'</span><span>'+esc(o)+'</span></button>').join('')+'</div>';
+  if(q.type==='choice' && q.pick==='many'){
+    const set=new Set(Array.isArray(cur)?cur:(cur?[cur]:[]));
+    body.innerHTML='<p class="pickhint" id="pickHint">Marca todas las que apliquen</p><div class="opts" role="group" aria-labelledby="qText pickHint">'+q.o.map((o,k)=>'<button class="opt'+(set.has(k+1)?' sel':'')+'" data-v="'+(k+1)+'" aria-pressed="'+set.has(k+1)+'"><span class="k">'+'abcd'[k]+'</span><span>'+esc(o)+'</span><span class="tick" aria-hidden="true"></span></button>').join('')+'</div>';
+    next.hidden=false;
+    const sync=()=>{ body.querySelectorAll('.opt').forEach(b=>{const on=set.has(+b.dataset.v); b.classList.toggle('sel',on); b.setAttribute('aria-pressed',on);}); S.a[q.id]=[...set].sort(); next.disabled=set.size===0; };
+    body.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{ const v=+b.dataset.v; set.has(v)?set.delete(v):set.add(v); sync(); }));
+    sync();
+  } else if(q.type==='choice'){
+    body.innerHTML='<div class="opts" role="radiogroup" aria-labelledby="qText">'+q.o.map((o,k)=>'<button class="opt'+(cur===k+1?' sel':'')+'" data-v="'+(k+1)+'" role="radio" aria-checked="'+(cur===k+1)+'"><span class="k">'+'abcd'[k]+'</span><span>'+esc(o)+'</span></button>').join('')+'</div>';
     body.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
-      body.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+      body.querySelectorAll('.opt').forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-checked','false');}); b.classList.add('sel'); b.setAttribute('aria-checked','true');
       S.a[q.id]=+b.dataset.v; advanceSoon();
     }));
   } else if(q.type==='scale'){
@@ -829,7 +893,7 @@ function renderQ(){
       S.a[q.id]=+b.dataset.v; advanceSoon();
     }));
   } else if(q.type==='text'){
-    body.innerHTML='<textarea class="open" id="openTa" maxlength="600" placeholder="Escribe lo primero que te venga a la mente…"></textarea><div class="hint">Respuesta libre. No hay respuestas incorrectas en esta forma.</div>';
+    body.innerHTML='<textarea class="open" id="openTa" maxlength="600" placeholder="Escribe lo primero que te venga a la mente…" aria-describedby="openHint"></textarea><div class="hint" id="openHint">Respuesta libre. No hay respuestas incorrectas en esta forma.</div>';
     const ta=$('#openTa'); ta.value=cur||'';
     next.hidden=false;
     const upd=()=>{ S.a[q.id]=ta.value.trim(); next.innerHTML = (ta.value.trim()?'Siguiente':'Me quedé en blanco')+' <span class="arrow">→</span>'; };
@@ -837,7 +901,7 @@ function renderQ(){
     if(!KIOSK || matchMedia('(pointer:fine)').matches) setTimeout(()=>ta.focus(),300);
   } else if(q.type==='multi'){
     const set = new Set(Array.isArray(cur)?cur:[]);
-    body.innerHTML='<div class="opts multi">'+q.o.map((o,k)=>'<button class="opt'+(set.has(k)?' sel':'')+'" data-k="'+k+'"><span class="k">'+(set.has(k)?'✓':'')+'</span><span>'+esc(o)+'</span></button>').join('')+'</div><div class="hint">Puedes marcar varios.</div>';
+    body.innerHTML='<p class="pickhint">Marca todas las que apliquen</p><div class="opts multi">'+q.o.map((o,k)=>'<button class="opt'+(set.has(k)?' sel':'')+'" data-k="'+k+'"><span class="k">'+(set.has(k)?'✓':'')+'</span><span>'+esc(o)+'</span></button>').join('')+'</div>';
     next.hidden=false;
     const sync=()=>{ body.querySelectorAll('.opt').forEach(b=>{const k=+b.dataset.k,on=set.has(k);b.classList.toggle('sel',on);b.querySelector('.k').textContent=on?'✓':'';}); S.a[q.id]=[...set].sort(); next.disabled=set.size===0; };
     body.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
@@ -882,7 +946,10 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','
 /* =================== PUNTAJE =================== */
 const m5 = v => 1 + (v-1)*0.75;            // escala 1–5 → 1–4
 const avg = a => a.reduce((x,y)=>x+y,0)/a.length;
-function score(a){
+const MANY=[3,6,10,13,17];
+function flat(raw){ const a=Object.assign({},raw); MANY.forEach(n=>{ if(Array.isArray(a[n])) a[n]=a[n].length?Math.max.apply(null,a[n]):undefined; }); return a; }
+function score(raw){
+  const a=flat(raw);
   const n15 = (a[15]||[]).filter(k=>k!==5).length;
   const q15 = n15===0?1:n15===1?2:n15===2?3:4;
   const sk = a[16]||{};
@@ -930,7 +997,7 @@ function dec(s){ s=s.replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4)s+='=
 
 function submitAnswers(){
   if(S.sent) return; S.sent=true;
-  const a=S.a, r=S.result, sk=a[16]||{};
+  const raw=S.a, a=flat(raw), r=S.result, sk=a[16]||{};
   const f = {
     'form-name':'arca-respuestas', folio:S.folio, nombre:S.name, modo:KIOSK?'estacion':'web',
     fecha:new Date().toISOString(), duracion_seg:String(Math.round((Date.now()-S.t0)/1000)),
@@ -938,7 +1005,8 @@ function submitAnswers(){
     cubierta:PROFILES[r.key].deckN+' · '+PROFILES[r.key].deck, equipaje:r.bags.map(b=>BAGS[b].t).join('; '),
     q11:a[11]||'', q15:(a[15]||[]).map(k=>Q[14].o[k]).join('; '),
     q16_ia:String(sk.ia||''), q16_finanzas:String(sk.finanzas||''), q16_vender:String(sk.vender||''), q16_contenido:String(sk.contenido||''),
-    consentimiento:'si'
+    consentimiento:'si',
+    selecciones:MANY.filter(n=>Array.isArray(raw[n])).map(n=>'q'+n+':'+raw[n].join(',')).join(' | ')
   };
   [1,2,3,4,5,6,7,8,9,10,12,13,14,17,18].forEach(n=>f['q'+n]=String(a[n]||''));
   queuePost(f);
