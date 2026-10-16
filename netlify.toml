@@ -1,6 +1,21 @@
 [build]
   publish = "."
 
+# ---------- arca.futurable.work: el artefacto ARCA con su propio subdominio ----------
+# Los formularios de Netlify viven en la raíz del sitio.
+[[redirects]]
+  from = "https://arca.futurable.work/__forms.html"
+  to = "/__forms.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://arca.futurable.work/*"
+  to = "/arca/:splat"
+  status = 200
+  force = true
+
+# ---------- futurable.work ----------
 [[redirects]]
   from = "/"
   to = "/arca/"
@@ -11,7 +26,17 @@
   to = "/arca/"
   status = 301
 
+[[redirects]]
+  from = "/techweek"
+  to = "/techweek/"
+  status = 301
+
 [[headers]]
   for = "/arca/vendor/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/techweek/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
