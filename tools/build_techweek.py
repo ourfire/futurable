@@ -49,7 +49,7 @@ def clean(sec, sid):
     sec = re.sub(r"<p[^>]*letter-spacing:3px[^>]*>", mute, sec)
     if sid == "estacion":
         sec = sec.replace("Haz tu diagnóstico en la estación interactiva de Futurable.",
-                          'Haz tu diagnóstico en <a href="https://arca.futurable.work" style="color:%s">arca.futurable.work</a>' % tokens["accent"])
+                          'Haz tu diagnóstico en <a href="/arca/" style="color:%s">futurable.work/arca</a>' % tokens["accent"])
     return sec.strip()
 
 order = [s for s in deck["order"] if s not in SKIP]
