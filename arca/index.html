@@ -494,6 +494,20 @@ body:has(#boardForm:focus-within) #welcome .hero,body:has(#boardForm:focus-withi
 #result .pass-col,#result .res-head,#result .sec:not(.mail-card),#result .restart-row{transition:opacity .35s, filter .35s}
 body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-within) #result .res-head,body:has(#mailForm:focus-within) #result .sec:not(.mail-card),body:has(#mailForm:focus-within) #result .restart-row{opacity:.35;filter:blur(2.5px)}
 .mail-row input::placeholder{color:#6A6354}
+
+/* ---------- Expediente en el hero ---------- */
+.dossier-copy{max-width:1000px;margin-top:22px;columns:2 300px;column-gap:44px;font-size:17px;line-height:1.65;color:var(--ink-2)}
+.dossier-copy p{margin:0 0 14px;break-inside:avoid}
+.dossier-copy b{color:var(--ink);font-weight:500}
+.dossier-copy .declass-line{column-span:all;margin-bottom:12px}
+.declass-inline{display:inline-block;font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);border:1.5px solid rgba(180,102,74,.6);border-radius:30px;padding:3px 12px;transform:rotate(-1.5deg)}
+.dossier-copy .declass-line + p::first-letter{font-family:var(--display);font-weight:600;font-size:3.3em;float:left;line-height:.8;margin:.06em .1em 0 0;color:var(--leather)}
+/* Futurable: presente pero discreto */
+.futurable img{height:17px;width:auto;opacity:.72;display:block;transition:opacity .2s}
+.futurable:hover img{opacity:1}
+.p-fut{flex-direction:column;align-items:flex-end;gap:.8cqw}
+.p-fut img{height:3.2cqw;width:auto;opacity:.85}
+.p-fut span{font-family:var(--mono);font-weight:400;font-size:2.3cqw;letter-spacing:.04em;color:#56605A}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
 </style>
 </head>
@@ -542,10 +556,15 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
       <g stroke="#B4664A" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"><path d="M1118 138 l24 24 M1142 138 l-24 24" vector-effect="non-scaling-stroke"/></g>
     </svg>
     <div class="hero-in">
-      <div class="masthead"><span>Expediente Nº 000</span><i></i><span>Año 2035</span><i></i><span>Muelle 7 · Progreso</span></div>
+      <div class="masthead"><span>Expediente Nº 000</span><i></i><span>Año 2035</span><i></i><span>Primer puerto</span></div>
       <div class="arca-word">ARC<em>A</em></div>
       <div class="agency">Agencia de Reubicación de Capacidades Humanas</div>
-      <p class="deck-copy">El gran diluvio de la automatización ya empezó. Antes de cada zarpe, ARCA entrevista a sus pasajeros para saber dónde están, a dónde quieren ir y con qué cuentan para el viaje.</p>
+      <div class="dossier-copy">
+        <p class="declass-line"><span class="declass-inline">Expediente desclasificado</span></p>
+        <p>Año 2035. El agua no subió de golpe: subió un punto por trimestre. Primero se automatizaron las tareas, después los puestos, después oficios enteros. Cuando por fin le pusieron nombre, el <b>Gran Diluvio</b> ya le llegaba a los tobillos a media economía.</p>
+        <p>El primer puerto no lo levantó un gobierno ni una corporación. Lo levantaron las <b>agencias de imaginación constructiva</b>: estudios que llevaban años diseñando los futuros necesarios mientras el resto se dedicaba a predecir los probables. Ellas dibujaron los mapas cuando todavía nadie veía el agua.</p>
+        <p>De ese puerto zarpó <b>ARCA</b>. Su mandato es simple y un poco absurdo: no salvar empleos, sino personas; no reubicar puestos, sino capacidades humanas. Antes de cada zarpe entrevista a cada pasajero. El arca no se asigna por méritos ni por patrimonio: <b>se asigna por rumbo</b>.</p>
+      </div>
       <div class="tagline">Antes del diluvio, aborda</div>
       <svg class="compass" aria-hidden="true"><use href="#i-compass"/></svg>
     </div>
@@ -569,13 +588,13 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
       </label>
       <div class="welcome-cta">
         <button class="btn signal" type="submit" id="startBtn" disabled>Iniciar entrevista <span class="arrow">→</span></button>
-        <button class="linkbtn" type="button" data-open-lore>Leer el expediente de ARCA</button>
+        <button class="linkbtn" type="button" data-open-lore>Reglamento y cubiertas</button>
       </div>
     </form>
 
     <aside class="card lore-card">
       <h3>Entrevista de embarque</h3>
-      <p>El agua no subió de golpe: subió un punto por trimestre. ARCA no salva empleos, reubica capacidades humanas. Antes de zarpar, entrevistamos a cada pasajero para asignarle cubierta.</p>
+      <p>Tres puertas, dieciocho preguntas. Al final recibes tu pase de abordaje con la cubierta que te corresponde y el equipaje que te falta para el viaje.</p>
       <ul class="steps">
         <li><span class="gate">A</span>¿Dónde estás hoy?</li>
         <li><span class="gate">B</span>¿A dónde quieres ir?</li>
@@ -586,7 +605,7 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
   </div>
   <div class="foot">
     <span>ARCA es una ficción de diseño. El diluvio, por ahora, es metáfora.</span>
-    <span class="futurable"><svg><use href="#i-futurable"/></svg>Futurable</span>
+    <a class="futurable" href="https://futurable.now" target="_blank" rel="noopener" aria-label="Futurable"><img src="../assets/logo/futurable-lockup-ink.png" alt="Futurable"></a>
   </div>
 </section>
 
@@ -701,11 +720,9 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
   <article class="dossier">
     <span class="tab">EXPEDIENTE 000 · ARCA</span>
     <button class="close" data-close-lore aria-label="Cerrar">✕</button>
-    <h2>Historia de la Agencia</h2>
+    <h2>Reglamento y cubiertas</h2>
     <span class="declass">Desclasificado</span>
-    <p>Año 2035. El agua no subió de golpe. Subió un punto por trimestre: primero se automatizaron las tareas, después los puestos, después oficios enteros. Cuando por fin le pusieron nombre, el <b>Gran Diluvio</b> ya le llegaba a los tobillos a media economía.</p>
-    <p><b>ARCA, la Agencia de Reubicación de Capacidades Humanas</b>, abrió su primer mostrador en el Muelle 7 de Progreso, Yucatán: el muelle más largo que encontraron, porque nadie sabía todavía qué tan lejos había que llegar. Su mandato es simple y un poco absurdo: no salvar empleos, sino personas. No reubicar puestos, sino capacidades humanas.</p>
-    <p>Antes de cada zarpe, ARCA entrevista a cada pasajero para saber dónde está, a dónde quiere ir y con qué cuenta para el viaje. El arca no se asigna por méritos ni por patrimonio: se asigna por rumbo. Hay cuatro cubiertas, y ninguna es la última.</p>
+    <p>ARCA zarpó del primer puerto, el que levantaron las agencias de imaginación constructiva. A bordo hay cuatro cubiertas, y ninguna es la última.</p>
     <div class="decks-list">
       <div><b>Cubierta 0 · Sala de Despertar</b><span>Para quien viaja en piloto automático.</span></div>
       <div><b>Cubierta 2 · Astillero</b><span>Para quien sabe a dónde ir y necesita herramientas.</span></div>
@@ -1049,7 +1066,7 @@ function passHTML(D, exportMode){
   return '<div class="pass-frame'+(exportMode?' export':'')+'"><div class="pf-bg"></div>'+
    '<div class="pf-top"><span>Agencia de Reubicación de Capacidades Humanas</span><span>2035</span></div>'+
    '<div class="pass">'+
-    '<div class="p-head"><div class="w">ARC<em>A</em></div><div class="r"><b>Pase de abordaje</b>Boarding pass<br>Muelle 7 · Progreso</div></div>'+
+    '<div class="p-head"><div class="w">ARC<em>A</em></div><div class="r"><b>Pase de abordaje</b>Boarding pass<br>Muelle 7 · Primer puerto</div></div>'+
     '<div class="p-deck"><span>Cubierta '+P.deckN+' · '+P.deck+'</span><span class="ar">→</span></div>'+
     '<div class="p-body">'+
       '<div class="lbl">Pasajero</div><div class="p-name">'+name+'</div>'+
@@ -1061,7 +1078,7 @@ function passHTML(D, exportMode){
     '</div>'+
     '<div class="p-perf"><i></i><i></i></div>'+
     '<div class="p-stub"><div class="lbl">Equipaje recomendado</div><div class="p-bags">'+D.b.map(b=>'<div>'+esc((BAGS[b]||{}).t||b)+'</div>').join('')+'</div>'+
-      '<div class="p-foot"><div><div class="p-bar">'+barcode(D.f)+'</div><div class="p-folio">'+esc(D.f)+'</div></div><div class="p-fut"><svg viewBox="0 0 24 24"><use href="#i-futurable"/></svg>Futurable</div></div>'+
+      '<div class="p-foot"><div><div class="p-bar">'+barcode(D.f)+'</div><div class="p-folio">'+esc(D.f)+'</div></div><div class="p-fut"><img src="../assets/logo/futurable-lockup-ink.png" alt="Futurable"><span>futurable.now</span></div></div>'+
     '</div>'+
    '</div>'+
    '<div class="pf-bottom"><span class="tg">Antes del diluvio, aborda.</span><span class="url">futurable.work/arca</span></div>'+
@@ -1125,6 +1142,7 @@ async function renderPNG(D){
         try{ await img.decode(); }catch(e){}
     svg.replaceWith(img);
   }));
+  await Promise.all(Array.from(stage.querySelectorAll('img')).map(im=>im.complete?Promise.resolve():new Promise(r=>{im.onload=im.onerror=r;})));
   const node=stage.firstChild;
   const canvas = await html2canvas(node,{scale:2,backgroundColor:'#4D6A5B',useCORS:true,logging:false,width:540,height:960});
   stage.innerHTML='';
