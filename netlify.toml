@@ -1,6 +1,10 @@
 [build]
   publish = "."
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # ---------- arca.futurable.work: el artefacto ARCA con su propio subdominio ----------
 # Los formularios de Netlify viven en la raíz del sitio.
 [[redirects]]

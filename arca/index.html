@@ -7,6 +7,11 @@
 <meta name="description" content="ARCA, la Agencia de Reubicación de Capacidades Humanas. Una entrevista de embarque de 5 minutos para saber qué tan preparado estás para el gran salto. Una ficción de diseño de Futurable.">
 <meta property="og:title" content="ARCA · Antes del diluvio, aborda">
 <meta property="og:description" content="Es 2030 y el diluvio de la irrelevancia ya empezó. Haz tu entrevista de embarque y recibe tu pase.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://futurable.work/arca/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2F3A36">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237E5236'/%3E%3Cpath d='M5 19h22l-3 6H8z' fill='%23CFA25A'/%3E%3Cpath d='M16 6v11M16 7l7 9h-7' stroke='%23EFE8D8' stroke-width='2' fill='none'/%3E%3C/svg%3E">
@@ -507,6 +512,19 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 .p-fut{flex-direction:column;align-items:flex-end;gap:.8cqw}
 .p-fut img{height:3.2cqw;width:auto}
 .p-fut span{font-family:var(--mono);font-weight:400;font-size:2.3cqw;letter-spacing:.04em;color:#56605A}
+
+/* ---------- Compartir ---------- */
+.share-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.share-lbl{font-family:var(--cond);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-right:4px;width:100%}
+.sh{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:30px;border:1px solid var(--edge-2);background:var(--lit);color:var(--focus-ink);font-family:var(--sans);font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;box-shadow:0 2px 0 var(--edge)}
+.sh svg{width:18px;height:18px;flex:none}
+.sh:hover{border-color:var(--leather);color:var(--leather)}
+.sh:active{transform:translateY(1px)}
+.mail-card p b{color:var(--paper)}
+.mail-status{font-family:var(--sans);font-size:17px;line-height:1.5;color:rgba(250,244,230,.9);margin-top:6px}
+.p-deck{font-size:3.3cqw;letter-spacing:.16em;gap:2cqw}
+.p-deck>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.p-deck .ar{flex:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
 </style>
 </head>
@@ -662,7 +680,15 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
       <div id="passMount"></div>
       <div class="pass-actions" id="passActions">
         <button class="btn signal" id="dlBtn">Descargar pase</button>
-        <button class="btn ghost" id="shareBtn" hidden>Compartir</button>
+        <button class="btn ghost" id="shareBtn" hidden>Compartir imagen</button>
+      </div>
+      <div class="share-row" id="shareRow">
+        <span class="share-lbl">Compártelo</span>
+        <a class="sh" id="shWa" target="_blank" rel="noopener" aria-label="Compartir en WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2Z" fill="currentColor"/></svg><span>WhatsApp</span></a>
+        <a class="sh" id="shX" target="_blank" rel="noopener" aria-label="Compartir en X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z" fill="currentColor"/></svg><span>X</span></a>
+        <a class="sh" id="shIn" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5Z" fill="currentColor"/></svg><span>LinkedIn</span></a>
+        <a class="sh" id="shFb" target="_blank" rel="noopener" aria-label="Compartir en Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z" fill="currentColor"/></svg><span>Facebook</span></a>
+        <button class="sh" id="shCopy" type="button" aria-label="Copiar enlace"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.1 1.1M13.4 10.6a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.1-1.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Copiar enlace</span></button>
       </div>
       <div class="qr-card" id="qrCard" hidden>
         <div class="qr" id="qrBox"></div>
@@ -698,11 +724,11 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 
       <div class="sec mail-card" id="mailCard">
         <h3>Futurable te acompaña</h3>
-        <p>Deja tu correo y te enviamos tu expediente completo, con ideas concretas para tu cubierta. Nada de spam: solo navegación.</p>
+        <p>Deja tu correo y te enviamos ahora mismo tu <b>pase de abordaje</b>. Después, Futurable te acompaña con ideas concretas para tu cubierta. Nada de spam: solo navegación.</p>
         <form class="mail-row" id="mailForm">
           <input type="email" id="mailInput" placeholder="tu@correo.com" required autocomplete="email" inputmode="email">
           <input class="hp" name="bot-field" tabindex="-1" aria-hidden="true">
-          <button class="btn signal" type="submit">Enviar</button>
+          <button class="btn signal" type="submit" id="mailBtn">Enviar mi pase</button>
         </form>
       </div>
 
@@ -854,6 +880,7 @@ $('#boardForm').addEventListener('submit',e=>{
 $$('[data-open-lore]').forEach(b=>b.addEventListener('click',()=>$('#lore').classList.add('on')));
 $$('[data-close-lore]').forEach(b=>b.addEventListener('click',()=>$('#lore').classList.remove('on')));
 $('#lore').addEventListener('click',e=>{if(e.target.id==='lore')$('#lore').classList.remove('on');});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') $('#lore').classList.remove('on'); });
 
 /* =================== ETAPAS =================== */
 let stageIdx=0;
@@ -1108,23 +1135,43 @@ function renderResult(){
   resetMail();
   const url = shareURL(D);
   if(KIOSK){
-    $('#qrCard').hidden=false; $('#passActions').hidden=true;
+    $('#qrCard').hidden=false; $('#passActions').hidden=true; $('#shareRow').hidden=true;
     $('#qrBox').innerHTML=qrSVG(url);
   } else {
-    $('#qrCard').hidden=true; $('#passActions').hidden=false;
+    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false;
     $('#shareBtn').hidden = !navigator.share;
+    wireShare(D);
   }
   $('#restartBtn').textContent = KIOSK ? 'Siguiente pasajero' : 'Volver a empezar';
   show('result');
 }
 function shareURL(D){ return location.origin + location.pathname + '?p=' + enc(D); }
+function shareText(D){ return 'Hice mi entrevista de embarque en ARCA y soy '+PROFILES[D.p].name+'. ¿Y tú, qué tan preparado estás para el Diluvio de la Irrelevancia?'; }
+function wireShare(D){
+  const url=shareURL(D), t=shareText(D), u=encodeURIComponent(url), tx=encodeURIComponent(t);
+  $('#shWa').href='https://wa.me/?text='+encodeURIComponent(t+' '+url);
+  $('#shX').href='https://twitter.com/intent/tweet?text='+tx+'&url='+u;
+  $('#shIn').href='https://www.linkedin.com/sharing/share-offsite/?url='+u;
+  $('#shFb').href='https://www.facebook.com/sharer/sharer.php?u='+u;
+  $('#shCopy').onclick=async()=>{
+    try{ await navigator.clipboard.writeText(t+' '+url); toast('Enlace copiado. Pégalo donde quieras.'); }
+    catch(e){ const ta=document.createElement('textarea'); ta.value=t+' '+url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy'); toast('Enlace copiado.');}catch(_){toast('Copia este enlace: '+url);} ta.remove(); }
+  };
+}
 function qrSVG(text){
   const qr=qrcode(0,'M'); qr.addData(text); qr.make();
   return qr.createSvgTag({cellSize:4,margin:2,scalable:true});
 }
 
 /* =================== EXPORTAR / COMPARTIR =================== */
-async function renderPNG(D){
+async function renderPNG(D){ const c=await renderCanvas(D); return await new Promise(res=>c.toBlob(res,'image/png')); }
+async function renderJPEG64(D){
+  const c=await renderCanvas(D);
+  const w=720, h=1280, s=document.createElement('canvas'); s.width=w; s.height=h;
+  s.getContext('2d').drawImage(c,0,0,w,h);
+  return s.toDataURL('image/jpeg',0.86).split(',')[1];
+}
+async function renderCanvas(D){
   if(!window.html2canvas) throw new Error('html2canvas no cargó');
   const stage=$('#export-stage'); stage.innerHTML=passHTML(D,true);
   try{ if(document.fonts && document.fonts.ready) await document.fonts.ready; }catch(e){}
@@ -1145,7 +1192,7 @@ async function renderPNG(D){
   const node=stage.firstChild;
   const canvas = await html2canvas(node,{scale:2,backgroundColor:'#4D6A5B',useCORS:true,logging:false,width:540,height:960});
   stage.innerHTML='';
-  return await new Promise(res=>canvas.toBlob(res,'image/png'));
+  return canvas;
 }
 function fileName(D){ return 'pase-arca-'+D.f.toLowerCase()+'.png'; }
 let currentD=null;
@@ -1177,7 +1224,7 @@ async function share(D){
   try{
     const blob=await renderPNG(D);
     const file=new File([blob],fileName(D),{type:'image/png'});
-    const data={title:'Mi pase de abordaje ARCA',text:'Soy '+PROFILES[D.p].name+'. ¿Y tú, qué tan preparado estás para el gran salto? Antes del diluvio, aborda.',url:location.origin+location.pathname};
+    const data={title:'Mi pase de abordaje ARCA',text:shareText(D),url:shareURL(D)};
     if(navigator.canShare && navigator.canShare({files:[file]})) await navigator.share(Object.assign({files:[file]},data));
     else if(navigator.share) await navigator.share(data);
     else download(D);
@@ -1190,16 +1237,30 @@ $('#shareBtn').addEventListener('click',()=>share(currentD||passData()));
 function resetMail(){
   $('#mailCard').querySelector('p').hidden=false;
   const f=$('#mailForm'); f.hidden=false; f.reset();
-  const ok=$('#mailCard').querySelector('.mail-ok'); if(ok) ok.remove();
+  $('#mailCard').querySelectorAll('.mail-ok,.mail-status').forEach(n=>n.remove());
 }
-$('#mailForm').addEventListener('submit',e=>{
+$('#mailForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  const email=$('#mailInput').value.trim(); if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){toast('Revisa tu correo.');return;}
-  const D=currentD||passData();
-  queuePost({'form-name':'arca-correo',nombre:D.n||'',email,folio:D.f,perfil:PROFILES[D.p].short,origen:currentD?'pase-celular':(KIOSK?'estacion':'web'),'bot-field':e.target.querySelector('[name=bot-field]').value});
+  const email=$('#mailInput').value.trim(); if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){toast('Revisa tu correo: parece incompleto.');$('#mailInput').focus();return;}
+  const hp=e.target.querySelector('[name=bot-field]').value;
+  const D=currentD||passData(), P=PROFILES[D.p];
+  queuePost({'form-name':'arca-correo',nombre:D.n||'',email,folio:D.f,perfil:P.short,origen:currentD?'pase-celular':(KIOSK?'estacion':'web'),'bot-field':hp});
   e.target.hidden=true; $('#mailCard').querySelector('p').hidden=true;
-  const ok=document.createElement('div'); ok.className='mail-ok'; ok.textContent='Registrado. Te escribimos pronto.';
-  $('#mailCard').appendChild(ok);
+  const st=document.createElement('div'); st.className='mail-ok'; st.textContent='Imprimiendo y enviando tu pase…';
+  const sub=document.createElement('p'); sub.className='mail-status';
+  $('#mailCard').append(st,sub);
+  let sent=false;
+  if(!hp){
+    try{
+      const imagen=await renderJPEG64(D);
+      const res=await fetch('/.netlify/functions/enviar-pase',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+        email, nombre:D.n||'', folio:D.f, perfil:P.name, lead:P.lead, cubierta:'Cubierta '+P.deckN+' · '+P.deck,
+        imaginacion:D.i, recursos:D.r, equipaje:D.b.map(b=>BAGS[b].t), url:shareURL(D), imagen })});
+      sent=res.ok;
+    }catch(err){ sent=false; }
+  }
+  if(sent){ st.textContent='Pase enviado.'; sub.textContent='Revisa tu correo ('+email+'): tu pase de abordaje va adjunto. Si no lo ves, busca en promociones o spam.'; }
+  else { st.textContent='Registrado.'; sub.textContent='Guardamos tu correo y te enviaremos tu pase de abordaje muy pronto. Mientras tanto, puedes descargarlo aquí mismo.'; }
 });
 
 /* =================== REINICIO E INACTIVIDAD =================== */
@@ -1241,7 +1302,7 @@ if(params.has('p')){
     currentD=D;
     S.result={key:D.p,imagPct:D.i,recPct:D.r,bags:D.b}; S.folio=D.f; S.name=D.n;
     renderResult();
-    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareBtn').hidden=!navigator.share;
+    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false; $('#shareBtn').hidden=!navigator.share; wireShare(D);
     $('#resEyebrow').textContent='Pase de abordaje · '+D.f;
     $('#restartBtn').textContent='Hacer mi propia entrevista';
   }catch(e){ console.warn('Pase inválido',e); show('welcome'); }
