@@ -1140,6 +1140,7 @@ function renderResult(){
     $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false;
     $('#shareBtn').hidden = !navigator.share;
     wireShare(D);
+    setTimeout(()=>passBlob(D).catch(()=>{}), 600);
   }
   $('#restartBtn').textContent = KIOSK ? 'Siguiente pasajero' : 'Volver a empezar';
   show('result');
@@ -1170,7 +1171,9 @@ async function renderJPEG64(D){
   s.getContext('2d').drawImage(c,0,0,w,h);
   return s.toDataURL('image/jpeg',0.86).split(',')[1];
 }
-async function renderCanvas(D){
+let renderLock=Promise.resolve();
+function renderCanvas(D){ const run=renderLock.then(()=>renderCanvasRaw(D)); renderLock=run.catch(()=>{}); return run; }
+async function renderCanvasRaw(D){
   if(!window.html2canvas) throw new Error('html2canvas no cargó');
   const stage=$('#export-stage'); stage.innerHTML=passHTML(D,true);
   try{ if(document.fonts && document.fonts.ready) await document.fonts.ready; }catch(e){}
@@ -1194,6 +1197,16 @@ async function renderCanvas(D){
   return canvas;
 }
 function fileName(D){ return 'pase-arca-'+D.f.toLowerCase()+'.png'; }
+// La imagen del pase se prepara en cuanto aparece el resultado: así "Compartir" abre el menú
+// dentro del mismo clic (los navegadores de escritorio bloquean compartir tras una espera).
+const passCache={key:null,promise:null,blob:null};
+function passBlob(D){
+  if(passCache.key!==D.f || !passCache.promise){
+    passCache.key=D.f; passCache.blob=null;
+    passCache.promise=renderPNG(D).then(b=>{ if(passCache.key===D.f) passCache.blob=b; return b; }).catch(e=>{ passCache.promise=null; throw e; });
+  }
+  return passCache.promise;
+}
 let currentD=null;
 let dlNS; // namespace de descargas del visor de Claude (solo existe dentro de claude.ai)
 async function getDownloads(){
@@ -1205,7 +1218,7 @@ getDownloads();
 async function download(D){
   toast('Imprimiendo tu pase…');
   try{
-    const blob=await renderPNG(D);
+    const blob=await passBlob(D);
     const ns=await getDownloads();
     if(ns){
       try{ await ns.save({filename:fileName(D),data:blob}); toast('Pase guardado. Compártelo en tus historias.'); }
@@ -1218,16 +1231,20 @@ async function download(D){
     toast('Pase descargado. Compártelo en tus historias.');
   }catch(e){ console.error(e); toast('No se pudo generar la imagen. Toma captura de pantalla de tu pase.'); }
 }
-async function share(D){
-  if(await getDownloads()){ return download(D); }
+function share(D){
+  getDownloads().then(ns=>{ if(ns) return download(D); });
+  if(dlNS) return;
+  const data={title:'Mi pase de abordaje ARCA',text:shareText(D),url:shareURL(D)};
+  const blob=passCache.key===D.f ? passCache.blob : null;
+  const file=blob ? new File([blob],fileName(D),{type:'image/png'}) : null;
+  let p;
   try{
-    const blob=await renderPNG(D);
-    const file=new File([blob],fileName(D),{type:'image/png'});
-    const data={title:'Mi pase de abordaje ARCA',text:shareText(D),url:shareURL(D)};
-    if(navigator.canShare && navigator.canShare({files:[file]})) await navigator.share(Object.assign({files:[file]},data));
-    else if(navigator.share) await navigator.share(data);
-    else download(D);
-  }catch(e){ if(e && e.name!=='AbortError'){ console.error(e); download(D);} }
+    if(file && navigator.canShare && navigator.canShare({files:[file]})) p=navigator.share(Object.assign({files:[file]},data));
+    else if(navigator.share) p=navigator.share(data);
+    else { download(D); return; }
+  }catch(e){ download(D); return; }
+  p.then(()=>toast('Listo, compartido.')).catch(e=>{ if(e && e.name==='AbortError') return; console.warn(e); download(D); });
+  if(!blob) passBlob(D).catch(()=>{});
 }
 $('#dlBtn').addEventListener('click',()=>download(currentD||passData()));
 $('#shareBtn').addEventListener('click',()=>share(currentD||passData()));
@@ -1326,7 +1343,7 @@ if(params.has('p')){
     currentD=D;
     S.result={key:D.p,imagPct:D.i,recPct:D.r,bags:D.b}; S.folio=D.f; S.name=D.n;
     renderResult();
-    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false; $('#shareBtn').hidden=!navigator.share; wireShare(D);
+    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false; $('#shareBtn').hidden=!navigator.share; wireShare(D); setTimeout(()=>passBlob(D).catch(()=>{}),600);
     $('#resEyebrow').textContent='Pase de abordaje · '+D.f;
     $('#restartBtn').textContent='Hacer mi propia entrevista';
   }catch(e){ console.warn('Pase inválido',e); show('welcome'); }
