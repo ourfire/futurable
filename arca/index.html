@@ -525,6 +525,8 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 .p-deck{font-size:3.3cqw;letter-spacing:.16em;gap:2cqw}
 .p-deck>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .p-deck .ar{flex:none}
+.signbar .brand{text-decoration:none;cursor:pointer}
+.signbar .brand:hover{color:#E1BA78}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
 </style>
 </head>
@@ -560,8 +562,8 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 </svg>
 
 <header class="signbar" role="banner">
-  <div class="brand"><svg><use href="#i-ship"/></svg>ARCA</div>
-  <div class="info"><span>Muelle 7</span><span class="hide-s">Mostrador de abordaje</span><span id="sb-stage">Abierto</span></div>
+  <a class="brand" href="./" id="homeBtn" aria-label="ARCA, volver al inicio"><svg aria-hidden="true"><use href="#i-ship"/></svg>ARCA</a>
+  <div class="info" aria-hidden="true"></div>
   <div class="clock" id="clock">--:--</div>
 </header>
 
@@ -734,7 +736,6 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 
       <div class="restart-row" id="restartRow">
         <button class="btn ghost" id="restartBtn">Nuevo pasajero</button>
-        <button class="linkbtn" data-open-lore>Expediente de ARCA</button>
       </div>
     </div>
   </div>
@@ -864,8 +865,6 @@ tick(); setInterval(tick, 15000);
 function show(id){
   $$('.screen').forEach(s=>s.classList.toggle('on', s.id===id));
   window.scrollTo(0,0);
-  const label = {welcome:'Abierto',stage:'Control de puertas',question:'Entrevista en curso',processing:'Asignando cubierta',result:'Pase emitido'}[id];
-  $('#sb-stage').textContent = label || '';
 }
 
 /* =================== BIENVENIDA =================== */
@@ -1289,6 +1288,16 @@ $('#idleStay').addEventListener('click',armIdle);
 
 let toastT=null;
 function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('on'),3500); }
+
+
+/* =================== VOLVER AL INICIO =================== */
+let homeArmed=0;
+$('#homeBtn').addEventListener('click',e=>{
+  e.preventDefault();
+  const midway = $('#question').classList.contains('on') || $('#stage').classList.contains('on');
+  if(midway && Date.now()-homeArmed>3500){ homeArmed=Date.now(); toast('Toca ARCA otra vez para volver al inicio. Perderás tus respuestas.'); return; }
+  homeArmed=0; restart(); window.scrollTo(0,0);
+});
 
 /* =================== ARRANQUE =================== */
 newSession(); flush();
