@@ -10,7 +10,7 @@
 <meta property="og:image" content="https://futurable.work/arca/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFFFFF">
-<link rel="icon" href="/assets/logo/futurable-box-dark.png" type="image/png">
+<link rel="icon" href="/assets/logo/futurable-work-w-dark.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/zalando-sans-expanded-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/zalando-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/futurable.css">
@@ -27,11 +27,13 @@ header{padding-top:env(safe-area-inset-top,0px)}
 .logo img{display:block;width:auto;height:30px}
 
 main{flex:1;display:flex;align-items:center;padding-block:clamp(32px,6vw,80px)}
-main .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,6vw,88px);align-items:center}
-@media (max-width:900px){main .wrap{grid-template-columns:1fr}}
+main .wrap{display:flex;flex-direction:column;align-items:center;gap:clamp(36px,5vw,56px);max-width:860px}
+.title{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
+.wmark{width:clamp(72px,8vw,96px);height:auto;border-radius:12px;box-shadow:0 14px 30px -14px rgba(15,15,15,.45)}
+.arca{width:100%}
 .eyebrow{font-family:var(--f-display);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--f-muted);display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .eyebrow::before{content:"";width:40px;height:1px;background:var(--f-ink)}
-h1{font-family:var(--f-display);font-weight:400;color:var(--f-ink);font-size:clamp(46px,7vw,104px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+h1{font-family:var(--f-display);font-weight:400;color:var(--f-ink);font-size:clamp(40px,6.4vw,84px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
 h1 span{color:var(--f-muted)}
 
 /* ARCA: el artefacto presentado como una pieza que se puede abrir */
@@ -60,7 +62,8 @@ footer a:hover{color:var(--f-muted);border-color:var(--f-muted)}
 
 <main class="gutter">
   <div class="wrap">
-    <div>
+    <div class="title">
+      <img class="wmark" src="/assets/logo/futurable-work-w-dark.svg" alt="" width="96" height="96">
       <h1>El futuro del <span>trabajo.</span></h1>
     </div>
     <a class="arca" href="/arca/" aria-label="Abrir ARCA, la entrevista de embarque">
