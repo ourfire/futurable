@@ -527,6 +527,23 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 .p-deck .ar{flex:none}
 .signbar .brand{text-decoration:none;cursor:pointer}
 .signbar .brand:hover{color:#E1BA78}
+
+/* ---------- Invitar (CTA de redes) ---------- */
+.share-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px;padding:18px;border-radius:12px;
+  background-color:rgba(243,235,218,.92);background-image:var(--grain), var(--fibers);background-size:220px 220px,300px 300px;
+  border:1px solid var(--edge-2);box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 1px 0 var(--edge), 0 2px 0 var(--edge-2), 0 8px 18px rgba(70,48,25,.12)}
+.share-head{grid-column:1/-1;display:flex;flex-direction:column;gap:2px;margin-bottom:4px}
+.share-head b{font-family:var(--display);font-style:italic;font-weight:600;font-size:23px;line-height:1.15;color:var(--leather)}
+.share-head span{font-size:14.5px;line-height:1.4;color:var(--ink-2)}
+.sh{justify-content:center;min-height:50px;border-radius:10px;font-size:15.5px;padding:0 12px;transition:transform .1s, background .15s, color .15s, border-color .15s}
+.sh:hover{background:#fff}
+.sh:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+#shWa{grid-column:1/-1;min-height:58px;font-size:17px;font-weight:600;color:#FAF4E6;background:#3F7A5C;border-color:#2F6248;box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 2px 0 #2A5640, 0 8px 16px rgba(47,98,72,.25)}
+#shWa:hover{background:#468766;color:#fff}
+#shWa svg{width:22px;height:22px}
+#shCopy{grid-column:1/-1}
+#shCopy.done{border-color:var(--jungle);color:var(--jungle-2)}
+@media (max-width:380px){.share-row .sh:not(#shWa):not(#shCopy) span{font-size:14px}.share-row{padding:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
 </style>
 </head>
@@ -682,11 +699,10 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
       <div id="passMount"></div>
       <div class="pass-actions" id="passActions">
         <button class="btn signal" id="dlBtn">Descargar pase</button>
-        <button class="btn ghost" id="shareBtn" hidden>Compartir imagen</button>
       </div>
       <div class="share-row" id="shareRow">
-        <span class="share-lbl">Compártelo</span>
-        <a class="sh" id="shWa" target="_blank" rel="noopener" aria-label="Compartir en WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2Z" fill="currentColor"/></svg><span>WhatsApp</span></a>
+        <div class="share-head"><b>Invita a alguien a abordar</b><span>Comparte tu pase: quien lo abra podrá hacer su propia entrevista.</span></div>
+        <a class="sh" id="shWa" target="_blank" rel="noopener" aria-label="Compartir en WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2c0 1.2.9 2.3 1 2.5.1.2 1.7 2.6 4.2 3.7 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2Z" fill="currentColor"/></svg><span>Enviar por WhatsApp</span></a>
         <a class="sh" id="shX" target="_blank" rel="noopener" aria-label="Compartir en X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z" fill="currentColor"/></svg><span>X</span></a>
         <a class="sh" id="shIn" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5Z" fill="currentColor"/></svg><span>LinkedIn</span></a>
         <a class="sh" id="shFb" target="_blank" rel="noopener" aria-label="Compartir en Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z" fill="currentColor"/></svg><span>Facebook</span></a>
@@ -1138,7 +1154,6 @@ function renderResult(){
     $('#qrBox').innerHTML=qrSVG(url);
   } else {
     $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false;
-    $('#shareBtn').hidden = !navigator.share;
     wireShare(D);
     setTimeout(()=>passBlob(D).catch(()=>{}), 600);
   }
@@ -1154,7 +1169,7 @@ function wireShare(D){
   $('#shIn').href='https://www.linkedin.com/sharing/share-offsite/?url='+u;
   $('#shFb').href='https://www.facebook.com/sharer/sharer.php?u='+u;
   $('#shCopy').onclick=async()=>{
-    try{ await navigator.clipboard.writeText(t+' '+url); toast('Enlace copiado. Pégalo donde quieras.'); }
+    try{ await navigator.clipboard.writeText(t+' '+url); toast('Enlace copiado. Pégalo donde quieras.'); const b=$('#shCopy'); b.classList.add('done'); b.querySelector('span').textContent='¡Copiado!'; setTimeout(()=>{b.classList.remove('done'); b.querySelector('span').textContent='Copiar enlace';},2200); }
     catch(e){ const ta=document.createElement('textarea'); ta.value=t+' '+url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy'); toast('Enlace copiado.');}catch(_){toast('Copia este enlace: '+url);} ta.remove(); }
   };
 }
@@ -1231,23 +1246,7 @@ async function download(D){
     toast('Pase descargado. Compártelo en tus historias.');
   }catch(e){ console.error(e); toast('No se pudo generar la imagen. Toma captura de pantalla de tu pase.'); }
 }
-function share(D){
-  getDownloads().then(ns=>{ if(ns) return download(D); });
-  if(dlNS) return;
-  const data={title:'Mi pase de abordaje ARCA',text:shareText(D),url:shareURL(D)};
-  const blob=passCache.key===D.f ? passCache.blob : null;
-  const file=blob ? new File([blob],fileName(D),{type:'image/png'}) : null;
-  let p;
-  try{
-    if(file && navigator.canShare && navigator.canShare({files:[file]})) p=navigator.share(Object.assign({files:[file]},data));
-    else if(navigator.share) p=navigator.share(data);
-    else { download(D); return; }
-  }catch(e){ download(D); return; }
-  p.then(()=>toast('Listo, compartido.')).catch(e=>{ if(e && e.name==='AbortError') return; console.warn(e); download(D); });
-  if(!blob) passBlob(D).catch(()=>{});
-}
 $('#dlBtn').addEventListener('click',()=>download(currentD||passData()));
-$('#shareBtn').addEventListener('click',()=>share(currentD||passData()));
 
 /* =================== CORREO =================== */
 function resetMail(){
@@ -1343,7 +1342,7 @@ if(params.has('p')){
     currentD=D;
     S.result={key:D.p,imagPct:D.i,recPct:D.r,bags:D.b}; S.folio=D.f; S.name=D.n;
     renderResult();
-    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false; $('#shareBtn').hidden=!navigator.share; wireShare(D); setTimeout(()=>passBlob(D).catch(()=>{}),600);
+    $('#qrCard').hidden=true; $('#passActions').hidden=false; $('#shareRow').hidden=false; wireShare(D); setTimeout(()=>passBlob(D).catch(()=>{}),600);
     $('#resEyebrow').textContent='Pase de abordaje · '+D.f;
     $('#restartBtn').textContent='Hacer mi propia entrevista';
   }catch(e){ console.warn('Pase inválido',e); show('welcome'); }
