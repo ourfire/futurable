@@ -1243,21 +1243,36 @@ $('#mailForm').addEventListener('submit',async e=>{
   const email=$('#mailInput').value.trim(); if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){toast('Revisa tu correo: parece incompleto.');$('#mailInput').focus();return;}
   const hp=e.target.querySelector('[name=bot-field]').value;
   const D=currentD||passData(), P=PROFILES[D.p];
-  queuePost({'form-name':'arca-correo',nombre:D.n||'',email,folio:D.f,perfil:P.short,origen:currentD?'pase-celular':(KIOSK?'estacion':'web'),'bot-field':hp});
+  const origen=currentD?'pase-celular':(KIOSK?'estacion':'web');
   e.target.hidden=true; $('#mailCard').querySelector('p').hidden=true;
   const st=document.createElement('div'); st.className='mail-ok'; st.textContent='Imprimiendo y enviando tu pase…';
   const sub=document.createElement('p'); sub.className='mail-status';
   $('#mailCard').append(st,sub);
-  let sent=false;
+  let sent=false, imagen='';
   if(!hp){
+    try{ imagen=await renderJPEG64(D); }catch(err){ imagen=''; }
     try{
-      const imagen=await renderJPEG64(D);
       const res=await fetch('/.netlify/functions/enviar-pase',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
         email, nombre:D.n||'', folio:D.f, perfil:P.name, lead:P.lead, cubierta:'Cubierta '+P.deckN+' · '+P.deck,
         imaginacion:D.i, recursos:D.r, equipaje:D.b.map(b=>BAGS[b].t), url:shareURL(D), imagen })});
+      if(!imagen) throw new Error('sin imagen');
       sent=res.ok;
     }catch(err){ sent=false; }
   }
+  // Guardar correo + pase en Netlify Forms (con la imagen adjunta) para envíos posteriores
+  const reg={'form-name':'arca-correo',nombre:D.n||'',email,folio:D.f,perfil:P.short,origen,
+    cubierta:'Cubierta '+P.deckN+' · '+P.deck,imaginacion:String(D.i),recursos:String(D.r),
+    equipaje:D.b.map(b=>BAGS[b].t).join('; '),pase_url:shareURL(D),envio:sent?'enviado':'pendiente','bot-field':hp};
+  let saved=false;
+  if(imagen){
+    try{
+      const fd=new FormData(); Object.keys(reg).forEach(k=>fd.append(k,reg[k]));
+      const bin=Uint8Array.from(atob(imagen),c=>c.charCodeAt(0));
+      fd.append('pase',new File([bin],'pase-'+D.f.toLowerCase()+'.jpg',{type:'image/jpeg'}));
+      const r=await fetch('/__forms.html',{method:'POST',body:fd}); saved=r.ok;
+    }catch(err){ saved=false; }
+  }
+  if(!saved) queuePost(reg); // sin imagen: el enlace del pase basta para regenerarlo
   if(sent){ st.textContent='Pase enviado.'; sub.textContent='Revisa tu correo ('+email+'): tu pase de abordaje va adjunto. Si no lo ves, busca en promociones o spam.'; }
   else { st.textContent='Registrado.'; sub.textContent='Guardamos tu correo y te enviaremos tu pase de abordaje muy pronto. Mientras tanto, puedes descargarlo aquí mismo.'; }
 });
