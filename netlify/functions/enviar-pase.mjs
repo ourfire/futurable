@@ -1,10 +1,13 @@
-// Envía el pase de abordaje de ARCA por correo, con la imagen adjunta.
-// Proveedor: Brevo (BREVO_API_KEY) o Resend (RESEND_API_KEY), el que esté configurado.
+// Envía el pase de abordaje de ARCA por correo, con la imagen adjunta,
+// desde una cuenta propia de Google (Gmail o Google Workspace) vía SMTP.
 // Variables en Netlify:
-//   BREVO_API_KEY  o  RESEND_API_KEY
-//   ARCA_FROM_EMAIL   remitente verificado, p. ej. arca@futurable.now
-//   ARCA_FROM_NAME    opcional, por defecto "ARCA · Futurable"
-//   ARCA_REPLY_TO     opcional, a dónde llegan las respuestas
+//   SMTP_USER       la cuenta que envía, p. ej. hola@futurable.now
+//   SMTP_PASS       contraseña de aplicación de Google (16 letras)
+//   ARCA_FROM_NAME  opcional, por defecto "ARCA · Futurable"
+//   ARCA_REPLY_TO   opcional, a dónde llegan las respuestas
+//   SMTP_HOST / SMTP_PORT  opcionales (por defecto smtp.gmail.com:465)
+
+import nodemailer from "nodemailer";
 
 const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,24}$/;
 const MAX_IMG = 1_500_000; // ~1.1 MB de JPEG en base64
@@ -58,33 +61,17 @@ function texto(d) {
   ].join("\n");
 }
 
-async function conBrevo(key, from, d, html, txt, archivo) {
-  const body = {
-    sender: { email: from.email, name: from.name },
-    to: [{ email: d.email, ...(d.nombre ? { name: d.nombre } : {}) }],
-    subject: `Tu pase de abordaje ARCA · ${d.perfil}`,
-    htmlContent: html, textContent: txt,
-    attachment: [{ name: archivo, content: d.imagen }],
-    tags: ["arca", "pase"],
-  };
-  if (process.env.ARCA_REPLY_TO) body.replyTo = { email: process.env.ARCA_REPLY_TO };
-  const r = await fetch("https://api.brevo.com/v3/smtp/email", {
-    method: "POST", headers: { "api-key": key, "Content-Type": "application/json", accept: "application/json" }, body: JSON.stringify(body),
-  });
-  return { ok: r.ok, status: r.status, detail: r.ok ? "" : await r.text() };
-}
-
-async function conResend(key, from, d, html, txt, archivo) {
-  const body = {
-    from: `${from.name} <${from.email}>`, to: [d.email],
-    subject: `Tu pase de abordaje ARCA · ${d.perfil}`,
-    html, text: txt, attachments: [{ filename: archivo, content: d.imagen }],
-  };
-  if (process.env.ARCA_REPLY_TO) body.reply_to = process.env.ARCA_REPLY_TO;
-  const r = await fetch("https://api.resend.com/emails", {
-    method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" }, body: JSON.stringify(body),
-  });
-  return { ok: r.ok, status: r.status, detail: r.ok ? "" : await r.text() };
+let transporte;
+function smtp() {
+  if (!transporte) {
+    const port = Number(process.env.SMTP_PORT || 465);
+    transporte = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com", port, secure: port === 465,
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      ...(process.env.SMTP_INSECURE === "1" ? { tls: { rejectUnauthorized: false } } : {}),
+    });
+  }
+  return transporte;
 }
 
 export default async (req) => {
@@ -109,19 +96,24 @@ export default async (req) => {
   if (!/^https:\/\/((arca\.)?futurable\.work|([a-z0-9-]+--)?arca-futurable\.netlify\.app)\//.test(d.url)) d.url = "https://futurable.work/arca/";
   if (!d.imagen || d.imagen.length > MAX_IMG || !/^[A-Za-z0-9+/=]+$/.test(d.imagen)) return json(400, { error: "imagen" });
 
-  const fromEmail = process.env.ARCA_FROM_EMAIL;
-  const from = { email: fromEmail, name: process.env.ARCA_FROM_NAME || "ARCA · Futurable" };
-  const brevo = process.env.BREVO_API_KEY, resend = process.env.RESEND_API_KEY;
-  if (!fromEmail || (!brevo && !resend)) return json(503, { error: "no-configurado" });
+  const user = process.env.SMTP_USER, pass = process.env.SMTP_PASS;
+  if (!user || !pass) return json(503, { error: "no-configurado" });
+  const from = { email: user, name: process.env.ARCA_FROM_NAME || "ARCA · Futurable" };
 
   const archivo = `pase-arca-${(d.folio || "pasajero").toLowerCase().replace(/[^a-z0-9-]/g, "")}.jpg`;
   const html = plantilla(d), txt = texto(d);
   try {
-    const r = brevo ? await conBrevo(brevo, from, d, html, txt, archivo) : await conResend(resend, from, d, html, txt, archivo);
-    if (!r.ok) { console.error("envio-fallido", r.status, r.detail.slice(0, 300)); return json(502, { error: "proveedor" }); }
+    await smtp().sendMail({
+      from: { name: from.name, address: from.email },
+      to: d.nombre ? { name: d.nombre, address: d.email } : d.email,
+      replyTo: process.env.ARCA_REPLY_TO || undefined,
+      subject: `Tu pase de abordaje ARCA · ${d.perfil}`,
+      html, text: txt,
+      attachments: [{ filename: archivo, content: d.imagen, encoding: "base64", contentType: "image/jpeg" }],
+    });
     return json(200, { ok: true });
   } catch (e) {
-    console.error("envio-error", e);
+    console.error("envio-error", e && e.message);
     return json(502, { error: "red" });
   }
 };

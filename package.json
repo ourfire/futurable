@@ -1,0 +1,9 @@
+{
+  "name": "futurable-work",
+  "private": true,
+  "type": "module",
+  "description": "futurable.work: home del futuro del trabajo, charla de Tech Week y ARCA",
+  "dependencies": {
+    "nodemailer": "6.9.16"
+  }
+}
