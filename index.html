@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Futurable · El futuro del trabajo</title>
-<meta name="description" content="El futuro del trabajo es la vertical principal de Futurable. Ayudamos a personas y organizaciones a pasar de vender su tiempo a administrar activos, y a imaginar a dónde saltar antes de que llegue el cambio.">
+<meta name="description" content="El futuro del trabajo es la vertical principal de Futurable. Prueba ARCA: una entrevista de embarque de 5 minutos para saber qué tan preparado estás para el gran salto.">
 <meta property="og:title" content="Futurable · El futuro del trabajo">
-<meta property="og:description" content="La vertical principal de Futurable: el futuro del trabajo y del valor humano.">
+<meta property="og:description" content="Prueba ARCA: una entrevista de embarque de 5 minutos para saber qué tan preparado estás para el gran salto.">
+<meta property="og:image" content="https://futurable.work/arca/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFFFFF">
-<meta property="og:image" content="https://futurable.work/assets/futurable-logo.png">
 <link rel="icon" href="/assets/logo/futurable-box-dark.png" type="image/png">
 <link rel="preload" href="/assets/fonts/zalando-sans-expanded-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/zalando-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -16,113 +17,63 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%}
-body{background:var(--f-bg);color:var(--f-text);font-family:var(--f-body);font-size:20px;line-height:30px;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body{background:var(--f-bg);color:var(--f-text);font-family:var(--f-body);font-size:20px;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
 a{color:inherit}
 .gutter{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-.wrap{max-width:1320px;margin:0 auto;width:100%}
+.wrap{max-width:1180px;margin:0 auto;width:100%}
 
-/* cabecera */
-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--f-line);padding-top:env(safe-area-inset-top,0px)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--f-ink);font-family:var(--f-display);font-size:24px;font-weight:400;letter-spacing:-.01em}
-.logo img{width:34px;height:34px}
-.logo .wm b{font-weight:700}
-.logo img.lockup{width:auto;height:30px}
-.links{display:flex;gap:32px;align-items:center;list-style:none;font-size:16px}
-.links a{text-decoration:none;color:var(--f-muted)}
-.links a:hover,.links a[aria-current]{color:var(--f-ink)}
-@media (max-width:820px){.links .hide-m{display:none}}
+header{padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;height:84px}
+.logo img{display:block;width:auto;height:30px}
 
-/* hero */
-.hero{flex:1;display:flex;align-items:center;padding-block:clamp(64px,10vw,140px) clamp(56px,8vw,112px)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
-.eyebrow{font-family:var(--f-display);font-size:13px;line-height:1.7;flex-wrap:wrap;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--f-muted);display:flex;align-items:center;gap:14px}
+main{flex:1;display:flex;align-items:center;padding-block:clamp(32px,6vw,80px)}
+main .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,6vw,88px);align-items:center}
+@media (max-width:900px){main .wrap{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--f-display);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--f-muted);display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .eyebrow::before{content:"";width:40px;height:1px;background:var(--f-ink)}
-h1{font-family:var(--f-display);font-weight:400;color:var(--f-ink);font-size:clamp(48px,8.6vw,124px);line-height:1.02;letter-spacing:-.02em;max-width:12ch;text-wrap:balance}
+h1{font-family:var(--f-display);font-weight:400;color:var(--f-ink);font-size:clamp(46px,7vw,104px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
 h1 span{color:var(--f-muted)}
-.lede{max-width:36em;font-size:clamp(18px,1.7vw,22px);line-height:1.55;color:var(--f-text)}
-.lede b{font-weight:600;color:var(--f-ink)}
-.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
-.btn{display:inline-flex;align-items:center;gap:12px;min-height:60px;padding:18px 28px;border-radius:var(--f-radius);border:1px solid var(--f-ink);background:var(--f-ink);color:#fff;font-family:var(--f-display);font-size:16px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
-.btn:hover,.btn:focus-visible{background:#fff;color:var(--f-ink)}
-.btn.outline{background:transparent;color:var(--f-ink)}
-.btn.outline:hover,.btn.outline:focus-visible{background:var(--f-ink);color:#fff}
-.btn:focus-visible{outline:2px solid var(--f-ink);outline-offset:3px}
 
-/* franja de entradas */
-.doors{border-top:1px solid var(--f-line)}
-.doors .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width:900px){.doors .wrap{grid-template-columns:1fr}}
-.door{display:flex;flex-direction:column;gap:14px;padding:40px 32px 44px 0;text-decoration:none;color:inherit;min-width:0;border-right:1px solid var(--f-line)}
-.door+.door{padding-left:32px}
-.door:last-child{border-right:0}
-@media (max-width:900px){.door,.door+.door{padding:32px 0;border-right:0;border-bottom:1px solid var(--f-line)}.door:last-child{border-bottom:0}}
-.door .k{font-family:var(--f-display);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--f-muted)}
-.door h2{font-family:var(--f-display);font-weight:400;font-size:clamp(24px,2.2vw,30px);line-height:1.2;color:var(--f-ink);text-wrap:balance}
-.door p{font-size:17px;line-height:1.55;color:var(--f-muted-2)}
-.door .go{margin-top:auto;font-family:var(--f-display);font-size:14px;font-weight:600;color:var(--f-ink);display:inline-flex;gap:10px;align-items:center}
-a.door:hover h2{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
-a.door:hover .go span{transform:translateX(4px)}
-.door .go span{transition:transform .2s}
+/* ARCA: el artefacto presentado como una pieza que se puede abrir */
+.arca{display:block;text-decoration:none;color:inherit;border-radius:14px;overflow:hidden;border:1px solid var(--f-line);background:#F3EBDA;box-shadow:0 30px 60px -30px rgba(15,15,15,.35);transition:transform .25s, box-shadow .25s}
+.arca:hover{transform:translateY(-4px);box-shadow:0 40px 70px -30px rgba(15,15,15,.45)}
+.arca:focus-visible{outline:2px solid var(--f-ink);outline-offset:4px}
+.arca img{display:block;width:100%;height:auto;aspect-ratio:1200/630}
+.arca .meta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:#fff;border-top:1px solid var(--f-line);flex-wrap:wrap}
+.arca .meta p{font-size:16px;line-height:1.45;color:var(--f-muted);max-width:28em}
+.arca .meta p b{display:block;font-family:var(--f-display);font-weight:500;font-size:17px;color:var(--f-ink);margin-bottom:2px}
+.cta{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:16px 26px;border-radius:var(--f-radius);border:1px solid var(--f-ink);background:var(--f-ink);color:#fff;font-family:var(--f-display);font-size:15px;font-weight:600;white-space:nowrap;transition:background .2s,color .2s}
+.arca:hover .cta{background:#fff;color:var(--f-ink)}
 
-footer{border-top:1px solid var(--f-line);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--f-muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--f-ink);text-decoration:none}
+footer{padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;justify-content:center}
+footer a{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:15px;font-weight:500;color:var(--f-ink);text-decoration:none;border-bottom:1px solid var(--f-ink);padding-bottom:4px}
+footer a:hover{color:var(--f-muted);border-color:var(--f-muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <header class="gutter">
-  <nav class="wrap nav" aria-label="Principal">
-    <a class="logo" href="/" aria-label="Futurable"><img src="/assets/logo/futurable-lockup-ink.png" alt="Futurable" class="lockup"></a>
-    <ul class="links">
-      <li class="hide-m"><a href="/techweek/">Tech Week</a></li>
-      <li class="hide-m"><a href="/arca/">ARCA</a></li>
-      <li><a href="https://futurable.now">futurable.now ↗</a></li>
-    </ul>
-  </nav>
+  <div class="wrap nav"><a class="logo" href="/" aria-label="Futurable"><img src="/assets/logo/futurable-lockup-ink.png" alt="Futurable"></a></div>
 </header>
 
-<main class="hero gutter">
+<main class="gutter">
   <div class="wrap">
-    <p class="eyebrow">Vertical principal · Futurable</p>
-    <h1>El futuro del <span>trabajo.</span></h1>
-    <p class="lede">Es la vertical principal de Futurable. La automatización está cambiando de qué vivimos y qué nos hace valiosos. Ayudamos a personas y organizaciones a <b>pasar de vender su tiempo a administrar activos</b>, y a imaginar hacia dónde saltar antes de que el cambio decida por ellas.</p>
-    <div class="ctas">
-      <a class="btn" href="/techweek/">Ver la charla de Tech Week <span aria-hidden="true">→</span></a>
-      <a class="btn outline" href="/arca/">Hacer el diagnóstico ARCA</a>
+    <div>
+      <h1>El futuro del <span>trabajo.</span></h1>
     </div>
+    <a class="arca" href="/arca/" aria-label="Abrir ARCA, la entrevista de embarque">
+      <img src="/arca/og.png" alt="ARCA, Agencia de Reubicación de Capacidades Humanas. Antes del diluvio, aborda.">
+      <div class="meta">
+        <p><b>ARCA · Entrevista de embarque</b>18 preguntas, 5 minutos. Descubre qué tan preparado estás para el gran salto.</p>
+        <span class="cta">Abordar <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
   </div>
 </main>
 
-<section class="doors gutter" aria-label="Explora">
-  <div class="wrap">
-    <a class="door" href="/techweek/">
-      <span class="k">Charla · Tech Week Yucatán 2026</span>
-      <h2>El futuro del valor humano</h2>
-      <p>Cuatro transiciones que convergen, dos retos humanos y el gran salto. Las diapositivas completas.</p>
-      <span class="go">Ver la presentación <span aria-hidden="true">→</span></span>
-    </a>
-    <a class="door" href="/arca/">
-      <span class="k">Ficción de diseño · Diagnóstico</span>
-      <h2>ARCA, la agencia que decide quién aborda</h2>
-      <p>Una entrevista de embarque de cinco minutos para saber qué tan preparado estás para el gran salto.</p>
-      <span class="go">Abordar <span aria-hidden="true">→</span></span>
-    </a>
-    <a class="door" href="https://futurable.now">
-      <span class="k">Estudio</span>
-      <h2>Imaginable. Buildable. Scalable.</h2>
-      <p>Futurable es un estudio de imaginación constructiva: no predecimos el futuro, diseñamos los futuros necesarios.</p>
-      <span class="go">Conocer Futurable <span aria-hidden="true">↗</span></span>
-    </a>
-  </div>
-</section>
-
 <footer class="gutter">
-  <div class="wrap">
-    <span>© 2026 Futurable · Mérida, Yucatán</span>
-    <a href="https://futurable.now">futurable.now</a>
-  </div>
+  <div class="wrap"><a href="https://futurable.now">Conoce Futurable en futurable.now <span aria-hidden="true">↗</span></a></div>
 </footer>
 </body>
 </html>
