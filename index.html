@@ -19,7 +19,7 @@
 (function(){
   var d=document.documentElement, t=null;
   try{ t=localStorage.getItem('fw-theme'); }catch(e){}
-  if(!t) t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  if(t!=='dark') t='light';
   d.setAttribute('data-theme',t);
 })();
 </script>
@@ -50,14 +50,13 @@ button:focus-visible{outline:2px solid var(--f-ink);outline-offset:2px}
 
 main{flex:1;display:flex;align-items:center;padding-block:clamp(28px,7vw,88px) clamp(28px,6vw,72px)}
 main .wrap{display:flex;flex-direction:column;align-items:center;gap:clamp(28px,5vw,56px);max-width:860px}
-.title{display:flex;flex-direction:column;align-items:center;gap:clamp(16px,2.4vw,22px);text-align:center}
-.logo{display:inline-flex;margin-right:auto;border-radius:8px}
+.logo{display:inline-flex;align-items:center;gap:16px;margin-right:auto;border-radius:8px;text-decoration:none;min-width:0}
 .logo:focus-visible{outline:2px solid var(--f-ink);outline-offset:3px}
 .wmark{width:44px;height:44px;display:block}
 .wmark.on-dark{display:none}
 :root[data-theme="dark"] .wmark.on-light{display:none}
 :root[data-theme="dark"] .wmark.on-dark{display:block}
-h1{font-family:var(--f-display);font-weight:500;color:var(--f-ink);font-size:clamp(12px,1.5vw,16px);line-height:1.4;letter-spacing:.32em;text-transform:uppercase;text-wrap:balance;padding-left:.32em}
+h1{font-family:var(--f-display);font-weight:500;color:var(--f-ink);font-size:clamp(11px,1.2vw,14px);line-height:1.3;letter-spacing:.28em;text-transform:uppercase}
 
 /* ARCA: el artefacto presentado como una pieza que se puede abrir */
 .arca{display:block;width:100%;text-decoration:none;color:inherit;border-radius:14px;overflow:hidden;border:1px solid var(--f-line);background:var(--f-card-bg);box-shadow:0 30px 60px -30px var(--f-shadow);transition:transform .25s, box-shadow .25s}
@@ -86,9 +85,10 @@ footer a:hover{color:var(--f-muted);border-color:var(--f-muted)}
 <body>
 <header class="bar gutter">
   <div class="wrap">
-    <a class="logo" href="./" aria-label="Futurable · El futuro del trabajo">
+    <a class="logo" href="./">
       <img class="wmark on-light" src="assets/logo/futurable-box-dark.png" alt="Futurable" width="44" height="44">
       <img class="wmark on-dark" src="assets/logo/futurable-box-light.png" alt="Futurable" width="44" height="44">
+      <h1>El futuro del trabajo</h1>
     </a>
     <button type="button" class="icon-btn" id="themeBtn" aria-label="Cambiar a modo oscuro">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
@@ -99,9 +99,6 @@ footer a:hover{color:var(--f-muted);border-color:var(--f-muted)}
 
 <main class="gutter">
   <div class="wrap">
-    <div class="title">
-      <h1>El futuro del trabajo</h1>
-    </div>
     <a class="arca" href="arca/index.html" aria-label="Abrir ARCA, la entrevista de embarque">
       <img src="arca/og.png" alt="ARCA, Agencia de Reubicación de Capacidades Humanas. Antes del diluvio, aborda.">
       <div class="meta">
