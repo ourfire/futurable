@@ -69,7 +69,7 @@ input,textarea{font:inherit;color:inherit}
 .signbar .clock{font-family:var(--mono);font-weight:500;letter-spacing:.04em;padding:0 16px;display:flex;align-items:center;color:var(--brass);font-size:13px;white-space:nowrap}
 @media (max-width:640px){.signbar .hide-s{display:none}.signbar .info{gap:10px}}
 
-.screen{display:none;min-height:calc(100vh - 44px);min-height:calc(100dvh - 44px)}
+.screen{display:none;min-height:calc(100vh / var(--z) - 44px);min-height:calc(100dvh / var(--z) - 44px)}
 .screen.on{display:block;animation:in .4s ease}
 @keyframes in{from{opacity:.001;transform:translateY(8px)}to{opacity:1;transform:none}}
 .wrap{max-width:760px;margin:0 auto;padding-block:28px calc(40px + var(--safe-b));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -129,7 +129,7 @@ input,textarea{font:inherit;color:inherit}
 .futurable svg{width:18px;height:18px}
 
 /* ---------- Etapas ---------- */
-#stage .wrap{display:flex;flex-direction:column;justify-content:center;min-height:calc(100dvh - 44px);max-width:900px}
+#stage .wrap{display:flex;flex-direction:column;justify-content:center;min-height:calc(100dvh / var(--z) - 44px);max-width:900px}
 .stage-gate{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
 .stage-letter{font-weight:600;width:clamp(130px,24vw,200px);aspect-ratio:1;max-width:100%;display:grid;place-items:center;border-radius:50%;
   font-family:var(--display);font-size:clamp(94.08px,16.8vw,143.36px);line-height:1;color:var(--paper);
@@ -182,7 +182,7 @@ textarea.open:focus{outline:none;box-shadow:0 0 0 4px var(--brass-a), var(--shad
 .back{font-family:var(--cond);font-weight:500;font-size:16.4px;text-transform:uppercase;letter-spacing:.08em;padding:14px 8px;color:var(--ink-2)}
 
 /* ---------- Procesando ---------- */
-#processing .wrap{min-height:calc(100dvh - 44px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px}
+#processing .wrap{min-height:calc(100dvh / var(--z) - 44px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px}
 .proc-lines{font-family:var(--mono);font-size:16px;text-align:left;min-height:9em;width:min(460px,100%);color:var(--ink-2)}
 .proc-lines div{opacity:.001;animation:in .3s forwards}
 .proc-lines div::before{content:"✦ ";color:var(--brass)}
@@ -545,6 +545,13 @@ body:has(#mailForm:focus-within) #result .pass-col,body:has(#mailForm:focus-with
 #shCopy.done{border-color:var(--jungle);color:var(--jungle-2)}
 @media (max-width:380px){.share-row .sh:not(#shWa):not(#shCopy) span{font-size:14px}.share-row{padding:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bigstamp,.proc-lines div{opacity:1}}
+
+/* Escala general: todo un poco más chico (pantalla grande / TV, PC y celular).
+   El pase que se descarga (#export-stage) queda fuera, a tamaño real. */
+:root{--z:.9}
+@media (min-width:1024px){:root{--z:.8}}
+@media (min-width:1600px){:root{--z:.72}}
+.signbar,.screen,.modal>*,.idle>*,.toast{zoom:var(--z)}
 </style>
 </head>
 <body>
