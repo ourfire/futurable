@@ -182,6 +182,35 @@ body, html {
   font-weight: 400;
 }
 
+/* Card que lleva a una pieza interactiva */
+.hero-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-link:hover .hero-cta,
+.hero-link:focus-visible .hero-cta {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.hero-link:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: -8px;
+}
+
 /* --- Estilos del Footer --- */
 .main-footer {
   width: 100%;
