@@ -26,6 +26,11 @@
   status = 301
 
 [[redirects]]
+  from = "/recibo"
+  to = "/recibo/"
+  status = 301
+
+[[redirects]]
   from = "/techweek"
   to = "/techweek/"
   status = 301

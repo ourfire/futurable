@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recibo de Vida Humana · Privatizadora de Planetas Inc.</title>
+<meta name="description" content="Privatizadora de Planetas Inc., sucursal Planeta Tierra. Responde la entrevista y recibe el recibo de lo que ha costado tu vida.">
+<meta property="og:title" content="Recibo de Vida Humana">
+<meta property="og:description" content="Privatizadora de Planetas Inc. · Sucursal Planeta Tierra. ¿Cuánto te ha costado existir?">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://futurable.work/recibo/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f1eff4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 2h20v26l-3-2-3 2-4-2-4 2-3-2-3 2z' fill='%23fcfcfa' stroke='%231b1c1e' stroke-width='2'/%3E%3Cpath d='M10 9h12M10 14h12M10 19h8' stroke='%231b1c1e' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112,400..800&family=Spline+Sans+Mono:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+  /* emailEndpoint: URL que recibe un POST JSON {email, cliente, recibo, pais, total, texto}. Vacío = placeholder.
+     siteUrl: dirección que codifica el QR del recibo. Ver README. */
+  window.RVH_CONFIG = { emailEndpoint: "", allowDownload: true, siteUrl: "https://futurable.work/recibo/" };
+</script>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<main class="wrap">
+  <header class="topbar">
+    <div><b>Privatizadora de Planetas Inc.</b><span>Todo lo que era gratis, ahora con dueño</span></div>
+    <div><b>Sucursal Planeta Tierra</b><span>Única sucursal en operación</span></div>
+    <div><b>Vía Láctea</b><span>X −8.2 kpc · Y 0.0 · Z +0.02 kpc</span></div>
+    <div><b>Abierto 24/7</b><span>Sin días de descanso</span></div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-title">
+      <p class="eyebrow">Sucursal Planeta Tierra</p>
+      <h1 class="mega">Recibo de vida humana</h1>
+    </div>
+    <div class="hero-side">
+      <p>Este planeta tiene dueño. Cada vida en él genera una cuenta. Responde la entrevista de admisión y nuestra caja imprimirá la tuya: lo que pagaste, lo que pagaron por ti, lo que se llevó el Estado y el tiempo que regalaste.</p>
+      <div class="facts">
+        <div><b>32</b>Preguntas</div>
+        <div><b>4 min</b>Duración</div>
+        <div><b>6</b>Países</div>
+        <div><b>0</b>Datos enviados</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="counter" id="caja">
+    <div class="col col-quiz">
+      <div class="sticky">
+        <div class="col-label"><span>Entrevista de admisión</span><span id="quizCount">32 preguntas</span></div>
+        <div class="panel" id="quiz" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="col col-receipt">
+      <div class="col-label"><span>Caja 01</span><span id="receiptState">Recibo de muestra</span></div>
+      <div class="stage" id="stage">
+        <div class="rod" aria-hidden="true"></div>
+        <div class="hang"><div class="sheet"><div class="paper" id="receipt"></div><div class="tear" aria-hidden="true"></div></div></div>
+      </div>
+    </div>
+    <aside class="col col-side side">
+      <div class="sticky">
+        <div class="col-label"><span>Tu recibo</span><span id="sideState">Pendiente</span></div>
+        <div class="block">
+          <h3>Llévatelo</h3>
+          <div class="btns" style="margin-top:0">
+            <button class="btn" id="dl" disabled>Descargar imagen</button>
+            <button class="btn ghost" id="share" disabled>Compartir</button>
+            <button class="link" id="copy" disabled>Copiar como texto</button>
+          </div>
+          <div class="toast" id="toast" role="status"></div>
+          <textarea id="plain" readonly hidden aria-label="Recibo en texto"></textarea>
+        </div>
+        <div class="block">
+          <h3>Recíbelo por correo</h3>
+          <form id="mail" novalidate>
+            <label for="email" class="small">Te lo enviamos con tu número de cliente.</label>
+            <div class="mailrow"><input type="email" id="email" autocomplete="email" placeholder="tu@correo.com"><button class="btn inline" type="submit">Enviar</button></div>
+          </form>
+        </div>
+        <div class="block">
+          <h3>Cómo leer tu recibo</h3>
+          <ul class="legend">
+            <li><b>Partidas</b><span>Lo que se pagó desde el bolsillo, tuyo o de tu familia, año por año.</span></li>
+            <li><b>Subtotal e impuestos</b><span>El consumo va sin impuestos; IVA, renta y aportaciones se suman al final.</span></li>
+            <li><b>Tiempo regalado</b><span>Se cobra en $0, pero mostramos lo que valdría en el mercado.</span></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="band">
+    <h2>Qué cobra este recibo</h2>
+    <div class="body cells">
+      <div><h3>Lo que pagaste</h3><p>Techo, comida, salud, transporte, pantallas y deudas. Cada partida calculada año por año, desde el parto hasta hoy, con los precios de tu país.</p></div>
+      <div><h3>Lo que pagaron por ti</h3><p>Tu familia, hasta que te independizaste. El Estado, con los impuestos que también salieron de tu bolsillo y aparecen sumados al final.</p></div>
+      <div><h3>Lo que nunca se cobró</h3><p>Las horas que vendiste para pagar todo lo anterior y las que regalaste cuidando a otros. Eso también tiene precio, aunque nadie lo facture.</p></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>La sucursal en cifras</h2>
+    <div class="body stats">
+      <div><b>8,200 M</b><span>Clientes activos</span></div>
+      <div><b>1</b><span>Planeta privatizado</span></div>
+      <div><b>3,800 M</b><span>Años en que vivir fue gratis</span></div>
+      <div><b>0</b><span>Devoluciones aceptadas</span></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>Cómo se calcula</h2>
+    <div class="body method">
+      <div>
+        <p>Partimos de costos promedio por categoría para 2026 en cada país y los ajustamos con tus respuestas: el tipo de ciudad, la economía de tu hogar de infancia, tu ingreso actual, con cuántas personas compartes la casa y tus hábitos.</p>
+        <p>Contamos lo que se pagó desde el bolsillo, tuyo o de tu familia. Lo público entra a través de los impuestos que lo financian. El saldo pendiente proyecta el resto de tu vida hasta la edad que elijas.</p>
+        <p>Es una estimación, no una auditoría. Nada de lo que respondes sale de tu navegador.</p>
+      </div>
+      <ul class="countries" aria-label="Países disponibles">
+        <li><span>México</span><span>MXN</span></li>
+        <li><span>Colombia</span><span>COP</span></li>
+        <li><span>Estados Unidos</span><span>USD</span></li>
+        <li><span>España</span><span>EUR</span></li>
+        <li><span>Chile</span><span>CLP</span></li>
+        <li><span>Perú</span><span>PEN</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <span>Privatizadora de Planetas Inc. es una ficción. Tu recibo no.</span>
+    <a class="credit" href="https://futurable.work" target="_blank" rel="noopener">futurable.work</a>
+  </footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="js/model.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
